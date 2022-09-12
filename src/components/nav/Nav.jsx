@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Nav() {
+  const [open, setOpen] = useState(false);
+
+  const openNav = (e) =>{
+    setOpen(!open)
+    e.preventDefault();
+  }
+
   return (
-    <nav className='fixed inset-x-0 h-20 border-b border-slate-200 bg-white bg-opacity-20 backdrop-blur-sm z-50'>
-      <div className='container flex justify-between items-center h-full w-full '>
-        <a href="#" className='w-10 h-10 md:hidden'>
+    <nav className='fixed inset-x-0 h-20 border-b border-slate-200 bg-white bg-opacity-50 backdrop-blur-sm z-40'>
+      <div  className='container flex justify-between items-center h-full w-full'>
+        <a onClick={openNav} href="#" className='w-10 h-10 md:hidden'>
           <img 
             src="./img/icons/menu-left.svg" 
             alt=""
@@ -22,7 +29,7 @@ function Nav() {
           />
         </div>
 
-        <ul className='absolute top-0 left-0 h-screen w-3/4 pt-20 -translate-x-full bg-slate-400 flex items-center flex-col md:static md:w-auto md:h-auto md:p-0 md:bg-transparent md:translate-x-0 md:flex-row md:space-x-4'>
+        <ul className={`nav-bar ${open ? 'translate-x-0' : '-translate-x-full'}`}>
           <li className='py-2 px-3 text-lg font-semibold text-slate-700 capitalize rounded-3xl transition hover:bg-slate-100'>
             <a href="#"> 
             home
@@ -77,6 +84,8 @@ function Nav() {
           </a>
         </div>
       </div>
+
+      <div onClick={openNav} className={`overlay-black ${open ? 'translate-x-0' : '-translate-x-full'}`}></div>
     </nav>
   )
 }

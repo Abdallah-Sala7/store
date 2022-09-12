@@ -1,6 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -9,7 +7,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 function Header() {
   return (
-    <header className='w-full bg-primary-100 '>
+    <header className='w-full bg-primary-100 relative z-10'>
       <div className="container h-full pt-40 flex flex-col items-center justify-between md:flex-row">
         <div className='w-full pb-5 md:w-1/2'>
           <h1 className='font-semibold text-2xl text-gray-500 opacity-80 mb-8 first-letter:capitalize'>
@@ -33,7 +31,7 @@ function Header() {
           loop={true}
           centeredSlides={true}
           autoplay={{
-            delay: 99500,
+            delay: 3500,
             disableOnInteraction: true,
           }}
           pagination={{
@@ -73,6 +71,8 @@ function Header() {
         </Swiper>
         </div>
       </div>
+
+      <div className="overlay absolute inset-3 -z-10"></div>
     </header>
   )
 }
