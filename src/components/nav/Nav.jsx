@@ -29,30 +29,39 @@ function Nav() {
           />
         </div>
 
-        <ul className={`nav-bar ${open ? 'translate-x-0' : '-translate-x-full'}`}>
-          <li className='py-2 px-3 text-lg font-semibold text-slate-700 capitalize rounded-3xl transition hover:bg-slate-100'>
-            <a href="#"> 
-            home
+        <ul className={`nav-bar ${open ? 'translate-x-0 ' : '-translate-x-full'} md:translate-x-0`}>
+          <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
+            <a href="#" className='w-full py-2 px-3 text-lg'> 
+              home
             </a>
           </li>
 
-          <li className='py-2 px-3 text-lg font-semibold text-slate-700 capitalize rounded-3xl transition hover:bg-slate-100'>
-            <a href="#"> 
-            home
+          <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
+            <a href="#" className='w-full py-2 px-3 text-lg'> 
+              home
             </a>
           </li>
 
-          <li className='py-2 px-3 text-lg font-semibold text-slate-700 capitalize rounded-3xl transition hover:bg-slate-100'>
-            <a href="#"> 
-            home
+          <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
+            <a href="#" className='w-full py-2 px-3 text-lg'> 
+              home
             </a>
           </li>
 
-          <li className='py-2 px-3 text-lg font-semibold text-slate-700 capitalize rounded-3xl transition hover:bg-slate-100'>
-            <a href="#"> 
-            home
+          <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
+            <a href="#" className='w-full py-2 px-3 text-lg'> 
+              home
             </a>
           </li>
+
+          <a href="#" onClick={openNav} className=' absolute top-0 right-5 w-10 h-10 rounded bg-gray-700 text-gray-50 flex items-center justify-center md:hidden'>
+            <img 
+              src="./img/icons/xmark.svg" 
+              alt=""
+              loading='lazy'
+              className='w-3/4 h-3/4 object-contain img-white'
+            />
+          </a>
         </ul>
 
         <div className="flex items-baseline space-x-6">
@@ -85,7 +94,7 @@ function Nav() {
         </div>
       </div>
 
-      <div onClick={openNav} className={`overlay-black ${open ? 'translate-x-0' : '-translate-x-full'}`}></div>
+      <div onClick={openNav} className={`overlay-black   ${open ? 'visible bg-opacity-80' : 'invisible'} md:invisible`}></div>
     </nav>
   )
 }

@@ -1,13 +1,19 @@
-import Header from "./components/header/Header";
 import Nav from "./components/nav/Nav";
+import Home from "./components/home/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Nav />
-      <main>
-        <Header />
-      </main>
+    <Nav />
+
+    <main>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </main>
     </>
   );
 }

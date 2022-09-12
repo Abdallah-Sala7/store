@@ -8,6 +8,12 @@ module.exports = {
       colors: {
         primary:{
           100: "#e3ffe6"
+        },
+        discover:{
+          100: "#fef2f2",
+          200: "#fefce8",
+          300: "#eff6ff",
+          400: "#f0fdf4",
         }
       },
       container: {
