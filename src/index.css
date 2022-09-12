@@ -33,8 +33,24 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-
   filter: invert(99%) sepia(35%) saturate(989%) hue-rotate(184deg) brightness(109%) contrast(101%);
 }
 
+.label-check{
+  position: relative;
+}
 
+.radio-check:checked + .label-check::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  transform: translate(-50%, -50%);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+}
 
-.radio-check:checked + .label-check{
-  outline: 2px solid #111827;
+.radio-check:disabled + .label-check {
+  opacity: 0.2;
+  cursor: no-drop;
 }

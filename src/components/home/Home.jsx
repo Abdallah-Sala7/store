@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -5,8 +6,21 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Home() {
+  const [product, setProduct] = useState([]);
+  const [color, setColor] = useState('');
+
+  useEffect(() => {
+    axios.get('https://fakestoreapi.com/products')
+    .then(res => setProduct(res.data))
+  }, []);
+
+  const handleColor = (e) => {
+    setColor(e.target.value);
+    console.log(color);
+  }
   return (
     <>
     <header className='w-full bg-primary-100 relative z-10'>
@@ -55,7 +69,7 @@ function Home() {
 
           <SwiperSlide>
             <img
-              src='./img/hero-right-2.png'
+              src='./img/hero/hero-right-2.webp'
               alt=''
               loading='lazy'
               className='w-full h-full object-contain object-bottom'
@@ -79,7 +93,7 @@ function Home() {
 
     <section className=" py-20">
       <div className="container">
-        <h1 className="text-4xl font-extrabold text-gray-900 first-letter:capitalize mb-8">
+        <h1 className="text-2xl font-extrabold text-gray-900 first-letter:capitalize mb-8 md:text-4xl">
           <span>discover more.</span> 
           <span className="text-gray-600"> Good things are waiting for you</span> 
         </h1>
@@ -87,7 +101,7 @@ function Home() {
         <Swiper
             slidesPerView={1.1}
             spaceBetween={10}
-            loop={true}
+            loop={false}
             pagination={{
               clickable: true,
             }}
@@ -109,8 +123,8 @@ function Home() {
             className="mySwiper"
           >
             <SwiperSlide>
-              <div className="p-8 rounded-2xl bg-discover-100 relative z-10">
-                <div className="w-1/2 flex flex-col">
+              <div className="p-5 rounded-2xl bg-discover-100 relative z-10 sm:p-8">
+                <div className=" w-11/12 flex flex-col sm:w1/2">
                   <h2 className=" text-xl font-normal text-gray-600 mb-5">
                     Sale collection
                   </h2>
@@ -124,7 +138,7 @@ function Home() {
                   </Link>             
                 </div>
 
-                <div className="absolute top-1/2 right-5 -translate-y-1/2 w-1/2 h-3/4 -z-10">
+                <div className="absolute top-1/2 right-5 -translate-y-1/2 w-1/2 h-1/2 sm:h-3/4 -z-10">
                   <img 
                     src="./img/disc/disc.webp" 
                     alt=""
@@ -136,8 +150,8 @@ function Home() {
             </SwiperSlide>
 
             <SwiperSlide>
-              <div className="p-8 rounded-2xl bg-discover-200 relative z-10">
-                <div className="w-1/2 flex flex-col">
+              <div className="p-5 rounded-2xl bg-discover-200 relative z-10 sm:p-8">
+                <div className=" w-11/12 flex flex-col sm:w1/2">
                   <h2 className=" text-xl font-normal text-gray-600 mb-5">
                     Sale collection
                   </h2>
@@ -163,8 +177,8 @@ function Home() {
             </SwiperSlide>
 
             <SwiperSlide>
-              <div className="p-8 rounded-2xl bg-discover-300 relative z-10">
-                <div className="w-1/2 flex flex-col">
+              <div className="p-5 rounded-2xl bg-discover-300 relative z-10 sm:p-8">
+                <div className=" w-11/12 flex flex-col sm:w1/2">
                   <h2 className=" text-xl font-normal text-gray-600 mb-5">
                     Sale collection
                   </h2>
@@ -190,8 +204,8 @@ function Home() {
             </SwiperSlide>
 
             <SwiperSlide>
-              <div className="p-8 rounded-2xl bg-discover-400 relative z-10">
-                <div className="w-1/2 flex flex-col">
+              <div className="p-5 rounded-2xl bg-discover-400 relative z-10 sm:p-8">
+                <div className=" w-11/12 flex flex-col sm:w1/2">
                   <h2 className=" text-xl font-normal text-gray-600 mb-5">
                     Sale collection
                   </h2>
@@ -220,8 +234,8 @@ function Home() {
     </section> 
 
     <section className="py-20">
-    <div className="container">
-        <h1 className="text-4xl font-extrabold text-gray-900 first-letter:capitalize mb-8">
+      <div className="container">
+        <h1 className="text-2xl font-extrabold text-gray-900 first-letter:capitalize mb-8 md:text-4xl">
           <span>New Arrivals.</span> 
           <span className="text-gray-600"> REY backpacks & bags</span> 
         </h1>
@@ -229,7 +243,7 @@ function Home() {
         <Swiper
             slidesPerView={1.1}
             spaceBetween={5}
-            loop={true}
+            loop={false}
             pagination={{
               clickable: true,
             }}
@@ -239,138 +253,113 @@ function Home() {
                 spaceBetween: 10,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 2.5,
                 spaceBetween: 10,
               },
               1024: {
-                slidesPerView: 2.8,
+                slidesPerView: 4,
                 spaceBetween: 10,
               },
             }}
           >
-            <SwiperSlide>
-              <div className="">
-                <div className="relative w-full h-72 bg-gray-100 rounded-3xl overflow-hidden ">
-                  <img 
-                    src="./img/disc/disc.webp" 
-                    alt=""
-                    loading="lazy"
-                    className="w-full h-full object-contain" 
-                  />     
-                </div>
+            {product.map((item, index) => {
+              return (
+              <SwiperSlide key={index}>
+                <div className="">
+                  <div className="relative w-full h-72 p-4 bg-gray-100 rounded-3xl overflow-hidden group">
+                    <img 
+                      src={item.image}
+                      alt=""
+                      loading="lazy"
+                      className="w-full h-full object-contain" 
+                    />
 
-                <div className="py-6 px-2">
-                  <form action="" className="w-full">
-                    <div className="flex items-center space-x-2">
-                      <input type="radio" checked name="color" id="red" className="w-0 relative radio-check" />
-                      <label htmlFor="red" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
+                    <div className="absolute bottom-0 left-0 w-full flex items-center justify-center space-x-2 translate-y-full transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-5">
+                      <a href="#" type="butoon" className="py-2 px-4 rounded-full bg-gray-900  flex items-center justify-center space-x-2 hover:bg-opacity-90">
+                        <span className="w-4 h-4">
+                          <img 
+                            src="./img/icons/shopping-basket.svg" 
+                            alt=""
+                            loading="lazy"
+                            className="w-full h-full object-contain img-white" 
+                          />
+                        </span>
 
-                      <input type="radio" name="color" id="blue" className="w-0 relative radio-check" />
-                      <label htmlFor="blue" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
+                        <span className="text-base leading-none text-gray-50">
+                          add to cart
+                        </span>
+                      </a> 
 
-                      <input type="radio" name="color" id="green" className="w-0 relative radio-check" />
-                      <label htmlFor="green" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
+                      <Link to={'/'} className="py-2 px-4 rounded-full bg-gray-400  flex items-center justify-center space-x-2 hover:bg-opacity-90">
+                        <span className="w-4 h-4">
+                          <img 
+                            src="./img/icons/full-screen.svg" 
+                            alt=""
+                            loading="lazy"
+                            className="w-full h-full object-contain img-white" 
+                          />
+                        </span>
 
-                      <input type="radio" name="color" id="aa" className="w-0 relative radio-check" />
-                      <label htmlFor="aa" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
+                        <span className="text-base leading-none text-gray-50">
+                          full view
+                        </span>
+                      </Link> 
+                    </div> 
+                  </div>
+
+                  <div className="py-6 px-4">
+                    <form action="" className="w-full mb-6">
+                      <div className="flex items-center space-x-2">
+                        <input onChange={handleColor} type="radio" name="color" value={'red'} id={`red${item.id}`} className="w-0 relative radio-check" />
+                        <label htmlFor={`red${item.id}`} className="w-5 h-5 rounded-full cursor-pointer bg-red-400 label-check after:border-red-400"></label>
+
+                        <input onChange={handleColor} type="radio" name="color" value={'blue'} id={`blue${item.id}`} disabled className="w-0 relative radio-check" />
+                        <label htmlFor={`blue${item.id}`} className="w-5 h-5 rounded-full cursor-pointer bg-blue-400 label-check after:border-blue-400"></label>
+
+                        <input onChange={handleColor} type="radio" name="color" value={'yellow'} id={`yellow${item.id}`} className="w-0 relative radio-check" />
+                        <label htmlFor={`yellow${item.id}`} className="w-5 h-5 rounded-full cursor-pointer bg-yellow-400 label-check after:border-yellow-400"></label>
+
+                        <input onChange={handleColor} type="radio" name="color" value={'green'} id={`green${item.id}`} className="w-0 relative radio-check" />
+                        <label htmlFor={`green${item.id}`} className="w-5 h-5 rounded-full cursor-pointer bg-green-400 label-check after:border-green-400"></label>
+                      </div>
+                    </form>
+
+                    <h2 className="text-xl font-medium text-gray-900 mb-2 capitalize text-ellipsis whitespace-nowrap overflow-hidden">
+                      {item.title}
+                    </h2>
+
+                    <h3 className="text-lg font-normal text-gray-500 mb-3 capitalize">
+                      {item.category}
+                    </h3>
+
+                    <div className="flex justify-between items-end ">
+                      <div className="py-1 px-3 border-2 border-green-500 rounded-md">
+                        <h4 className="text-green-500 font-semibold text-lg leading-none">
+                          {item.price}$
+                        </h4>
+                      </div>
+
+                      <div className="flex items-center  space-x-3 ">
+                        <span className="w-5 h-5">
+                          <img 
+                            src="./img/icons/star.svg" 
+                            alt=""
+                            loading="lazy"
+                            className="w-full h-full object-contain" 
+                          />
+                        </span>
+
+                        <span className="text-sm text-gray-500 font-medium">
+                          {item.rating.rate} ({item.rating.count})
+                        </span>
+                      </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
+              </SwiperSlide>                
+              )
+            })}
 
-            <SwiperSlide>
-              <div className="">
-                <div className="relative w-full h-72 bg-gray-100 rounded-3xl overflow-hidden ">
-                  <img 
-                    src="./img/disc/disc.webp" 
-                    alt=""
-                    loading="lazy"
-                    className="w-full h-full object-contain" 
-                  />     
-                </div>
-
-                <div className="py-6 px-2">
-                  <form action="" className="w-full">
-                    <div className="flex items-center space-x-2">
-                      <input type="radio" checked name="color1" id="red" className="w-0 relative radio-check" />
-                      <label htmlFor="red" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color1" id="blue" className="w-0 relative radio-check" />
-                      <label htmlFor="blue" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color1" id="green" className="w-0 relative radio-check" />
-                      <label htmlFor="green" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color1" id="aa" className="w-0 relative radio-check" />
-                      <label htmlFor="aa" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="">
-                <div className="relative w-full h-72 bg-gray-100 rounded-3xl overflow-hidden ">
-                  <img 
-                    src="./img/disc/disc.webp" 
-                    alt=""
-                    loading="lazy"
-                    className="w-full h-full object-contain" 
-                  />     
-                </div>
-
-                <div className="py-6 px-2">
-                  <form action="" className="w-full">
-                    <div className="flex items-center space-x-2">
-                      <input type="radio" checked name="color2" id="red" className="w-0 relative radio-check" />
-                      <label htmlFor="red" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color2" id="blue" className="w-0 relative radio-check" />
-                      <label htmlFor="blue" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color2" id="green" className="w-0 relative radio-check" />
-                      <label htmlFor="green" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color2" id="aa" className="w-0 relative radio-check" />
-                      <label htmlFor="aa" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="">
-                <div className="relative w-full h-72 bg-gray-100 rounded-3xl overflow-hidden ">
-                  <img 
-                    src="./img/disc/disc.webp" 
-                    alt=""
-                    loading="lazy"
-                    className="w-full h-full object-contain" 
-                  />     
-                </div>
-
-                <div className="py-6 px-2">
-                  <form action="" className="w-full">
-                    <div className="flex items-center space-x-2">
-                      <input type="radio" checked name="color3" id="red" className="w-0 relative radio-check" />
-                      <label htmlFor="red" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color3" id="blue" className="w-0 relative radio-check" />
-                      <label htmlFor="blue" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color3" id="green" className="w-0 relative radio-check" />
-                      <label htmlFor="green" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-
-                      <input type="radio" name="color3" id="aa" className="w-0 relative radio-check" />
-                      <label htmlFor="aa" className="w-5 h-5 rounded-full bg-red-400 label-check"></label>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </SwiperSlide>
         </Swiper>
       </div>
     </section>   
