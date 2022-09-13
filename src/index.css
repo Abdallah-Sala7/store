@@ -29,8 +29,17 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-
   background: url('../public/img/BackgroundLine.svg') center / cover no-repeat;
 }
 
+.bg-line{
+  background: url('../public/img/VectorHIW.svg') top center / contain no-repeat;
+}
+
 .img-white{
   filter: invert(99%) sepia(35%) saturate(989%) hue-rotate(184deg) brightness(109%) contrast(101%);
+}
+
+.img-dark{
+  filter: invert(6%) sepia(8%) saturate(5217%) hue-rotate(184deg) brightness(93%) contrast(93%);
+  /* filter: invert(0%) sepia(1%) saturate(37%) hue-rotate(249deg) brightness(109%) contrast(101%); */
 }
 
 .label-check{
@@ -53,4 +62,23 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-
 .radio-check:disabled + .label-check {
   opacity: 0.2;
   cursor: no-drop;
+}
+
+.parent-hover:hover,
+.parent-hover.active{
+  background-color: rgb(17 24 39) !important;
+}
+
+.parent-hover:hover a span:last-of-type,
+.parent-hover.active a span:last-of-type{
+  color: #fff !important;
+}
+
+.parent-hover:hover .change-img-hover,
+.parent-hover.active .change-img-hover{
+  filter: invert(99%) sepia(35%) saturate(989%) hue-rotate(184deg) brightness(109%) contrast(101%) !important;
+}
+
+.remove-scrollbar::-webkit-scrollbar{
+  display: none;
 }

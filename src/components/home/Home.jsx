@@ -21,6 +21,10 @@ function Home() {
     setColor(e.target.value);
     console.log(color);
   }
+
+  const addActive = (e) =>{
+    this.classList.add('active')
+  }
   return (
     <>
     <header className='w-full bg-primary-100 relative z-10'>
@@ -362,9 +366,252 @@ function Home() {
 
         </Swiper>
       </div>
-    </section>   
-    </>
+    </section>
 
+    <section className="py-20">
+      <div className="container bg-line flex justify-center flex-wrap sm:justify-between">
+        <div className="w-11/12 sm:w-5/12 md:w-1/4 lg:w-1/5">
+          <div className="w-36 h-36 mx-auto">
+            <img 
+              src="./img/features/feature1.webp" 
+              alt=""
+              loading="lazy"
+              className="w-full h-full object-contain" 
+            />
+          </div>
+
+          <div className="p-5 flex flex-col items-center justify-center text-center">
+            <span className="py-1 px-2 w-fit bg-red-200 text-red-500 mb-6 capitalize rounded-full leading-none text-sm">
+              step 1
+            </span>
+
+            <h1 className="text-xl font-medium text-gray-800 mb-6 capitalize">
+              filter & discover
+            </h1>
+
+            <p className="text-sm text-gray-500 leading-6 first-letter:capitalize">
+              smart filtering and suggestions make it easy to find
+            </p>
+          </div>
+        </div>
+
+        <div className="w-11/12 sm:w-5/12 md:w-1/4 lg:w-1/5">
+          <div className="w-36 h-36 mx-auto">
+            <img 
+              src="./img/features/feature2.webp" 
+              alt=""
+              loading="lazy"
+              className="w-full h-full object-contain" 
+            />
+          </div>
+
+          <div className="p-5 flex flex-col items-center justify-center text-center">
+            <span className="py-1 px-2 w-fit bg-indigo-200 text-indigo-500 mb-6 capitalize rounded-full leading-none text-sm">
+              step 2
+            </span>
+
+            <h1 className="text-xl font-medium text-gray-800 mb-6 capitalize">
+              add to bag
+            </h1>
+
+            <p className="text-sm text-gray-500 leading-6 first-letter:capitalize">
+              easily select the correct items and add them to the cart
+            </p>
+          </div>
+        </div>
+
+        <div className="w-11/12 sm:w-5/12 md:w-1/4 lg:w-1/5">
+          <div className="w-36 h-36 mx-auto">
+            <img 
+              src="./img/features/feature3.webp" 
+              alt=""
+              loading="lazy"
+              className="w-full h-full object-contain" 
+            />
+          </div>
+
+          <div className="p-5 flex flex-col items-center justify-center text-center">
+            <span className="py-1 px-2 w-fit bg-yellow-200 text-yellow-500 mb-6 capitalize rounded-full leading-none text-sm">
+              step 3
+            </span>
+
+            <h1 className="text-xl font-medium text-gray-800 mb-6 capitalize">
+              fast shipping
+            </h1>
+
+            <p className="text-sm text-gray-500 leading-6 first-letter:capitalize">
+              the carrier will confirm and ship quickly to you
+            </p>
+          </div>
+        </div>
+
+        <div className="w-11/12 sm:w-5/12 md:w-1/4 lg:w-1/5">
+          <div className="w-36 h-36 mx-auto">
+            <img 
+              src="./img/features/feature4.webp" 
+              alt=""
+              loading="lazy"
+              className="w-full h-full object-contain" 
+            />
+          </div>
+
+          <div className="p-5 flex flex-col items-center justify-center text-center">
+            <span className="py-1 px-2 w-fit bg-purple-200 text-purple-500 mb-6 capitalize rounded-full leading-none text-sm">
+              step 1
+            </span>
+
+            <h1 className="text-xl font-medium text-gray-800 mb-6 capitalize">
+              enjoy the product
+            </h1>
+
+            <p className="text-sm text-gray-500 leading-6 first-letter:capitalize">
+              have fun and enjoy your 5-star quality products
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> 
+
+    <section className="py-20 bg-gray-200">
+      <div className="container">
+        <ul className="p-1 w-11/12 mb-16 flex items-center overflow-x-auto gap-2 mx-auto bg-white rounded-full shadow-lg md:gap-3 sm:max-w-fit remove-scrollbar">
+          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7 active">
+            <a href="#" type="button" className="flex items-center space-x-2">
+              <span className="w-3 h-3 md:w-5 md:h-5 ">
+                <img 
+                  src="./img/icons/xmark.svg" 
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-contain img-dark change-img-hover"
+                />
+              </span>
+
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
+                women
+              </span>
+            </a>
+          </li>
+
+          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7">
+            <a href="#" type="button" className="flex items-center space-x-2">
+              <span className="w-3 h-3 md:w-5 md:h-5 ">
+                <img 
+                  src="./img/icons/xmark.svg" 
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-contain img-dark change-img-hover"
+                />
+              </span>
+
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
+                women
+              </span>
+            </a>
+          </li>
+
+          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7">
+            <a href="#" type="button" className="flex items-center space-x-2">
+              <span className="w-3 h-3 md:w-5 md:h-5 ">
+                <img 
+                  src="./img/icons/xmark.svg" 
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-contain img-dark change-img-hover"
+                />
+              </span>
+
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
+                women
+              </span>
+            </a>
+          </li>
+
+          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7">
+            <a href="#" type="button" className="flex items-center space-x-2">
+              <span className="w-3 h-3 md:w-5 md:h-5 ">
+                <img 
+                  src="./img/icons/xmark.svg" 
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-contain img-dark change-img-hover"
+                />
+              </span>
+
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
+                women
+              </span>
+            </a>
+          </li>
+
+          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7">
+            <a href="#" type="button" className="flex items-center space-x-2">
+              <span className="w-3 h-3 md:w-5 md:h-5 ">
+                <img 
+                  src="./img/icons/xmark.svg" 
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-contain img-dark change-img-hover"
+                />
+              </span>
+
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
+                women
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 ">
+          <div className="relative p-7 bg-white flex flex-col rounded-3xl overflow-hidden z-10 transition hover:shadow-lg group">
+            <div className="flex justify-between items-center mb-10">
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-discover-100">
+                <img 
+                  src="./img/explore/explore_logo1.webp" 
+                  alt=""
+                  loading="lazy"
+                  className="w-14 h-14 object-contain" 
+                />
+              </div>
+
+              <p className="text-sm text-gray-400">
+                230 product
+              </p>              
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-gray-500 font-normal text-base capitalize mb-1">
+                manufacturar
+              </h2>
+
+              <h3 className="text-gray-900 font-semibold text-3xl capitalize">
+                backpack
+              </h3>
+            </div>
+
+            <Link to={'/'} className="flex items-center gap-2">
+              <span className="text-lg text-gray-700 font-normal leading-none">see collection</span>
+
+              <img 
+                src="./img/icons/xmark.svg" 
+                alt=""
+                loading="lazy"
+                className="w-5 h-5 object-contain"
+              />
+            </Link>
+
+            <div className="absolute bottom-8 right-8 w-full h-full -z-10">
+              <img 
+                src="./img/explore/explore1.svg" 
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-contain object-right-bottom"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </>
   )
 }
 

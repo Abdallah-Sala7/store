@@ -5,15 +5,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <>
-    <Nav />
-
-    <main>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <Nav />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>        
+        </main>
       </BrowserRouter>
-    </main>
     </>
   );
 }

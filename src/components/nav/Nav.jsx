@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Nav() {
   const [open, setOpen] = useState(false);
@@ -20,14 +21,14 @@ function Nav() {
           />
         </a>
 
-        <div className='w-36 h-10'>
+        <Link to='/' className='w-32 h-8 sm:w-36 sm:h-10'>
           <img 
             src="./img/logo.svg" 
             alt="" 
             loading='lazy'
             className='w-full h-full object-contain'
           />
-        </div>
+        </Link>
 
         <ul className={`nav-bar ${open ? 'translate-x-0 ' : '-translate-x-full'} md:translate-x-0`}>
           <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
@@ -74,7 +75,7 @@ function Nav() {
             />
           </a>
 
-          <a href="#" className='w-11 h-11 rounded-full flex items-center justify-center transition hover:bg-slate-100'>
+          <a href="#" className='w-11 h-11 rounded-full items-center justify-center transition hidden hover:bg-slate-100 md:flex'>
             <img
               src='./img/icons/user.svg'
               alt=''
