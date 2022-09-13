@@ -65,7 +65,7 @@ function Nav() {
           </a>
         </ul>
 
-        <div className="flex items-baseline space-x-6">
+        <div className="flex items-baseline md:space-x-6">
           <a href="#" className='w-11 h-11 rounded-full hidden items-center justify-center transition hover:bg-slate-100 md:flex'>
             <img
               src='./img/icons/search-outline.svg'

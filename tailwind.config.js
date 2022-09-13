@@ -22,9 +22,6 @@ module.exports = {
       },
       boxShadow: {
         outline: "inset 0 0 1px 2px rgba(0, 0, 0, 1)"
-      },
-      filter: {
-        whiteimg: "invert(99%) sepia(35%) saturate(989%) hue-rotate(184deg) brightness(109%) contrast(101%)"
       }
     },
   },

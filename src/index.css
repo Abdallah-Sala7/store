@@ -38,8 +38,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-
 }
 
 .img-dark{
-  filter: invert(6%) sepia(8%) saturate(5217%) hue-rotate(184deg) brightness(93%) contrast(93%);
-  /* filter: invert(0%) sepia(1%) saturate(37%) hue-rotate(249deg) brightness(109%) contrast(101%); */
+  /* filter: invert(6%) sepia(8%) saturate(5217%) hue-rotate(184deg) brightness(93%) contrast(93%); */
+  filter: invert(0%) sepia(1%) saturate(37%) hue-rotate(249deg) brightness(109%) contrast(101%);
 }
 
 .label-check{

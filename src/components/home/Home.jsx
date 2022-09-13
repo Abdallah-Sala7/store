@@ -95,7 +95,7 @@ function Home() {
       <div className="overlay absolute inset-3 -z-10"></div>
     </header>
 
-    <section className=" py-20">
+    <section className="py-8 sm:py-12 md:py-24">
       <div className="container">
         <h1 className="text-2xl font-extrabold text-gray-900 first-letter:capitalize mb-8 md:text-4xl">
           <span>discover more.</span> 
@@ -237,7 +237,7 @@ function Home() {
       </div>
     </section> 
 
-    <section className="py-20">
+    <section className="py-8 sm:py-12 md:py-24">
       <div className="container">
         <h1 className="text-2xl font-extrabold text-gray-900 first-letter:capitalize mb-8 md:text-4xl">
           <span>New Arrivals.</span> 
@@ -368,7 +368,7 @@ function Home() {
       </div>
     </section>
 
-    <section className="py-20">
+    <section className="py-8 sm:py-12 md:py-24">
       <div className="container bg-line flex justify-center flex-wrap sm:justify-between">
         <div className="w-11/12 sm:w-5/12 md:w-1/4 lg:w-1/5">
           <div className="w-36 h-36 mx-auto">
@@ -472,104 +472,108 @@ function Home() {
       </div>
     </section> 
 
-    <section className="py-20 bg-gray-200">
+    <section className="py-8 sm:py-12 md:py-24 bg-gray-100">
       <div className="container">
-        <ul className="p-1 w-11/12 mb-16 flex items-center overflow-x-auto gap-2 mx-auto bg-white rounded-full shadow-lg md:gap-3 sm:max-w-fit remove-scrollbar">
-          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7 active">
+        <h1 className=" mb-14 font-bold text-gray-900 text-2xl text-center first-letter:capitalize sm:text-4xl">
+          start exploring
+        </h1>
+
+        <ul className="p-1 w-11/12 mb-14 flex items-center overflow-x-auto gap-2 mx-auto bg-white rounded-full shadow-lg md:gap-3 sm:max-w-fit remove-scrollbar">
+          <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover active md:py-2 md:px-6">
             <a href="#" type="button" className="flex items-center space-x-2">
               <span className="w-3 h-3 md:w-5 md:h-5 ">
                 <img 
-                  src="./img/icons/xmark.svg" 
+                  src="./img/icons/male.svg" 
                   alt=""
                   loading="lazy"
                   className="w-full h-full object-contain img-dark change-img-hover"
                 />
               </span>
 
-              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                man
+              </span>
+            </a>
+          </li>
+
+          <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover md:py-2 md:px-6">
+            <a href="#" type="button" className="flex items-center space-x-2">
+              <span className="w-3 h-3 md:w-5 md:h-5 ">
+                <img 
+                  src="./img/icons/female.svg" 
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-contain img-dark change-img-hover"
+                />
+              </span>
+
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
                 women
               </span>
             </a>
           </li>
 
-          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7">
+          <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover md:py-2 md:px-6">
             <a href="#" type="button" className="flex items-center space-x-2">
               <span className="w-3 h-3 md:w-5 md:h-5 ">
                 <img 
-                  src="./img/icons/xmark.svg" 
+                  src="./img/icons/kids.svg" 
                   alt=""
                   loading="lazy"
                   className="w-full h-full object-contain img-dark change-img-hover"
                 />
               </span>
 
-              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
-                women
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                kids
               </span>
             </a>
           </li>
 
-          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7">
+          <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover md:py-2 md:px-6">
             <a href="#" type="button" className="flex items-center space-x-2">
               <span className="w-3 h-3 md:w-5 md:h-5 ">
                 <img 
-                  src="./img/icons/xmark.svg" 
+                  src="./img/icons/diamond.svg" 
                   alt=""
                   loading="lazy"
                   className="w-full h-full object-contain img-dark change-img-hover"
                 />
               </span>
 
-              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
-                women
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                jewelry
               </span>
             </a>
           </li>
 
-          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7">
+          <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover md:py-2 md:px-6">
             <a href="#" type="button" className="flex items-center space-x-2">
               <span className="w-3 h-3 md:w-5 md:h-5 ">
                 <img 
-                  src="./img/icons/xmark.svg" 
+                  src="./img/icons/barbell.svg" 
                   alt=""
                   loading="lazy"
                   className="w-full h-full object-contain img-dark change-img-hover"
                 />
               </span>
 
-              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
-                women
-              </span>
-            </a>
-          </li>
-
-          <li className="p-2 rounded-full cursor-pointer transition hover:bg-gray-900 group parent-hover md:py-3 md:px-7">
-            <a href="#" type="button" className="flex items-center space-x-2">
-              <span className="w-3 h-3 md:w-5 md:h-5 ">
-                <img 
-                  src="./img/icons/xmark.svg" 
-                  alt=""
-                  loading="lazy"
-                  className="w-full h-full object-contain img-dark change-img-hover"
-                />
-              </span>
-
-              <span className="text-sm text-gray-900 capitalize leading-none sm:text-lg">
-                women
+              <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                sports
               </span>
             </a>
           </li>
         </ul>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 ">
-          <div className="relative p-7 bg-white flex flex-col rounded-3xl overflow-hidden z-10 transition hover:shadow-lg group">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 ">
+          <div className="relative p-7 bg-white flex flex-col rounded-3xl overflow-hidden z-10 transition duration-300 hover:shadow-lg hover:-translate-y-2 group">
             <div className="flex justify-between items-center mb-10">
-              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-discover-100">
+              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-discover-100">
                 <img 
                   src="./img/explore/explore_logo1.webp" 
                   alt=""
                   loading="lazy"
-                  className="w-14 h-14 object-contain" 
+                  className="w-16 h-16 object-contain" 
                 />
               </div>
 
@@ -589,17 +593,17 @@ function Home() {
             </div>
 
             <Link to={'/'} className="flex items-center gap-2">
-              <span className="text-lg text-gray-700 font-normal leading-none">see collection</span>
+              <span className="text-lg text-gray-700 font-normal leading-none transition-colors duration-300 group-hover:text-blue-500">see collection</span>
 
               <img 
-                src="./img/icons/xmark.svg" 
+                src="./img/icons/arrow-right.svg" 
                 alt=""
                 loading="lazy"
-                className="w-5 h-5 object-contain"
+                className="w-5 h-5 object-contain img-dark group-hover:filter"
               />
             </Link>
 
-            <div className="absolute bottom-8 right-8 w-full h-full -z-10">
+            <div className="absolute bottom-8 right-8 w-full h-full -z-10 opacity-70">
               <img 
                 src="./img/explore/explore1.svg" 
                 alt=""
@@ -608,6 +612,262 @@ function Home() {
               />
             </div>
           </div>
+
+          <div className="relative p-7 bg-white flex flex-col rounded-3xl overflow-hidden z-10 transition duration-300 hover:shadow-lg hover:-translate-y-2 group">
+            <div className="flex justify-between items-center mb-10">
+              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-discover-100">
+                <img 
+                  src="./img/explore/explore_logo2.webp" 
+                  alt=""
+                  loading="lazy"
+                  className="w-16 h-16 object-contain" 
+                />
+              </div>
+
+              <p className="text-sm text-gray-400">
+                230 product
+              </p>              
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-gray-500 font-normal text-base capitalize mb-1">
+                manufacturar
+              </h2>
+
+              <h3 className="text-gray-900 font-semibold text-3xl capitalize">
+                shoses
+              </h3>
+            </div>
+
+            <Link to={'/'} className="flex items-center gap-2">
+              <span className="text-lg text-gray-700 font-normal leading-none transition-colors duration-300 group-hover:text-blue-500">see collection</span>
+
+              <img 
+                src="./img/icons/arrow-right.svg" 
+                alt=""
+                loading="lazy"
+                className="w-5 h-5 object-contain img-dark group-hover:filter"
+              />
+            </Link>
+
+            <div className="absolute bottom-8 right-8 w-full h-full -z-10 opacity-70">
+              <img 
+                src="./img/explore/explore2.svg" 
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-contain object-right-bottom"
+              />
+            </div>
+          </div>
+
+          <div className="relative p-7 bg-white flex flex-col rounded-3xl overflow-hidden z-10 transition duration-300 hover:shadow-lg hover:-translate-y-2 group">
+            <div className="flex justify-between items-center mb-10">
+              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-discover-100">
+                <img 
+                  src="./img/explore/explore_logo3.webp" 
+                  alt=""
+                  loading="lazy"
+                  className="w-16 h-16 object-contain" 
+                />
+              </div>
+
+              <p className="text-sm text-gray-400">
+                230 product
+              </p>              
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-gray-500 font-normal text-base capitalize mb-1">
+                manufacturar
+              </h2>
+
+              <h3 className="text-gray-900 font-semibold text-3xl capitalize">
+                recycled blanket
+              </h3>
+            </div>
+
+            <Link to={'/'} className="flex items-center gap-2">
+              <span className="text-lg text-gray-700 font-normal leading-none transition-colors duration-300 group-hover:text-blue-500">see collection</span>
+
+              <img 
+                src="./img/icons/arrow-right.svg" 
+                alt=""
+                loading="lazy"
+                className="w-5 h-5 object-contain img-dark group-hover:filter"
+              />
+            </Link>
+
+            <div className="absolute bottom-8 right-8 w-full h-full -z-10 opacity-70">
+              <img 
+                src="./img/explore/explore3.svg" 
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-contain object-right-bottom"
+              />
+            </div>
+          </div>
+
+          <div className="relative p-7 bg-white flex flex-col rounded-3xl overflow-hidden z-10 transition duration-300 hover:shadow-lg hover:-translate-y-2 group">
+            <div className="flex justify-between items-center mb-10">
+              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-discover-100">
+                <img 
+                  src="./img/explore/explore_logo4.webp" 
+                  alt=""
+                  loading="lazy"
+                  className="w-16 h-16 object-contain" 
+                />
+              </div>
+
+              <p className="text-sm text-gray-400">
+                230 product
+              </p>              
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-gray-500 font-normal text-base capitalize mb-1">
+                manufacturar
+              </h2>
+
+              <h3 className="text-gray-900 font-semibold text-3xl capitalize">
+                clining shorts
+              </h3>
+            </div>
+
+            <Link to={'/'} className="flex items-center gap-2">
+              <span className="text-lg text-gray-700 font-normal leading-none transition-colors duration-300 group-hover:text-blue-500">see collection</span>
+
+              <img 
+                src="./img/icons/arrow-right.svg" 
+                alt=""
+                loading="lazy"
+                className="w-5 h-5 object-contain img-dark group-hover:filter"
+              />
+            </Link>
+
+            <div className="absolute bottom-8 right-8 w-full h-full -z-10 opacity-70">
+              <img 
+                src="./img/explore/explore5.svg" 
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-contain object-right-bottom"
+              />
+            </div>
+          </div>
+
+          <div className="relative p-7 bg-white flex flex-col rounded-3xl overflow-hidden z-10 transition duration-300 hover:shadow-lg hover:-translate-y-2 group">
+            <div className="flex justify-between items-center mb-10">
+              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-discover-100">
+                <img 
+                  src="./img/explore/explore_logo5.webp" 
+                  alt=""
+                  loading="lazy"
+                  className="w-16 h-16 object-contain" 
+                />
+              </div>
+
+              <p className="text-sm text-gray-400">
+                230 product
+              </p>              
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-gray-500 font-normal text-base capitalize mb-1">
+                clyning jersey
+              </h2>
+
+              <h3 className="text-gray-900 font-semibold text-3xl capitalize">
+                backpack
+              </h3>
+            </div>
+
+            <Link to={'/'} className="flex items-center gap-2">
+              <span className="text-lg text-gray-700 font-normal leading-none transition-colors duration-300 group-hover:text-blue-500">see collection</span>
+
+              <img 
+                src="./img/icons/arrow-right.svg" 
+                alt=""
+                loading="lazy"
+                className="w-5 h-5 object-contain img-dark group-hover:filter"
+              />
+            </Link>
+
+            <div className="absolute bottom-8 right-8 w-full h-full -z-10 opacity-70">
+              <img 
+                src="./img/explore/explore6.svg" 
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-contain object-right-bottom"
+              />
+            </div>
+          </div>
+
+          <div className="relative p-7 bg-white flex flex-col rounded-3xl overflow-hidden z-10 transition duration-300 hover:shadow-lg hover:-translate-y-2 group">
+            <div className="flex justify-between items-center mb-10">
+              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-discover-100">
+                <img 
+                  src="./img/explore/explore_logo1.webp" 
+                  alt=""
+                  loading="lazy"
+                  className="w-16 h-16 object-contain" 
+                />
+              </div>
+
+              <p className="text-sm text-gray-400">
+                230 product
+              </p>              
+            </div>
+
+            <div className="mb-10">
+              <h2 className="text-gray-500 font-normal text-base capitalize mb-1">
+                manufacturar
+              </h2>
+
+              <h3 className="text-gray-900 font-semibold text-3xl capitalize">
+                backpack
+              </h3>
+            </div>
+
+            <Link to={'/'} className="flex items-center gap-2">
+              <span className="text-lg text-gray-700 font-normal leading-none transition-colors duration-300 group-hover:text-blue-500">see collection</span>
+
+              <img 
+                src="./img/icons/arrow-right.svg" 
+                alt=""
+                loading="lazy"
+                className="w-5 h-5 object-contain img-dark group-hover:filter"
+              />
+            </Link>
+
+            <div className="absolute bottom-8 right-8 w-full h-full -z-10 opacity-70">
+              <img 
+                src="./img/explore/explore9.svg" 
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-contain object-right-bottom"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-6 ">
+      <div className="container p-12 bg-gray-100 rounded-3xl flex flex-wrap md:p-24">
+        <div className="w-full mb-6 md:w-1/2 md:mb-0">
+          <h1 className="text-2xl mb-8 text-gray-900 font-bold first-letter:capitalize md:text-5xl">
+            don't miss out on special offers
+          </h1>
+
+          <p className="mb-10 text-gray-500 font-normal text-xl first-letter:capitalize">
+            register to receive news about the latest, savings combos, discount codes...
+          </p>
+
+          <ul>
+            <li className="flex items-center gap-4 mb-4">
+              <span>01</span>
+              <span>Savings combos</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
