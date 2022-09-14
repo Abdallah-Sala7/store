@@ -844,8 +844,8 @@ function Home() {
                 />
               </div>
             </div>
-4   4     </div>
-    md:w-5 md:h-5     </div>
+          </div>
+        </div>
       </section>
 
       <section className="py-6 px-2 sm:px-0">
@@ -909,7 +909,7 @@ function Home() {
 
       <section className="py-8 sm:py-12 md:py-24 bg-gray-100">
         <div className="container flex flex-wrap items-stretch justify-between">
-          <Link to={'/'} className="w-full mb-12 group lg:mb-0 lg:w-1/2 lg:pr-10">
+          <Link to={'/'} className="flex flex-col justify-between w-full mb-12 group lg:mb-0 lg:w-1/2 lg:pr-10">
             <div className=" relative w-full h-72 overflow-hidden rounded-3xl sm:h-80 md:h-96 ">
               <img 
                 src="./img/blog/blog1.webp" 
@@ -966,7 +966,7 @@ function Home() {
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima temporibus deserunt sequi tenetur ipsum quisquam 
               </p>
 
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <img 
                   src="./img/blog/image-1.webp"
                   alt=""
@@ -984,9 +984,9 @@ function Home() {
           </Link>
 
           <div className="w-full lg:w-1/2">
-            <Link to={'/'} className="w-full mb-9 group flex items-stretch justify-between">
-              <div className=" w-2/3 flex flex-col justify-between">
-                <h2 className="text-base text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 ">
+            <Link to={'/'} className="w-full mb-9 group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
+              <div className="w-full flex flex-col justify-between sm:pr-3">
+                <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
                   turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
                 </h2>
                 
@@ -994,7 +994,7 @@ function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
                 </p>
 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center space-x-3 sm:justify-start">
                   <img 
                     src="./img/blog/image-4.webp"
                     alt=""
@@ -1006,11 +1006,11 @@ function Home() {
                     abdalrahman
                   </h3>
 
-                  <span className="text-gray-500 text-xs capitalize leading-none">20 may 2022</span>
+                  <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
                 </div>
               </div>
 
-              <div className="h-28 w-28 overflow-hidden rounded-2xl md:w-44 md:h-44 lg:w-48 lg:h-48">
+              <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
                 <img 
                   src="./img/blog/blog4.webp" 
                   alt=""
@@ -1020,9 +1020,9 @@ function Home() {
               </div>
             </Link>   
 
-            <Link to={'/'} className="w-full mb-9 group flex items-stretch justify-between">
-              <div className=" w-2/3 flex flex-col justify-between">
-                <h2 className="text-base text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 ">
+            <Link to={'/'} className="w-full mb-9 group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
+              <div className="w-full flex flex-col justify-between sm:pr-3">
+                <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
                   turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
                 </h2>
                 
@@ -1030,7 +1030,7 @@ function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
                 </p>
 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center space-x-3 sm:justify-start">
                   <img 
                     src="./img/blog/image-6.webp"
                     alt=""
@@ -1042,11 +1042,11 @@ function Home() {
                     abdalrahman
                   </h3>
 
-                  <span className="text-gray-500 text-xs capitalize leading-none">20 may 2022</span>
+                  <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
                 </div>
               </div>
 
-              <div className="h-28 w-28 overflow-hidden rounded-2xl md:w-44 md:h-44 lg:w-48 lg:h-48">
+              <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
                 <img 
                   src="./img/blog/blog3.webp" 
                   alt=""
@@ -1056,9 +1056,9 @@ function Home() {
               </div>
             </Link>   
 
-            <Link to={'/'} className="w-full group flex items-stretch justify-between">
-              <div className=" w-2/3 flex flex-col justify-between">
-                <h2 className="text-base text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 ">
+            <Link to={'/'} className="w-full group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
+              <div className="w-full flex flex-col justify-between sm:pr-3">
+                <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
                   turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
                 </h2>
                 
@@ -1066,7 +1066,7 @@ function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
                 </p>
 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center space-x-3 sm:justify-start">
                   <img 
                     src="./img/blog/image-10.webp"
                     alt=""
@@ -1078,11 +1078,11 @@ function Home() {
                     abdalrahman
                   </h3>
 
-                  <span className="text-gray-500 text-xs capitalize leading-none">20 may 2022</span>
+                  <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
                 </div>
               </div>
 
-              <div className="h-28 w-28 overflow-hidden rounded-2xl md:w-44 md:h-44 lg:w-48 lg:h-48">
+              <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
                 <img 
                   src="./img/blog/blog2.webp" 
                   alt=""
