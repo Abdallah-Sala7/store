@@ -95,7 +95,7 @@ function Nav() {
         </div>
       </div>
 
-      <div onClick={openNav} className={`overlay-black   ${open ? 'visible bg-opacity-80' : 'invisible'} md:invisible`}></div>
+      <div onClick={openNav} className={`overlay-black   ${open ? 'visible bg-opacity-90' : 'invisible'} md:invisible`}></div>
     </nav>
   )
 }

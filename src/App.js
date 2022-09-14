@@ -4,16 +4,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Nav />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>        
-        </main>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>        
+    </BrowserRouter>
   );
 }
 
