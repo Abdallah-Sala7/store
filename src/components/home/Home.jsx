@@ -907,19 +907,53 @@ function Home() {
         </div>
       </section>
 
-      <section className="py-8 sm:py-12 md:py-24 bg-gray-100">
-        <div className="container flex flex-wrap items-stretch justify-between">
-          <Link to={'/'} className="flex flex-col justify-between w-full mb-12 group lg:mb-0 lg:w-1/2 lg:pr-10">
-            <div className=" relative w-full h-72 overflow-hidden rounded-3xl sm:h-80 md:h-96 ">
-              <img 
-                src="./img/blog/blog1.webp" 
-                alt=""
-                loading="lazy"
-                className="w-full h-full object-cover" 
-              />
+      <section className="py-8 sm:py-12 md:py-24 bg-gray-100 ">
+        <div className="container ">
+          <h1 className="text-2xl font-extrabold text-gray-900 first-letter:capitalize mb-8 md:text-4xl">
+            <span>the latest news.</span> 
+            <span className="text-gray-600"> from the Ciseco blog</span> 
+          </h1>
 
-              <div className=" absolute top-5 right-5 flex flex-col space-y-3 group">
-                <a href="http://facebook.com" target={"_blank"} title="" className="w-8 h-8  flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-75 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
+          <div className="flex flex-wrap items-stretch justify-between">
+            <div className="relative w-full mb-12 overflow-hidden group lg:mb-0 lg:w-1/2 lg:pr-10">
+              <Link to={'/'} className="flex flex-col justify-between">
+                <div className=" w-full h-72 overflow-hidden rounded-3xl sm:h-80 md:h-96 ">
+                  <img 
+                    src="./img/blog/blog1.webp" 
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+
+                <div className="w-full pt-5 lg:pt-8">
+                  <h2 className="text-2xl text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 md:text-3xl lg:mb-8 ">
+                    turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
+                  </h2>
+
+                  <p className="text-gray-500 mb-5 md:text-lg lg:mb-8">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima temporibus deserunt sequi tenetur ipsum quisquam 
+                  </p>
+
+                  <div className="flex items-center space-x-4">
+                    <img 
+                      src="./img/blog/image-1.webp"
+                      alt=""
+                      loading="lazy"
+                      className="w-10 h-10 object-contain rounded-full "
+                    />
+
+                    <h3 className="text-gray-600 font-semibold text-lg capitalize leading-none hover:text-gray-900">
+                      abdalrahman
+                    </h3>
+
+                    <span className="text-gray-500 text-sm capitalize leading-none">20 may 2022</span>
+                  </div>
+                </div>
+              </Link>
+
+              <div className="absolute top-5 right-5 flex flex-col space-y-3  z-10">
+                <a href="http://facebook.com" target="_blank" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-75 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
                   <img
                     src="./img/icons/facebook.svg"
                     alt=""
@@ -928,7 +962,7 @@ function Home() {
                   />
                 </a>
 
-                <a href="http://twitter.com" target={"_blank"} title="" className="w-8 h-8  flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-100 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
+                <a href="http://twitter.com" target="_blank" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-100 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
                   <img
                     src="./img/icons/twitter.svg"
                     alt=""
@@ -937,7 +971,7 @@ function Home() {
                   />
                 </a>
 
-                <a href="http://instagram.com" target={"_blank"} title="" className="w-8 h-8  flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-150 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
+                <a href="http://instagram.com" target="_blank" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-150 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
                   <img
                     src="./img/icons/instagram.svg"
                     alt=""
@@ -946,7 +980,7 @@ function Home() {
                   />
                 </a>
 
-                <a href="http://linkedin.com" target={"_blank"} title="" className="w-8 h-8  flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-200 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
+                <a href="http://linkedin.com" target="_blank" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-200 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
                   <img
                     src="./img/icons/linkedin.svg"
                     alt=""
@@ -957,140 +991,234 @@ function Home() {
               </div>
             </div>
 
-            <div className="w-full pt-5 lg:pt-8">
-              <h2 className="text-2xl text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 md:text-3xl lg:mb-8 ">
-                turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
-              </h2>
+            <div className="w-full lg:w-1/2">
+              <Link to={'/'} className="w-full mb-9 group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
+                <div className="w-full flex flex-col justify-between sm:pr-3">
+                  <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
+                    turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
+                  </h2>
+                  
+                  <p className="text-gray-500 hidden text-sm mb-5 md:block">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
+                  </p>
 
-              <p className="text-gray-500 mb-5 md:text-lg lg:mb-8">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima temporibus deserunt sequi tenetur ipsum quisquam 
-              </p>
+                  <div className="flex items-center justify-center space-x-3 sm:justify-start">
+                    <img 
+                      src="./img/blog/image-4.webp"
+                      alt=""
+                      loading="lazy"
+                      className="w-8 h-8 object-cover rounded-full "
+                    />
 
-              <div className="flex items-center space-x-4">
-                <img 
-                  src="./img/blog/image-1.webp"
-                  alt=""
-                  loading="lazy"
-                  className="w-10 h-10 object-contain rounded-full "
-                />
+                    <h3 className="text-gray-600 font-semibold capitalize leading-none hover:text-gray-900">
+                      abdalrahman
+                    </h3>
 
-                <h3 className="text-gray-600 font-semibold text-lg capitalize leading-none hover:text-gray-900">
-                  abdalrahman
-                </h3>
+                    <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
+                  </div>
+                </div>
 
-                <span className="text-gray-500 text-sm capitalize leading-none">20 may 2022</span>
-              </div>
+                <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
+                  <img 
+                    src="./img/blog/blog4.webp" 
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+              </Link>   
+
+              <Link to={'/'} className="w-full mb-9 group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
+                <div className="w-full flex flex-col justify-between sm:pr-3">
+                  <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
+                    turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
+                  </h2>
+                  
+                  <p className="text-gray-500 hidden text-sm mb-5 md:block">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
+                  </p>
+
+                  <div className="flex items-center justify-center space-x-3 sm:justify-start">
+                    <img 
+                      src="./img/blog/image-6.webp"
+                      alt=""
+                      loading="lazy"
+                      className="w-8 h-8 object-cover rounded-full "
+                    />
+
+                    <h3 className="text-gray-600 font-semibold capitalize leading-none hover:text-gray-900">
+                      abdalrahman
+                    </h3>
+
+                    <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
+                  </div>
+                </div>
+
+                <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
+                  <img 
+                    src="./img/blog/blog3.webp" 
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+              </Link>   
+
+              <Link to={'/'} className="w-full group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
+                <div className="w-full flex flex-col justify-between sm:pr-3">
+                  <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
+                    turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
+                  </h2>
+                  
+                  <p className="text-gray-500 hidden text-sm mb-5 md:block">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
+                  </p>
+
+                  <div className="flex items-center justify-center space-x-3 sm:justify-start">
+                    <img 
+                      src="./img/blog/image-10.webp"
+                      alt=""
+                      loading="lazy"
+                      className="w-8 h-8 object-cover rounded-full "
+                    />
+
+                    <h3 className="text-gray-600 font-semibold capitalize leading-none hover:text-gray-900">
+                      abdalrahman
+                    </h3>
+
+                    <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
+                  </div>
+                </div>
+
+                <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
+                  <img 
+                    src="./img/blog/blog2.webp" 
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+              </Link>         
             </div>
-          </Link>
+          </div>
+        </div>
+      </section>
 
-          <div className="w-full lg:w-1/2">
-            <Link to={'/'} className="w-full mb-9 group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
-              <div className="w-full flex flex-col justify-between sm:pr-3">
-                <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
-                  turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
-                </h2>
-                
-                <p className="text-gray-500 hidden text-sm mb-5 md:block">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
-                </p>
+      <section className="py-8 sm:py-12 md:py-24">
+        <div className="container">
+          <h1 className="text-2xl font-extrabold text-center text-gray-900 first-letter:capitalize mb-20 md:text-4xl">
+            <span className="mb-2 block sm:mb-5">Good news from far away</span> 
+            <span className="text-gray-500 font-medium text-sm md:text-lg">Let's see what people think of Ciseco</span> 
+          </h1>
 
-                <div className="flex items-center justify-center space-x-3 sm:justify-start">
-                  <img 
-                    src="./img/blog/image-4.webp"
-                    alt=""
-                    loading="lazy"
-                    className="w-8 h-8 object-cover rounded-full "
-                  />
+          <div className="relative ">
+            <div className="mx-auto w-11/12 md:w-1/2">
+              <Swiper
+                  slidesPerView={1}
+                  spaceBetween={10}
+                  loop={true}
+                  pagination={{
+                    clickable: true,
+                  }}
+                >
+                <SwiperSlide >
+                  <div className="flex flex-col items-center">
+                    <div className="w-28 h-28 mb-5 sm:mb-10">
+                      <img 
+                        src="./img/testimonial/testimonial2.webp"
+                        alt=""
+                        loading="lazy"
+                        className="w-full h-full object-contint"
+                      />
+                    </div>
 
-                  <h3 className="text-gray-600 font-semibold capitalize leading-none hover:text-gray-900">
-                    abdalrahman
-                  </h3>
+                    <p className="mb-5 text-lg font-medium text-gray-600 first-letter:capitalize text-center sm:mb-10">
+                      peat quality products, affordable prices, fast and friendly delivery. I very recommend.
+                    </p>
 
-                  <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
-                </div>
-              </div>
+                    <h2 className="mb-5 text-2xl font-bold text-gray-800  text-center capitalize sm:mb-10">
+                      abdalrahman
+                    </h2>
 
-              <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
-                <img 
-                  src="./img/blog/blog4.webp" 
-                  alt=""
-                  loading="lazy"
-                  className="w-full h-full object-cover" 
-                />
-              </div>
-            </Link>   
+                    <div className="flex items-center justify-center gap-2">
+                      <img 
+                        src="./img/icons/star.svg"
+                        alt=""
+                        loading="lazy"
+                        className="w-4 h-4 object-contain"
+                      />
 
-            <Link to={'/'} className="w-full mb-9 group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
-              <div className="w-full flex flex-col justify-between sm:pr-3">
-                <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
-                  turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
-                </h2>
-                
-                <p className="text-gray-500 hidden text-sm mb-5 md:block">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
-                </p>
+                      <img 
+                        src="./img/icons/star.svg"
+                        alt=""
+                        loading="lazy"
+                        className="w-4 h-4 object-contain"
+                      />
 
-                <div className="flex items-center justify-center space-x-3 sm:justify-start">
-                  <img 
-                    src="./img/blog/image-6.webp"
-                    alt=""
-                    loading="lazy"
-                    className="w-8 h-8 object-cover rounded-full "
-                  />
+                      <img 
+                        src="./img/icons/star.svg"
+                        alt=""
+                        loading="lazy"
+                        className="w-4 h-4 object-contain"
+                      />
 
-                  <h3 className="text-gray-600 font-semibold capitalize leading-none hover:text-gray-900">
-                    abdalrahman
-                  </h3>
+                      <img 
+                        src="./img/icons/star.svg"
+                        alt=""
+                        loading="lazy"
+                        className="w-4 h-4 object-contain"
+                      />
+                    </div>
+                  </div>
+                </SwiperSlide>
 
-                  <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
-                </div>
-              </div>
+              </Swiper>              
+            </div>
 
-              <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
-                <img 
-                  src="./img/blog/blog3.webp" 
-                  alt=""
-                  loading="lazy"
-                  className="w-full h-full object-cover" 
-                />
-              </div>
-            </Link>   
+            
+            <div className=" hidden absolute inset-x-0 top-10 bottom-0 pointer-events-none z-10 md:block">
+              <img 
+                src="./img/testimonial/testimonial1.webp" 
+                alt=""
+                loading="lazy"
+                className=" absolute top-0 left-52 translate-x-10 w-14 h-14 object-cover" 
+              />
 
-            <Link to={'/'} className="w-full group flex flex-col-reverse items-center justify-between sm:flex-row sm:items-stretch">
-              <div className="w-full flex flex-col justify-between sm:pr-3">
-                <h2 className="text-base text-center text-gray-700 font-semibold transition capitalize mb-5 group-hover:text-indigo-700 sm:text-start sm:text-lg ">
-                  turpis Cursus In Hac Habitasse Platea Dictumst Quisque Sagittis Purus 
-                </h2>
-                
-                <p className="text-gray-500 hidden text-sm mb-5 md:block">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum aliquid, excepturi totam amet ea quidem quae mollitia explicabo id.  
-                </p>
+              <img 
+                src="./img/testimonial/testimonial3.webp" 
+                alt=""
+                loading="lazy"
+                className=" absolute top-0 right-52 -translate-x-10 w-14 h-14 object-cover" 
+              />
 
-                <div className="flex items-center justify-center space-x-3 sm:justify-start">
-                  <img 
-                    src="./img/blog/image-10.webp"
-                    alt=""
-                    loading="lazy"
-                    className="w-8 h-8 object-cover rounded-full "
-                  />
+              <img 
+                src="./img/testimonial/testimonial4.webp" 
+                alt=""
+                loading="lazy"
+                className=" absolute top-1/2 left-52 -translate-y-1/2 -translate-x-20 w-14 h-14 object-cover" 
+              />
+              
+              <img 
+                src="./img/testimonial/testimonial5.webp" 
+                alt=""
+                loading="lazy"
+                className=" absolute top-1/2 right-52 -translate-y-1/2 translate-x-20 w-14 h-14 object-cover" 
+              />
+              
+              <img 
+                src="./img/testimonial/testimonial6.webp" 
+                alt=""
+                loading="lazy"
+                className=" absolute bottom-0 translate-x-10 left-52 w-14 h-14 object-cover" 
+              />
 
-                  <h3 className="text-gray-600 font-semibold capitalize leading-none hover:text-gray-900">
-                    abdalrahman
-                  </h3>
-
-                  <span className=" hidden text-gray-500 text-xs capitalize leading-none sm:block">20 may 2022</span>
-                </div>
-              </div>
-
-              <div className="flex-shrink-0 h-28 w-28 overflow-hidden rounded-2xl mb-5 sm:mb-0 md:w-44 md:h-44 lg:w-48 lg:h-48">
-                <img 
-                  src="./img/blog/blog2.webp" 
-                  alt=""
-                  loading="lazy"
-                  className="w-full h-full object-cover" 
-                />
-              </div>
-            </Link>         
+              <img 
+                src="./img/testimonial/testimonial8.webp" 
+                alt=""
+                loading="lazy"
+                className=" absolute bottom-0 -translate-x-10 right-52 w-14 h-14 object-cover" 
+              />
+            </div> 
           </div>
         </div>
       </section>
