@@ -22,9 +22,6 @@ function Home() {
     console.log(color);
   }
 
-  const addActive = (e) =>{
-    this.classList.add('active')
-  }
   return (
     <>
     <header className='w-full bg-primary-100 relative z-10'>
@@ -34,7 +31,7 @@ function Home() {
             In this season, find the best
           </h1>
 
-          <h2 className=' font-bold text-4xl text-gray-900 capitalize mb-8 sm:text-6xl'>
+          <h2 className='font-bold text-3xl text-gray-900 capitalize mb-8 sm:text-6xl'>
             Exclusive collection for everyone
           </h2>
 
@@ -851,9 +848,9 @@ function Home() {
       </div>
     </section>
 
-    <section className="py-6 ">
-      <div className="container p-12 bg-gray-100 rounded-3xl flex flex-wrap md:p-24">
-        <div className="w-full mb-6 md:w-1/2 md:mb-0">
+    <section className="py-6 px-2 sm:px-0">
+      <div className="container px-12 pt-12 bg-gray-100 rounded-3xl flex flex-wrap md:px-24 md:pt-24">
+        <div className="w-full pb-12 md:w-1/2">
           <h1 className="text-2xl mb-8 text-gray-900 font-bold first-letter:capitalize md:text-5xl">
             don't miss out on special offers
           </h1>
@@ -862,12 +859,50 @@ function Home() {
             register to receive news about the latest, savings combos, discount codes...
           </p>
 
-          <ul>
+          <ul className="mb-10">
             <li className="flex items-center gap-4 mb-4">
-              <span>01</span>
-              <span>Savings combos</span>
+              <span className="py-px px-2 rounded-3xl bg-purple-300 text-purple-800 text-sm">01</span>
+              <span className="text-gray-700 text-lg first-letter:capitalize">savings combos</span>
+            </li>
+
+            <li className="flex items-center gap-4 mb-4">
+              <span className="py-px px-2 rounded-3xl bg-blue-300 text-blue-800 text-sm">02</span>
+              <span className="text-gray-700 text-lg first-letter:capitalize">freeship</span>
+            </li>
+
+            <li className="flex items-center gap-4 mb-4">
+              <span className="py-px px-2 rounded-3xl bg-red-300 text-red-800 text-sm">03</span>
+              <span className="text-gray-700 text-lg first-letter:capitalize">premium magazines</span>
             </li>
           </ul>
+
+          <form action="" className="w-full">
+            <div className="relative w-full h-12">
+              <input 
+                type="text"
+                placeholder="Enter your email"
+                className="h-full w-full rounded-full outline-none border text-gray-600 border-gray-300 pl-4 pr-12 "
+              />
+
+              <a href="#" className="absolute top-1/2 right-1 -translate-y-1/2 rounded-full h-10 w-10 bg-gray-600 flex items-center justify-center hover:bg-opacity-90">
+                <img 
+                  src="./img/icons/arrow-right.svg" 
+                  alt=""
+                  loading="lazy"
+                  className="w-5 h-5 object-contain img-white " 
+                />
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <div className="w-full h-full md:w-1/2 md:pl-10">
+          <img 
+            src="./img/promo.webp" 
+            alt=""
+            loading="lazy"
+            className="w-full h-full object-contain object-right-bottom"
+          />
         </div>
       </div>
     </section>
