@@ -849,9 +849,9 @@ function Home() {
       </section>
 
       <section className="py-6 px-2 sm:px-0">
-        <div className="container px-6 pt-12 bg-gray-100 rounded-3xl flex flex-wrap sm:px-12 md:px-24 md:pt-24">
+        <div className="container px-6 pt-12 bg-gray-100 rounded-3xl flex items-end flex-wrap sm:px-12 md:px-24 md:pt-24">
           <div className="w-full pb-12 md:w-1/2">
-            <h1 className="text-2xl mb-8 text-gray-900 font-bold first-letter:capitalize md:text-5xl">
+            <h1 className="text-2xl mb-8 text-gray-900 font-bold first-letter:capitalize md:text-3xl lg:text-5xl">
               don't miss out on special offers
             </h1>
 
