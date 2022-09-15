@@ -12,7 +12,7 @@ function Footer() {
                 src="./img/logo.svg" 
                 alt="" 
                 loading='lazy'
-                className='w-full h-full object-contain'
+                className='w-full h-full object-contain object-left'
               />
             </Link>
             

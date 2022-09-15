@@ -311,16 +311,16 @@ function Home() {
                     <div className="py-6 px-4">
                       <form action="" className="w-full mb-6">
                         <div className="flex items-center space-x-2">
-                          <input onChange={handleColor} type="radio" name="color" value={'red'} id={`red${item.id}`} className="w-0 relative radio-check" />
+                          <input onChange={handleColor} type="radio" name="color" value={'red'} id={`red${item.id}`} className="w-0 hidden relative radio-check" />
                           <label htmlFor={`red${item.id}`} className="w-5 h-5 rounded-full cursor-pointer bg-red-400 label-check after:border-red-400"></label>
 
-                          <input onChange={handleColor} type="radio" name="color" value={'blue'} id={`blue${item.id}`} disabled className="w-0 relative radio-check" />
+                          <input onChange={handleColor} type="radio" name="color" value={'blue'} id={`blue${item.id}`} disabled className="w-0 hidden relative radio-check" />
                           <label htmlFor={`blue${item.id}`} className="w-5 h-5 rounded-full cursor-pointer bg-blue-400 label-check after:border-blue-400"></label>
 
-                          <input onChange={handleColor} type="radio" name="color" value={'yellow'} id={`yellow${item.id}`} className="w-0 relative radio-check" />
+                          <input onChange={handleColor} type="radio" name="color" value={'yellow'} id={`yellow${item.id}`} className="w-0 hidden relative radio-check" />
                           <label htmlFor={`yellow${item.id}`} className="w-5 h-5 rounded-full cursor-pointer bg-yellow-400 label-check after:border-yellow-400"></label>
 
-                          <input onChange={handleColor} type="radio" name="color" value={'green'} id={`green${item.id}`} className="w-0 relative radio-check" />
+                          <input onChange={handleColor} type="radio" name="color" value={'green'} id={`green${item.id}`} className="w-0 hidden relative radio-check" />
                           <label htmlFor={`green${item.id}`} className="w-5 h-5 rounded-full cursor-pointer bg-green-400 label-check after:border-green-400"></label>
                         </div>
                       </form>
