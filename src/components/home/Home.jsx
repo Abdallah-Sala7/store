@@ -914,8 +914,8 @@ function Home() {
             <span className="text-gray-600"> from the Ciseco blog</span> 
           </h1>
 
-          <div className="flex flex-wrap items-stretch justify-between">
-            <div className="relative w-full mb-12 overflow-hidden group lg:mb-0 lg:w-1/2 lg:pr-10">
+          <div className="flex flex-wrap items-stretch justify-between lg:flex-nowrap">
+            <div className="relative w-full mb-12 overflow-hidden group lg:mb-0 lg:w-1/2 lg:mr-10">
               <Link to={'/'} className="flex flex-col justify-between">
                 <div className=" w-full h-72 overflow-hidden rounded-3xl sm:h-80 md:h-96 ">
                   <img 
@@ -1181,42 +1181,42 @@ function Home() {
                 src="./img/testimonial/testimonial1.webp" 
                 alt=""
                 loading="lazy"
-                className=" absolute top-0 left-52 translate-x-10 w-14 h-14 object-cover" 
+                className=" absolute top-0 left-16 translate-x-10 w-14 h-14 object-cover lg:left-52" 
               />
 
               <img 
                 src="./img/testimonial/testimonial3.webp" 
                 alt=""
                 loading="lazy"
-                className=" absolute top-0 right-52 -translate-x-10 w-14 h-14 object-cover" 
+                className=" absolute top-0 right-16 -translate-x-10 w-14 h-14 object-cover lg:right-52" 
               />
 
               <img 
                 src="./img/testimonial/testimonial4.webp" 
                 alt=""
                 loading="lazy"
-                className=" absolute top-1/2 left-52 -translate-y-1/2 -translate-x-20 w-14 h-14 object-cover" 
+                className=" absolute top-1/2 left-16 -translate-y-1/2 -translate-x-20 w-14 h-14 object-cover lg:left-52" 
               />
               
               <img 
                 src="./img/testimonial/testimonial5.webp" 
                 alt=""
                 loading="lazy"
-                className=" absolute top-1/2 right-52 -translate-y-1/2 translate-x-20 w-14 h-14 object-cover" 
+                className=" absolute top-1/2 right-16 -translate-y-1/2 translate-x-20 w-14 h-14 object-cover lg:right-52" 
               />
               
               <img 
                 src="./img/testimonial/testimonial6.webp" 
                 alt=""
                 loading="lazy"
-                className=" absolute bottom-0 translate-x-10 left-52 w-14 h-14 object-cover" 
+                className=" absolute bottom-0 translate-x-10 left-16 w-14 h-14 object-cover lg:left-52" 
               />
 
               <img 
                 src="./img/testimonial/testimonial8.webp" 
                 alt=""
                 loading="lazy"
-                className=" absolute bottom-0 -translate-x-10 right-52 w-14 h-14 object-cover" 
+                className=" absolute bottom-0 -translate-x-10 right-16 w-14 h-14 object-cover lg:right-52" 
               />
             </div> 
           </div>
