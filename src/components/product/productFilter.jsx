@@ -11,13 +11,13 @@ function ProductFilter() {
   const [openColor, setOpenColor] = useState(false)
   const [openSize, setOpenSize] = useState(false)
   const [openCat, setOpenCat] = useState(false)
+  const [openSort, setOpenSort] = useState(false)
 
   const [value, setValue] = useState([0, 100])
   const [catValue, setCatValue] = useState([])
   const [colorValue, setColorValue] = useState([])
   const [sizeValue, setSizeValue] = useState([])
-
-  
+  const [sortValue, setSortValue] = useState('')
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -41,6 +41,11 @@ function ProductFilter() {
   const handleOpenCat = (e) => {
     e.preventDefault()
     setOpenCat(!openCat)
+  }
+
+  const handleOpenSort = (e) => {
+    e.preventDefault()
+    setOpenSort(!openSort)
   }
 
   const addCat = (e) =>{
@@ -73,10 +78,27 @@ function ProductFilter() {
     }
   }
 
+  const addSize = (e) =>{
+    let x = false;
+
+    for (let i = 0; i < sizeValue.length; i++) {
+      if (sizeValue[i] === e.target.value) {
+        sizeValue.splice(i,1)
+        x = true;
+      }
+    }
+
+    if (!x) {
+      setSizeValue([...sizeValue, e.target.value])
+    }
+  }
+
+  const addSort = (e) =>{
+    setSortValue(e.target.value)
+  }
+
   return (
     <div className="hidden justify-between items-center md:flex ">
-      {console.log('cat value is :' + catValue)}
-      {console.log('color value is :' + colorValue)}
       <div className="flex items-center gap-5">
         <div className={`relative ${openRange ? '' : 'overflow-hidden'}`}>
           <a href="#" onClick={handleOpenRange} className={`w-36 flex items-center justify-between py-2 px-4 border  rounded-full ${value[0] == 0 && value[1] == 100 ? 'border-gray-300' : 'bg-blue-50 border-blue-300'}`}>
@@ -162,7 +184,7 @@ function ProductFilter() {
         <div className={`relative ${openCat ? '' : 'overflow-hidden'}`}>
           <a href="#" onClick={handleOpenCat} className={`flex items-center justify-center py-2 px-4 rounded-full border ${catValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'}`}>
             <img
-              src='./img/icons/filter/dollar-sign-solid.svg'
+              src='./img/icons/filter/document-text-outline.svg'
               alt='filter price'
               loading='lazy'
               className='w-4 h-4 object-contain mr-3'
@@ -268,7 +290,7 @@ function ProductFilter() {
         <div className={`relative ${openColor ? '' : 'overflow-hidden'}`}>
           <a href="#" onClick={handleOpenColor} className={`flex items-center justify-center py-2 px-4 rounded-full border ${colorValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'}`}>
             <img
-              src='./img/icons/filter/dollar-sign-solid.svg'
+              src='./img/icons/filter/color-fill-outline.svg'
               alt='filter price'
               loading='lazy'
               className='w-4 h-4 object-contain mr-3'
@@ -370,6 +392,218 @@ function ProductFilter() {
 
           <div onClick={handleOpenColor} className={`fixed inset-0 z-10 ${openColor ? '' : 'hidden'}`}></div>
         </div>
+
+        <div className={`relative ${openSize ? '' : 'overflow-hidden'}`}>
+          <a href="#" onClick={handleOpenSize} className={`flex items-center justify-center py-2 px-4 rounded-full border ${sizeValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'}`}>
+            <img
+              src='./img/icons/filter/resize-outline.svg'
+              alt='filter price'
+              loading='lazy'
+              className='w-4 h-4 object-contain mr-3'
+            />
+
+            <span className='text-gray-700 capitalize'>
+              size
+            </span>
+          </a>
+
+          <div className={`absolute top-14 left-0 z-20 w-96 pt-10 bg-white rounded-2xl overflow-hidden shadow-2xl transition duration-500  ${openSize ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+            <ul className="px-8 mb-10">
+              <li className='flex items-center mb-4'>
+                <input 
+                  type="checkbox" 
+                  name="size" 
+                  id="xs" 
+                  value={'xs'} 
+                  onChange={addSize}
+                  className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+                />
+
+                <label htmlFor="xs" className='text-gray-600 text-xl flex-1 uppercase cursor-pointer'>
+                  xs
+                </label>
+              </li>
+
+              <li className='flex items-center mb-4'>
+                <input 
+                  type="checkbox" 
+                  name="size" 
+                  id="s" 
+                  value={'s'} 
+                  onChange={addSize}
+                  className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+                />
+
+                <label htmlFor="s" className='text-gray-600 text-xl flex-1 uppercase cursor-pointer'>
+                  s
+                </label>
+              </li>
+
+              <li className='flex items-center mb-4'>
+                <input 
+                  type="checkbox" 
+                  name="size" 
+                  id="m" 
+                  value={'m'} 
+                  onChange={addSize}
+                  className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+                />
+
+                <label htmlFor="m" className='text-gray-600 text-xl flex-1 uppercase cursor-pointer'>
+                  m
+                </label>
+              </li>
+
+              <li className='flex items-center mb-4'>
+                <input 
+                  type="checkbox" 
+                  name="size" 
+                  id="l" 
+                  value={'l'} 
+                  onChange={addSize}
+                  className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+                />
+
+                <label htmlFor="l" className='text-gray-600 text-xl flex-1 uppercase cursor-pointer'>
+                  l
+                </label>
+              </li>
+
+              <li className='flex items-center'>
+                <input 
+                  type="checkbox" 
+                  name="size" 
+                  id="xl" 
+                  value={'xl'} 
+                  onChange={addSize}
+                  className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+                />
+
+                <label htmlFor="xl" className='text-gray-600 text-xl flex-1 uppercase cursor-pointer'>
+                  xl
+                </label>
+              </li>    
+            </ul>                   
+
+            <div className="w-full flex justify-between items-center p-8 bg-slate-100">
+              <button className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
+                clear
+              </button>
+
+              <button onClick={handleOpenSize} className='custom-btn capitalize py-2 px-6'>
+                apply
+              </button>
+            </div>             
+          </div>
+
+          <div onClick={handleOpenSize} className={`fixed inset-0 z-10 ${openSize? '' : 'hidden'}`}></div>
+        </div>
+      </div>
+
+      <div className={`relative ${openSort ? '' : 'overflow-hidden'}`}>
+        <a href="#" onClick={handleOpenSort} className={`flex items-center justify-center py-2 px-4 rounded-full border ${sortValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'}`}>
+          <img
+            src='./img/icons/filter/swap-vertical-outline.svg'
+            alt='filter price'
+            loading='lazy'
+            className='w-4 h-4 object-contain mr-3'
+          />
+
+          <span className='text-gray-700 capitalize'>
+            sort
+          </span>
+        </a>
+
+        <div className={`absolute top-14 right-0 z-20 w-96 pt-10 bg-white rounded-2xl overflow-hidden shadow-2xl transition duration-500  ${openSort ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+          <ul className="px-8 mb-10">
+            <li className='flex items-center pb-5 mb-4 border-b border-gray-200'>
+              <input 
+                type="radio" 
+                name="sort" 
+                id="popular" 
+                value={'popular'} 
+                onChange={addSort}
+                className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+              />
+
+              <label htmlFor="popular" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                most popular
+              </label>
+            </li>
+
+            <li className='flex items-center mb-4'>
+              <input 
+                type="radio" 
+                name="sort" 
+                id="rating" 
+                value={'rating'} 
+                onChange={addSort}
+                className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+              />
+
+              <label htmlFor="rating" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                best rating
+              </label>
+            </li>
+
+            <li className='flex items-center mb-4'>
+              <input 
+                type="radio" 
+                name="sort" 
+                id="newest" 
+                value={'newest'} 
+                onChange={addSort}
+                className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+              />
+
+              <label htmlFor="newest" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                newest
+              </label>
+            </li>
+
+            <li className='flex items-center mb-4'>
+              <input 
+                type="radio" 
+                name="sort" 
+                id="low" 
+                value={'low'} 
+                onChange={addSort}
+                className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+              />
+
+              <label htmlFor="low" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                price low - hight
+              </label>
+            </li>
+
+            <li className='flex items-center'>
+              <input 
+                type="radio" 
+                name="sort" 
+                id="hight" 
+                value={'hight'} 
+                onChange={addSort}
+                className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
+              />
+
+              <label htmlFor="hight" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                price hight - low
+              </label>
+            </li>    
+          </ul>                   
+
+          <div className="w-full flex justify-between items-center p-8 bg-slate-100">
+            <button className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
+              clear
+            </button>
+
+            <button onClick={handleOpenSort} className='custom-btn capitalize py-2 px-6'>
+              apply
+            </button>
+          </div>             
+        </div>
+
+        <div onClick={handleOpenSort} className={`fixed inset-0 z-10 ${openSort? '' : 'hidden'}`}></div>
       </div>
     </div>
   )

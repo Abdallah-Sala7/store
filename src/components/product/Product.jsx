@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import ProductFilter from './productFilter'
 
-
 function Product() {
-
-
-
   return (
     <main>
       <header className='pt-48 pb-20 '>
