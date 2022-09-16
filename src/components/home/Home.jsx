@@ -35,7 +35,7 @@ function Home() {
               Exclusive collection for everyone
             </h2>
 
-            <a href="#" className='custom-btn'>
+            <a href="#new" className='custom-btn'>
               <span>
                 Shop now
               </span>
@@ -134,7 +134,7 @@ function Home() {
                       up to 80% off retail
                     </h3>
 
-                    <Link to={'/'} className="py-3 px-5 w-fit font-semibold rounded-full text-gray-700 bg-primary-100 bg-opacity-50 hover:bg-opacity-100 " >
+                    <Link to={'/product'} className="py-3 px-5 w-fit font-semibold rounded-full text-gray-700 bg-primary-100 hover:bg-opacity-50 " >
                       show me all
                     </Link>             
                   </div>
@@ -161,7 +161,7 @@ function Home() {
                       up to 80% off retail
                     </h3>
 
-                    <Link to={'/'} className="py-3 px-5 w-fit font-semibold rounded-full text-gray-700 bg-primary-100 bg-opacity-50 hover:bg-opacity-100 " >
+                    <Link to={'/product'} className="py-3 px-5 w-fit font-semibold rounded-full text-gray-700 bg-primary-100 hover:bg-opacity-50 " >
                       show me all
                     </Link>             
                   </div>
@@ -188,7 +188,7 @@ function Home() {
                       up to 80% off retail
                     </h3>
 
-                    <Link to={'/'} className="py-3 px-5 w-fit font-semibold rounded-full text-gray-700 bg-primary-100 bg-opacity-50 hover:bg-opacity-100 " >
+                    <Link to={'/product'} className="py-3 px-5 w-fit font-semibold rounded-full text-gray-700 bg-primary-100 hover:bg-opacity-50 " >
                       show me all
                     </Link>             
                   </div>
@@ -215,7 +215,7 @@ function Home() {
                       up to 80% off retail
                     </h3>
 
-                    <Link to={'/'} className="py-3 px-5 w-fit font-semibold rounded-full text-gray-700 bg-primary-100 bg-opacity-50 hover:bg-opacity-100 " >
+                    <Link to={'/product'} className="py-3 px-5 w-fit font-semibold rounded-full text-gray-700 bg-primary-100 hover:bg-opacity-50 " >
                       show me all
                     </Link>             
                   </div>
@@ -234,7 +234,7 @@ function Home() {
         </div>
       </section> 
 
-      <section className="py-8 sm:py-12 md:py-24">
+      <section id="new" className="py-8 sm:py-12 md:py-24">
         <div className="container">
           <h1 className="text-2xl font-extrabold text-gray-900 first-letter:capitalize mb-8 md:text-4xl">
             <span>New Arrivals.</span> 
