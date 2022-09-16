@@ -17,8 +17,7 @@ function Product() {
           </div>
 
           <ProductFilter />
-
-    
+          
         </div>
       </header>
     </main>
