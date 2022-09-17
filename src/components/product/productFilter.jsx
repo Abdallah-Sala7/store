@@ -7,6 +7,8 @@ function valuetext(value) {
 }
 
 function ProductFilter() {
+  const [mobileFilter, setMobileFilter] = useState(false);
+
   const [openRange, setOpenRange] = useState(false)
   const [openColor, setOpenColor] = useState(false)
   const [openSize, setOpenSize] = useState(false)
@@ -46,6 +48,11 @@ function ProductFilter() {
   const handleOpenSort = (e) => {
     e.preventDefault()
     setOpenSort(!openSort)
+  }
+
+  const handleMobileFilter = (e) => {
+    e.preventDefault()
+    setMobileFilter(!mobileFilter)
   }
 
   const addCat = (e) =>{
@@ -99,7 +106,7 @@ function ProductFilter() {
 
   return (
     <>
-      <div className=" absolute inset-0 z-50 bg-white w-full h-full flex justify-between items-center flex-wrap md:flex-nowrap md:static">
+      <div className={`absolute inset-0 z-50 bg-white w-full h-full justify-between items-center flex-wrap md:flex-nowrap md:static ${mobileFilter ? 'flex' : 'hidden'} md:flex`}>
         <div className="flex items-center flex-wrap  md:gap-5">
           <div className={`relative w-full md:w-fit  ${openRange ? '' : 'overflow-hidden'}`}>
             <a href="#" onClick={handleOpenRange} className={` hidden w-36 items-center justify-between py-2 px-4 border  rounded-full ${value[0] == 0 && value[1] == 100 ? 'border-gray-300' : 'bg-blue-50 border-blue-300'} md:flex `}>
@@ -168,7 +175,7 @@ function ProductFilter() {
                 </div>                    
               </div>
 
-              <div className="w-full flex justify-between items-center p-8 bg-slate-100">
+              <div className="hidden w-full justify-between items-center p-8 bg-slate-100 md:flex">
                 <button className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
                   clear
                 </button>
@@ -274,7 +281,7 @@ function ProductFilter() {
                 </li>    
               </ul>                   
 
-              <div className="w-full flex justify-between items-center p-8 bg-slate-100">
+              <div className="w-full hidden justify-between items-center p-8 bg-slate-100 md:flex">
                 <button className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
                   clear
                 </button>
@@ -380,7 +387,7 @@ function ProductFilter() {
                 </li>    
               </ul> 
 
-              <div className="w-full flex justify-between items-center p-8 bg-slate-100">
+              <div className="w-full hidden justify-between items-center p-8 bg-slate-100 md:flex">
                 <button className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
                   clear
                 </button>
@@ -486,7 +493,7 @@ function ProductFilter() {
                 </li>    
               </ul>                   
 
-              <div className="w-full flex justify-between items-center p-8 bg-slate-100">
+              <div className="w-full hidden justify-between items-center p-8 bg-slate-100 md:flex">
                 <button className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
                   clear
                 </button>
@@ -593,7 +600,7 @@ function ProductFilter() {
               </li>    
             </ul>                   
 
-            <div className="w-full flex justify-between items-center p-8 bg-slate-100">
+            <div className="w-full hidden justify-between items-center p-8 bg-slate-100 md:flex">
               <button className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
                 clear
               </button>
@@ -606,7 +613,30 @@ function ProductFilter() {
 
           <div onClick={handleOpenSort} className={`fixed inset-0 z-10 hidden ${openSort? 'md:block' : ''}`}></div>
         </div>
+
+        <div className="fixed bottom-0 left-0 w-full flex justify-between items-center p-8 bg-slate-100 md:hidden">
+          <button onClick={handleMobileFilter} className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
+            clear
+          </button>
+
+          <button onClick={handleMobileFilter} className='custom-btn capitalize py-2 px-6'>
+            apply
+          </button>
+        </div> 
       </div>
+
+      <a href="#" onClick={handleMobileFilter} className={`flex items-center justify-center py-2 px-4 rounded-full border md:hidden`}>
+        <img
+          src='./img/icons/filter/sliders-solid.svg'
+          alt='filter price'
+          loading='lazy'
+          className='w-4 h-4 object-contain mr-3'
+        />
+
+        <span className='text-gray-700 capitalize'>
+          product filter
+        </span>
+      </a>
     </>
   )
 }
