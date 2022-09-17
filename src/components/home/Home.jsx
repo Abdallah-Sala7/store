@@ -19,7 +19,6 @@ function Home() {
 
   const handleColor = (e) => {
     setColor(e.target.value);
-    console.log(color);
   }
 
   return (
