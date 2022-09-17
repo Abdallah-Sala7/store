@@ -11,7 +11,7 @@
   }
 
   .nav-bar{
-    @apply absolute top-0 left-0 h-screen w-3/4 pt-20 bg-primary-100 text-center flex items-center flex-col space-y-6 transition-transform duration-300 z-50 md:static md:w-auto md:h-auto md:p-0 md:bg-transparent md:flex-row md:space-x-4 md:space-y-0 ;
+    @apply absolute top-0 left-0 h-screen w-3/4 pt-20 bg-primary-100 transition-transform duration-300 z-50 md:static md:w-auto md:h-auto md:p-0 md:bg-transparent  ;
   }
 
   .overlay-black{
