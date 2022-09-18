@@ -60,7 +60,13 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-
 
 .radio-check:disabled + .label-check {
   opacity: 0.2;
-  cursor: no-drop;
+  cursor: no-drop !important;
+}
+
+.size-check:checked + label{
+  background-color: rgb(63 131 248);
+  color: #fff;
+  border-color: rgb(63 131 248);;
 }
 
 .parent-hover:hover,

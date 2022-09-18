@@ -290,7 +290,7 @@ function Home() {
                           </span>
                         </a> 
 
-                        <Link to={'/'} className="py-2 px-4 rounded-full bg-gray-400  flex items-center justify-center space-x-2 hover:bg-opacity-90">
+                        <Link to={'/details'} className="py-2 px-4 rounded-full bg-gray-400  flex items-center justify-center space-x-2 hover:bg-opacity-90">
                           <span className="w-4 h-4">
                             <img 
                               src="./img/icons/full-screen.svg" 

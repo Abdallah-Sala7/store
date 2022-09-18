@@ -37,7 +37,7 @@ function Nav() {
         </Link>
 
         <div className={`nav-bar ${open ? 'translate-x-0 ' : '-translate-x-full'} md:translate-x-0`}>
-          <ul className={`text-center items-center flex-col space-y-6 md:flex-row md:space-x-4 md:space-y-0 ${search ? 'hidden' : 'flex'}`}>
+          <ul className={`mb-5 text-center items-center flex-col space-y-6 md:mb-0 md:flex-row md:space-x-4 md:space-y-0 ${search ? 'md:hidden' : 'flex'}`}>
             <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
               <Link to={'/'} className='w-full py-2 px-3 text-lg'> 
                 home
@@ -72,12 +72,12 @@ function Nav() {
             </a>
           </ul>       
 
-          <form action="" className={` w-96 h-11 ${search ? 'block' : 'hidden'}`}>
+          <form action="" className={`w-11/12 h-14 m-auto md:w-96 ${search ? 'block' : 'md:hidden'}`}>
             <div className="relative w-full h-full ">
               <input 
                 type="text"
                 placeholder='Search'
-                className='w-full h-full bg-gray-100 rounded-full px-10 py-2 focus:outline-none border-none !ring-0'
+                className='w-full h-full bg-slate-200 rounded-xl px-10 py-2 focus:outline-none border-none !ring-0'
               />
 
               <a href="#" className=' absolute top-1/2 -translate-y-1/2 left-2 w-6 h-6 group'>
@@ -94,7 +94,7 @@ function Nav() {
                   src="./img/icons/xmark.svg"
                   alt=""
                   loading='lazy'
-                  className='w-full h-full object-contain opacity-60 group-hover:opacity-100'
+                  className='w-full h-full object-contain opacity-60 hidden group-hover:opacity-100 md:block'
                 />
               </a>
             </div>
@@ -102,7 +102,7 @@ function Nav() {
         </div>
 
         <div className="flex items-baseline md:space-x-6">
-          <a href="#" onClick={openSearch} className='w-11 h-11 rounded-full hidden items-center justify-center transition hover:bg-slate-100 md:flex'>
+          <a href="#" onClick={openSearch} className={`w-11 h-11 rounded-full hidden items-center justify-center transition hover:bg-slate-100 ${search ? 'hidden' : 'md:flex'}`}>
             <img
               src='./img/icons/search-outline.svg'
               alt=''
