@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from "axios";
 
 import ProductFilter from './productFilter'
-import CardList from '../global/card';
-import Loading from '../global/loading';
+import CardList from '../component/card';
+import Loading from '../component/loading';
 
 function Product() {
   const [product, setProduct] = useState([]);

@@ -52,7 +52,7 @@ function Nav() {
 
             <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
               <Link to={'/product'} className='w-full py-2 px-3 text-lg'> 
-                whomen
+                women
               </Link>
             </li>
 
@@ -102,30 +102,30 @@ function Nav() {
         </div>
 
         <div className="flex items-baseline md:space-x-6">
-          <a href="#" onClick={openSearch} className={`w-11 h-11 rounded-full hidden items-center justify-center transition hover:bg-slate-100 ${search ? 'hidden' : 'md:flex'}`}>
+          <a href="#" onClick={openSearch} className={`w-11 h-11 rounded-full hidden items-center justify-center transition hover:bg-gray-900 group ${search ? 'hidden' : 'md:flex'}`}>
             <img
               src='./img/icons/search-outline.svg'
               alt=''
               loading='lazy'
-              className='w-7 h-7 object-contain'
+              className='w-7 h-7 object-contain group-hover:invert'
             />
           </a>
 
-          <a href="#" className='w-11 h-11 rounded-full items-center justify-center transition hidden hover:bg-slate-100 md:flex'>
+          <a href="#" className='w-11 h-11 rounded-full items-center justify-center transition hidden hover:bg-gray-900 group md:flex'>
             <img
               src='./img/icons/user.svg'
               alt=''
               loading='lazy'
-              className='w-7 h-7 object-contain'
+              className='w-7 h-7 object-contain group-hover:invert'
             />
           </a>
 
-          <a href="#" className='w-11 h-11 rounded-full flex items-center justify-center transition hover:bg-slate-100'>
+          <a href="#" className='w-11 h-11 rounded-full flex items-center justify-center transition hover:bg-gray-900 group'>
             <img
               src='./img/icons/cart-outline.svg'
               alt=''
               loading='lazy'
-              className='w-7 h-7 object-contain'
+              className='w-7 h-7 object-contain group-hover:invert'
             />
           </a>
         </div>

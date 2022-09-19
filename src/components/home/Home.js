@@ -6,8 +6,8 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import CardList from "../global/card";
-import Loading from "../global/loading";
+import CardList from "../component/card";
+import Loading from "../component/loading";
 
 function Home() {
   const [product, setProduct] = useState([]);
@@ -865,7 +865,7 @@ function Home() {
               </Link>
 
               <div className="absolute top-5 right-5 flex flex-col space-y-3  z-10">
-                <a href="http://facebook.com" target="_blank" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-75 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
+                <a href="http://facebook.com" target="_blank" rel="noreferrer noopener" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-75 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
                   <img
                     src="./img/icons/facebook.svg"
                     alt=""
@@ -874,7 +874,7 @@ function Home() {
                   />
                 </a>
 
-                <a href="http://twitter.com" target="_blank" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-100 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
+                <a href="http://twitter.com" target="_blank" rel="noreferrer noopener" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-100 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
                   <img
                     src="./img/icons/twitter.svg"
                     alt=""
@@ -883,7 +883,7 @@ function Home() {
                   />
                 </a>
 
-                <a href="http://instagram.com" target="_blank" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-150 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
+                <a href="http://instagram.com" target="_blank" rel="noreferrer noopener" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-150 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
                   <img
                     src="./img/icons/instagram.svg"
                     alt=""
@@ -892,7 +892,7 @@ function Home() {
                   />
                 </a>
 
-                <a href="http://linkedin.com" target="_blank" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-200 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
+                <a href="http://linkedin.com" target="_blank" rel="noreferrer noopener" type="button" title="" className="w-8 h-8 flex justify-center items-center bg-slate-50 rounded-full translate-x-20 transition-transform duration-300 delay-200 group-hover:translate-x-0 hover:bg-opacity-90 hover:scale-105 md:w-10 md:h-10">
                   <img
                     src="./img/icons/linkedin.svg"
                     alt=""

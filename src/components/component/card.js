@@ -13,8 +13,8 @@ function CardList(props) {
     setCountry(e.target.value);
   }
   return (
-    <div className="" key={props.id}>
-      <div className="relative w-full h-72 p-4 bg-gray-100 rounded-3xl overflow-hidden group">
+    <div className="group" key={props.id}>
+      <div className="relative w-full h-72 p-4 bg-gray-100 rounded-3xl overflow-hidden">
         <img 
           src={props.image}
           alt=""
