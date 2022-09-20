@@ -137,9 +137,9 @@ function Details() {
 
               <div className="flex justify-between items-center flex-wrap mb-6">
                 <div className="w-full mb-5 py-3 px-6 bg-slate-300 text-lg font-medium rounded-full flex justify-between items-center sm:mb-0 sm:w-1/3">
-                  <a onClick={decrementQuantity} href='#'  className="text-gray-500 px-3 border border-gray-500 rounded-md text-xl cursor-pointer">-</a>
+                  <a onClick={decrementQuantity} href='#'  className="text-gray-500 px-3 rounded-md text-xl cursor-pointer bg-slate-50">-</a>
                   <span className="text-gray-600 text-lg">{quantity}</span>
-                  <a onClick={incrementQuantity} href='#' className="text-gray-500 px-3 border border-gray-500 rounded-md text-xl cursor-pointer">+</a>
+                  <a onClick={incrementQuantity} href='#' className="text-gray-500 px-3 rounded-md text-xl cursor-pointer bg-slate-50">+</a>
                 </div>
 
                 <a href='#' className="w-full py-3 px-6 bg-gray-900 text-center text-white text-lg font-medium rounded-full first-letter:capitalize sm:w-3/5">
@@ -294,48 +294,255 @@ function Details() {
               </ul>
             </div> 
           </div>
+        </div>
+      </section>
 
-          <div className="pt-10">
-            <div className="flex items-center gap-5">
-              <img 
-                src="./img/icons/star.svg" 
-                alt="star"
-                loading='lazy'
-                className="w-6 h-6 object-contain img-dark" 
-              />
+      <section className="pb-8 sm:pb-12 md:pb-24">
+        <div className="container">
+          <div className="flex items-center gap-5 mb-8">
+            <img 
+              src="./img/icons/star.svg" 
+              alt="star"
+              loading='lazy'
+              className="w-6 h-6 object-contain img-dark" 
+            />
 
-              <h2 className='text-2xl font-semibold text-gray-700 capitalize leading-none md:text-3xl'>
-                4,8 - 236 reviews
-              </h2>
-            </div>
+            <h1 className='text-2xl font-semibold text-gray-700 capitalize leading-none md:text-3xl'>
+              4,8 - 236 reviews
+            </h1>
+          </div>
 
-            <div className="grid col-span-1 gap-8 md:col-span-2">
-              <div className="">
-                <div className="flex justify-between items-start">
-                  <div className="flex gap-3">
-                    <img
-                      src="./img/blog/image-1.webp"
-                      alt="star"
-                      loading='lazy'
-                      className="w-12 h-12 object-contain rounded-full"
-                    />
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+            <div>
+              <div className="flex justify-between items-center">
+                <div className="flex">
+                  <img
+                    src="./img/blog/image-1.webp"
+                    alt="star"
+                    loading='lazy'
+                    className="w-12 h-12 object-contain rounded-full mr-6"
+                  />
 
-                    <div className="flex flex-col justify-between">
-                      <h3 className='font-bold text-gray-900 capitalize'>
-                        jessica
-                      </h3>
+                  <div className="flex flex-col justify-between">
+                    <h2 className='font-bold text-gray-900 capitalize'>
+                      hossam
+                    </h2>
 
-                      <p className='text-gray-500 text-sm'>
-                        May 20, 2021
-                      </p>
-                    </div>
+                    <p className='text-gray-500 text-sm'>
+                      May 20, 2021
+                    </p>
                   </div>
                 </div>
+
+                <div className="flex items-center gap-1">
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+                </div>
               </div>
+
+              <p className='text-gray-500 first-letter:capitalize mt-6'>
+                the patented eighteen-inch hardwood Arrowhead deck --- finely mortised in, makes this the strongest and most rigid canoe ever built. You cannot buy a canoe that will afford greater satisfaction
+              </p>
+            </div>
+
+            <div>
+              <div className="flex justify-between items-center">
+                <div className="flex">
+                  <img
+                    src="./img/blog/image-10.webp"
+                    alt="star"
+                    loading='lazy'
+                    className="w-12 h-12 object-contain rounded-full mr-6"
+                  />
+
+                  <div className="flex flex-col justify-between">
+                    <h2 className='font-bold text-gray-900 capitalize'>
+                      abdallah
+                    </h2>
+
+                    <p className='text-gray-500 text-sm'>
+                      May 20, 2021
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+                </div>
+              </div>
+
+              <p className='text-gray-500 first-letter:capitalize mt-6'>
+                the patented eighteen-inch hardwood Arrowhead deck --- finely mortised in, makes this the strongest and most rigid canoe ever built. You cannot buy a canoe that will afford greater satisfaction
+              </p>
+            </div>
+
+            <div>
+              <div className="flex justify-between items-center">
+                <div className="flex">
+                  <img
+                    src="./img/blog/image-4.webp"
+                    alt="star"
+                    loading='lazy'
+                    className="w-12 h-12 object-contain rounded-full mr-6"
+                  />
+
+                  <div className="flex flex-col justify-between">
+                    <h2 className='font-bold text-gray-900 capitalize'>
+                      jessica
+                    </h2>
+
+                    <p className='text-gray-500 text-sm'>
+                      May 20, 2021
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+                </div>
+              </div>
+
+              <p className='text-gray-500 first-letter:capitalize mt-6'>
+                the patented eighteen-inch hardwood Arrowhead deck --- finely mortised in, makes this the strongest and most rigid canoe ever built. You cannot buy a canoe that will afford greater satisfaction
+              </p>
+            </div>
+
+            <div>
+              <div className="flex justify-between items-center">
+                <div className="flex">
+                  <img
+                    src="./img/blog/image-6.webp"
+                    alt="star"
+                    loading='lazy'
+                    className="w-12 h-12 object-contain rounded-full mr-6"
+                  />
+
+                  <div className="flex flex-col justify-between">
+                    <h2 className='font-bold text-gray-900 capitalize'>
+                      sara
+                    </h2>
+
+                    <p className='text-gray-500 text-sm'>
+                      May 20, 2021
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+
+                  <img
+                    src="./img/icons/star.svg"
+                    alt="star"
+                    loading='lazy'
+                    className="w-5 h-5 object-contain"
+                  />
+                </div>
+              </div>
+
+              <p className='text-gray-500 first-letter:capitalize mt-6'>
+                the patented eighteen-inch hardwood Arrowhead deck --- finely mortised in, makes this the strongest and most rigid canoe ever built. You cannot buy a canoe that will afford greater satisfaction
+              </p>
             </div>
           </div>
         </div>
-      </section>     
+      </section> 
     </main>
 
   )

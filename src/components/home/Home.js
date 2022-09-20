@@ -22,7 +22,7 @@ function Home() {
   }, []);
 
   return (
-    <main className="">
+    <main>
       <header className='w-full bg-primary-100 relative z-10'>
         <div className="container h-full pt-40 flex flex-col items-center justify-between md:flex-row">
           <div className='w-full pb-5 md:w-1/2'>
@@ -267,7 +267,7 @@ function Home() {
               {product.map((item, index) => {
                 return (
                 <SwiperSlide key={index}>
-                  <CardList id={item.id} image={item.image} title={item.title} price={item.price} category={item.category} rating={item.rating} />
+                  <CardList item={item} id={item.id} image={item.image} title={item.title} price={item.price} category={item.category} rating={item.rating} />
                 </SwiperSlide>                
                 )
               })}

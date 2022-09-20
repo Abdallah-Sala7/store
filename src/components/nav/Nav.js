@@ -120,14 +120,14 @@ function Nav() {
             />
           </a>
 
-          <a href="#" className='w-11 h-11 rounded-full flex items-center justify-center transition hover:bg-gray-900 group'>
+          <Link to={'/cart'} className='w-11 h-11 rounded-full flex items-center justify-center transition hover:bg-gray-900 group'>
             <img
               src='./img/icons/cart-outline.svg'
               alt=''
               loading='lazy'
               className='w-7 h-7 object-contain group-hover:invert'
             />
-          </a>
+          </Link>
         </div>
       </div>
 
