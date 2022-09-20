@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 
-import ProductFilter from './productFilter'
 import CardList from '../component/card';
 import Loading from '../component/loading';
+import ProductFilter from '../component/productFilter';
 
 function Product() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [dataFilter, setDataFilter] = useState({
+    category: ['all'],
+    price: [],
+    sort: ''
+  });
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
@@ -17,9 +22,18 @@ function Product() {
     })
   }, []);
 
+  const handleFilter = (cat, price, sort) => {
+    setDataFilter({
+      category: cat,
+      price: price,
+      sort: sort
+    })
+  }
+
 
   return (
     <main>
+      {console.log(dataFilter)}
       <header className='pt-48 pb-10'>
         <div className="container ">
           <div className="pb-20 border-b border-gray-200 mb-20">
@@ -33,7 +47,7 @@ function Product() {
           </div>
 
           <div className="">
-            <ProductFilter />
+            <ProductFilter handleFilter={handleFilter} />
           </div>        
         </div>
       </header>
@@ -44,9 +58,11 @@ function Product() {
             <div className="grid gap-x-5 gap-y-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             { product.map((item) => {
               return (
+                item.category === dataFilter.category[0] || dataFilter.category[0] === 'all' ?
                 <div className="group" key={item.id}>
                   <CardList item={item} id={item.id} image={item.image} title={item.title} price={item.price} category={item.category} rating={item.rating} />  
-                </div>              
+                </div>     
+                : ''        
                 )
               })}
             </div>

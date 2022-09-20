@@ -6,7 +6,7 @@ function valuetext(value) {
   return `${value}$`;
 }
 
-function ProductFilter() {
+function ProductFilter({ handleFilter }) {
   const [mobileFilter, setMobileFilter] = useState(false);
 
   const [openRange, setOpenRange] = useState(false)
@@ -68,6 +68,9 @@ function ProductFilter() {
     if (!x) {
       setCatValue([...catValue, e.target.value])
     }
+
+    handleFilter(catValue, value, sortValue)
+
   }
 
   const addColor = (e) =>{
@@ -102,6 +105,8 @@ function ProductFilter() {
 
   const addSort = (e) =>{
     setSortValue(e.target.value)
+
+    handleFilter(catValue, value, sortValue)
   }
 
   return (
@@ -438,7 +443,7 @@ function ProductFilter() {
             </span>
           </a>
 
-          <div className={`static top-14 left-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:w-96 md:rounded-2xl md:shadow-2xl md:absolute  ${openSize ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'}`}>
+          <div className={`static top-14 right-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:w-96 md:rounded-2xl md:shadow-2xl md:absolute  ${openSize ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'}`}>
             <h2 className='text-xl pl-8 font-medium capitalize text-gray-900 mb-5 whitespace-nowrap md:hidden'>
               size
             </h2>

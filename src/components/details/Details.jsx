@@ -137,9 +137,25 @@ function Details() {
 
               <div className="flex justify-between items-center flex-wrap mb-6">
                 <div className="w-full mb-5 py-3 px-6 bg-slate-300 text-lg font-medium rounded-full flex justify-between items-center sm:mb-0 sm:w-1/3">
-                  <a onClick={decrementQuantity} href='#'  className="text-gray-500 px-3 rounded-md text-xl cursor-pointer bg-slate-50">-</a>
+                  <a onClick={decrementQuantity} href='#'  className="w-8 h-8">
+                    <img 
+                      src="./img/icons/add-circle-outline.svg" 
+                      alt=""
+                      loading='lazy'
+                      className='w-full h-full object-contain opacity-80 ' 
+                    />
+                  </a>
+
                   <span className="text-gray-600 text-lg">{quantity}</span>
-                  <a onClick={incrementQuantity} href='#' className="text-gray-500 px-3 rounded-md text-xl cursor-pointer bg-slate-50">+</a>
+
+                  <a onClick={incrementQuantity} href='#' className="w-8 h-8">
+                    <img 
+                      src="./img/icons/add-circle-outline.svg" 
+                      alt=""
+                      loading='lazy'
+                      className='w-full h-full object-contain opacity-80 ' 
+                    />
+                  </a>
                 </div>
 
                 <a href='#' className="w-full py-3 px-6 bg-gray-900 text-center text-white text-lg font-medium rounded-full first-letter:capitalize sm:w-3/5">
