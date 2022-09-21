@@ -2,24 +2,12 @@ import React from 'react'
 import { Breadcrumb } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 
-import { removeFromCart,addToCart } from '../store/reducers/cartSlice'
+import { removeFromCart, addToCart, removeProduct } from '../store/reducers/cartSlice'
 import { useSelector,useDispatch } from 'react-redux'
 
 function Cart() {
   const dispatch = useDispatch();
   const {cartItems, totalAmount, totalPrice} = useSelector(state => state.cart)
-
-  const [count, setCount] = React.useState(0)
-
-  const increment = (e) => {
-    e.preventDefault()
-    setCount(count + 1)
-  }
-
-  const decrement = (e) => {
-    e.preventDefault()
-    setCount(count - 1)
-  }
 
   return (
     <main>
@@ -140,13 +128,12 @@ function Cart() {
                           </span>
                         </div>
 
-                        <button onClick={()=> dispatch(removeFromCart(item.id))} className='text-lg capitalize text-red-300 transition hover:text-red-600'>remove</button>
+                        <button onClick={() => dispatch(removeProduct(item.id))} className='text-lg capitalize text-red-300 transition hover:text-red-600'>remove</button>
                       </div>
                     </div>
                   </div>
                 )}
               )}
-
             </div>
 
             <div className="sticky top-40 w-full pt-5 md:pb-0 md:px-5 md:w-1/3">

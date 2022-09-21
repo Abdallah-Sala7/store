@@ -67,10 +67,8 @@ function ProductFilter({ handleFilter }) {
 
     if (!x) {
       setCatValue([...catValue, e.target.value])
+      handleFilter(e.target.value, value, sortValue)
     }
-
-    handleFilter(catValue, value, sortValue)
-
   }
 
   const addColor = (e) =>{
@@ -106,7 +104,7 @@ function ProductFilter({ handleFilter }) {
   const addSort = (e) =>{
     setSortValue(e.target.value)
 
-    handleFilter(catValue, value, sortValue)
+    handleFilter(catValue, value, e.target.value)
   }
 
   return (

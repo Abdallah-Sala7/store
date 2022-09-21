@@ -1,10 +1,34 @@
+import axios from 'axios';
 import { Accordion } from 'flowbite-react';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { addToCart } from '../store/reducers/cartSlice';
 
 function Details() {
   const [color, setColor] = useState('');
   const [size, setSize] = useState('');
   const [quantity, setQuantity] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const [product, setProduct] = useState({})
+  const param = useParams();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios.get(`https://fakestoreapi.com/products`)
+      .then(res => {
+        res.data.forEach(item => {
+          if (item.id === parseInt(param.id)) {
+            setProduct(item);
+          }
+        })
+        
+        setLoading(true);
+      })
+  }, [param.id]);
+
 
   const handleColor = (e) => {
     setColor(e.target.value);
@@ -24,41 +48,39 @@ function Details() {
     setQuantity(quantity + 1);
   }
 
-//   export function GetNewProductById(id) {
-//     const product = newProducts.find(item => item.id === id)
-//     return Promise.resolve(product)
-// }
   return (
     <main>
+      {loading ? ( 
+        <>
       <header className='pt-28'>
         <div className="container">
           <div className="flex flex-wrap lg:flex-nowrap lg:space-x-8">
             <div className="w-full mb-10 lg:w-1/2 lg:mb-0">
-              <div className="w-full mb-5 rounded-lg overflow-hidden">
+              <div className="w-full mb-5 py-10 rounded-lg bg-gray-100">
                 <img
-                  src={'/img/detail1.jpg'}
+                  src={product.image}
                   alt='feature1'
                   loading='lazy'
-                  className='w-full object-contain'
+                  className='w-1/2 m-auto object-contain'
                 />
               </div>
 
               <div className="w-full flex justify-between space-x-2">
-                <div className="w-1/2 rounded-lg overflow-hidden">
+                <div className="w-1/2 py-5 rounded-lg bg-gray-100">
                   <img
-                    src={'/img/detail1.jpg'}
+                    src={product.image}
                     alt='feature2'
                     loading='lazy'
-                    className='w-full object-contain'
+                    className='w-1/2 m-auto object-contain'
                   />
                 </div>
 
-                <div className="w-1/2 rounded-lg overflow-hidden">
+                <div className="w-1/2 py-5 rounded-lg bg-gray-100">
                   <img
-                    src={'/img/detail1.jpg'}
+                    src={product.image}
                     alt='feature3'
                     loading='lazy'
-                    className='w-full object-contain'
+                    className='w-1/2 m-auto object-contain'
                   />
                 </div>
               </div>
@@ -66,13 +88,13 @@ function Details() {
 
             <div className="w-full lg:w-1/2">
               <h1 className='text-2xl mb-2 text-gray-700 font-semibold md:text-3xl'>
-                Heavy Weight Shoes
+                {product.title}
               </h1>
 
               <div className="flex items-center gap-4 mb-8">
                 <div className="py-1 px-3 border-2 border-green-500 rounded-md">
                   <h2 className="text-green-500 font-medium text-lg leading-none">
-                    200$
+                    {product.price}$
                   </h2>
                 </div>
 
@@ -88,9 +110,10 @@ function Details() {
                     />
                   </span>
 
-                  <span className="text-sm text-gray-500 font-medium">
-                    2.5 (2000)
-                  </span>
+                  <p className="text-sm text-gray-500 font-medium">
+                    <span>{product.rating.rate}</span>
+                    <span>({product.rating.count} reviews)</span>  
+                  </p>
                 </div>
               </div>
 
@@ -142,7 +165,7 @@ function Details() {
 
               <div className="flex justify-between items-center flex-wrap mb-6">
                 <div className="w-full mb-5 py-3 px-6 bg-slate-300 text-lg font-medium rounded-full flex justify-between items-center sm:mb-0 sm:w-1/3">
-                  <a onClick={decrementQuantity} href='#'  className="w-8 h-8">
+                  <a onClick={decrementQuantity} href='#' className="w-8 h-8">
                     <img 
                       src={"/img/icons/add-circle-outline.svg"} 
                       alt=""
@@ -163,9 +186,9 @@ function Details() {
                   </a>
                 </div>
 
-                <a href='#' className="w-full py-3 px-6 bg-gray-900 text-center text-white text-lg font-medium rounded-full first-letter:capitalize sm:w-3/5">
+                <button onClick={() => dispatch(addToCart(product, quantity))} className="w-full py-3 px-6 bg-gray-900 text-center text-white text-lg font-medium rounded-full first-letter:capitalize sm:w-3/5">
                   add to cart
-                </a>
+                </button>
               </div>
 
               <div className="w-full mb-6">
@@ -289,11 +312,11 @@ function Details() {
 
             <div className="md:w-8/12">
               <p className='text-gray-600 first-letter:capitalize mb-5 md:text-lg'>
-                the patented eighteen-inch hardwood Arrowhead deck --- finely mortised in, makes this the strongest and most rigid canoe ever built. You cannot buy a canoe that will afford greater satisfaction
+                {product.title}
               </p>
 
               <p className='text-gray-600 first-letter:capitalize mb-8 md:text-lg'>
-                the St. Louis Meramec Canoe Company was founded by Alfred Wickett in 1922. Wickett had previously worked for the Old Town Canoe Co from 1900 to 1914. Manufacturing of the classic wooden canoes in Valley Park, Missouri ceased in 1978.
+                {product.description}
               </p>
 
               <ul className='list-disc pl-7 marker:text-gray-300 marker:text-xl'>
@@ -325,11 +348,11 @@ function Details() {
               src={"/img/icons/star.svg"} 
               alt="star"
               loading='lazy'
-              className="w-6 h-6 object-contain img-dark" 
+              className="w-6 h-6 object-contain brightness-0 opacity-70" 
             />
 
             <h1 className='text-2xl font-semibold text-gray-700 capitalize leading-none md:text-3xl'>
-              4,8 - 236 reviews
+              {/* {product.rating.rate} - {product.rating.count} reviews */}
             </h1>
           </div>
 
@@ -452,7 +475,7 @@ function Details() {
               <div className="flex justify-between items-center">
                 <div className="flex">
                   <img
-                    src="./img/blog/image-4.webp"
+                    src={"/img/blog/image-4.webp"}
                     alt="star"
                     loading='lazy'
                     className="w-12 h-12 object-contain rounded-full mr-6"
@@ -563,7 +586,18 @@ function Details() {
             </div>
           </div>
         </div>
-      </section> 
+      </section> </>) : 
+        <div className="container pt-28 pb-8 flex flex-wrap lg:pb-28 lg:flex-nowrap lg:space-x-8">
+          <div className="w-full h-96 mb-10 rounded-lg animated-background lg:w-1/2 lg:mb-0"></div>
+
+          <div className="w-full lg:w-1/2">
+            <div className='w-full h-16 mb-10 animated-background'></div>
+
+            <div className='w-3/4 h-10 mb-8 animated-background'></div>
+
+            <div className='w-40 h-8 animated-background'></div>
+          </div>            
+      </div>}
     </main>
   )
 }

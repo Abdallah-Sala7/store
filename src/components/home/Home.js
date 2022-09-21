@@ -123,8 +123,8 @@ function Home() {
               modules={[Pagination]}
               className="mySwiper"
             >
-              <SwiperSlide>
-                <div className="p-5 rounded-2xl bg-discover-100 relative z-10 sm:p-8">
+              <SwiperSlide className="pt-2">
+                <div className="p-5 rounded-2xl bg-discover-100 relative z-10 transition duration-300 hover:-translate-y-2 sm:p-8">
                   <div className=" w-11/12 flex flex-col sm:w1/2">
                     <h2 className=" text-xl font-normal text-gray-600 mb-5">
                       Sale collection
@@ -150,8 +150,8 @@ function Home() {
                 </div>
               </SwiperSlide>
 
-              <SwiperSlide>
-                <div className="p-5 rounded-2xl bg-discover-200 relative z-10 sm:p-8">
+              <SwiperSlide className="pt-2">
+                <div className="p-5 rounded-2xl bg-discover-200 relative z-10 transition duration-300 hover:-translate-y-2 sm:p-8">
                   <div className=" w-11/12 flex flex-col sm:w1/2">
                     <h2 className=" text-xl font-normal text-gray-600 mb-5">
                       Sale collection
@@ -177,8 +177,8 @@ function Home() {
                 </div>
               </SwiperSlide>
 
-              <SwiperSlide>
-                <div className="p-5 rounded-2xl bg-discover-300 relative z-10 sm:p-8">
+              <SwiperSlide className="pt-2">
+                <div className="p-5 rounded-2xl bg-discover-300 relative z-10 transition duration-300 hover:-translate-y-2 sm:p-8">
                   <div className=" w-11/12 flex flex-col sm:w1/2">
                     <h2 className=" text-xl font-normal text-gray-600 mb-5">
                       Sale collection
@@ -204,8 +204,8 @@ function Home() {
                 </div>
               </SwiperSlide>
 
-              <SwiperSlide>
-                <div className="p-5 rounded-2xl bg-discover-400 relative z-10 sm:p-8">
+              <SwiperSlide className="pt-2">
+                <div className="p-5 rounded-2xl bg-discover-400 relative z-10 transition duration-300 hover:-translate-y-2 sm:p-8">
                   <div className=" w-11/12 flex flex-col sm:w1/2">
                     <h2 className=" text-xl font-normal text-gray-600 mb-5">
                       Sale collection

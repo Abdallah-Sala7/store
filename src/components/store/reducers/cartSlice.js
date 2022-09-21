@@ -17,11 +17,10 @@ const cartSlis = createSlice({
             if (itemIndex >= 0) {
                 state.cartItems[itemIndex].cartQuantity += 1;
             } else {
-                const tempProduct = {...action.payload,cartQuantity:1}
+                const tempProduct = {...action.payload, cartQuantity:1}
                 state.cartItems.push(tempProduct)
             }
-            state.totalAmount += 1
-
+            state.totalAmount = state.cartItems.length;
         },
         removeFromCart: (state,action) =>{
             const itemIndex = state.cartItems.findIndex(
@@ -32,10 +31,14 @@ const cartSlis = createSlice({
             } else {
                 state.cartItems = state.cartItems.filter(item => item.id != action.payload)
             }
-            state.totalAmount -= 1
+            state.totalAmount = state.cartItems.length;
+        },
+        removeProduct: (state, action) =>{
+            state.cartItems = state.cartItems.filter(item => item.id != action.payload)
+            state.totalAmount = state.cartItems.length;
         }
     }
 })
 
-export const {addToCart,removeFromCart} = cartSlis.actions
+export const {addToCart, removeFromCart, removeProduct} = cartSlis.actions
 export default cartSlis.reducer

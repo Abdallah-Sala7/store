@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function Nav() {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
+
+  const {totalAmount} = useSelector(state => state.cart)
 
   const openNav = (e) =>{
     setOpen(!open)
@@ -120,13 +123,17 @@ function Nav() {
             />
           </a>
 
-          <Link to={'/cart'} className='w-11 h-11 rounded-full flex items-center justify-center transition hover:bg-gray-900 group'>
+          <Link to={'/cart'} className='relative w-11 h-11 rounded-full flex items-center justify-center transition hover:bg-gray-900 group'>
             <img
               src={'/img/icons/cart-outline.svg'}
               alt=''
               loading='lazy'
               className='w-7 h-7 object-contain group-hover:invert'
             />
+
+            <span className='absolute top-0 right-0 w-5 h-5 bg-blue-500 text-white rounded-full text-center leading-5 text-sm'>
+              {totalAmount}
+            </span>
           </Link>
         </div>
       </div>
