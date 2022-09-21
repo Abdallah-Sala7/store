@@ -11,6 +11,8 @@ function Cart() {
 
   return (
     <main>
+      {totalAmount > 0 ? 
+      <>
       <header className='pt-40'>
         <div className="container">
           <div className="border-b border-gray-300 pb-8 sm:pb-12 md:pb-20">
@@ -47,12 +49,12 @@ function Cart() {
                         src={item.image}
                         alt=""
                         loading='lazy'
-                        className='w-full h-full object-cover'
+                        className='w-full h-full object-contain'
                       />
                     </div>
 
                     <div className="grow">
-                      <h1 className='text-gray-800 mb-3 text-lg font-semibold capitalize'>
+                      <h1 className='text-gray-800 mb-3 text-lg font-semibold capitalize whitespace-nowrap overflow-hidden text-ellipsis md:whitespace-normal'>
                         {item.title}
                       </h1>
 
@@ -188,6 +190,28 @@ function Cart() {
           </div>
         </div>
       </section>
+      </>:
+      <div className="pt-40 pb-10 bg-primary-100">
+        <div className="container">
+          <div className="flex flex-col items-center justify-center">
+            <img 
+              src="/img/icons/shopping-basket.svg" 
+              alt=""
+              loading='lazy'
+              className='w-52 h-52 object-contain opacity-70 mb-7 md:w-80 md:h-80' 
+            />
+
+            <h1 className='text-5xl font-bold italic text-red-600 mb-5'>
+              ooops!
+            </h1>
+
+            <h1 className='text-2xl font-bold text-gray-900 md:text-3xl'>
+              Your cart is empty
+            </h1>
+          </div>
+        </div>
+      </div>
+      }
     </main>
   )
 }

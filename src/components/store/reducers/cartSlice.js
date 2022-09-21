@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
     cartItems : [],
     totalAmount : 0,
     totalPrice : 0
 }
+
 const cartSlis = createSlice({
     name:'cart',
     initialState,

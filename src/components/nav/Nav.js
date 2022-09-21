@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   const [open, setOpen] = useState(false);
+  const [openUser, setOpenUser] = useState(false);
   const [search, setSearch] = useState(false);
 
   const {totalAmount} = useSelector(state => state.cart)
 
   const openNav = (e) =>{
     setOpen(!open)
+    e.preventDefault();
+  }
+
+  const handleOpenUser = (e) =>{
+    setOpenUser(!openUser)
     e.preventDefault();
   }
 
@@ -114,14 +120,122 @@ function Nav() {
             />
           </a>
 
-          <a href="#" className='w-11 h-11 rounded-full items-center justify-center transition hidden hover:bg-gray-900 group md:flex'>
-            <img
-              src={'/img/icons/user.svg'}
-              alt=''
-              loading='lazy'
-              className='w-7 h-7 object-contain group-hover:invert'
-            />
-          </a>
+          <div className={`relative overflow-hidden ${openUser ? 'md:overflow-visible' : ''}`}>
+            <a href="#" onClick={handleOpenUser} className='w-11 h-11 rounded-full items-center justify-center transition hidden hover:bg-gray-900 group md:flex'>
+              <img
+                src={'/img/icons/user.svg'}
+                alt=''
+                loading='lazy'
+                className='w-7 h-7 object-contain group-hover:invert'
+              />
+            </a>
+
+            <div className={`absolute top-16 right-0 w-64 py-6 px-5 rounded-3xl shadow-2xl bg-white transition-all duration-300 opacity-0 translate-y-5 lg:left-0 lg:-translate-x-1/2  ${openUser ? 'opacity-100 translate-y-0' : ''}`}>
+              <div className='flex gap-5 pb-3 border-b border-gray-200'>
+                <div className='w-12 h-12 rounded-full overflow-hidden '>
+                  <img
+                    src={'/img/user.webp'}
+                    alt=''
+                    loading='lazy'
+                    className='w-full h-full object-cover'
+                  />
+                </div>
+
+                <div className='flex flex-col justify-between'>
+                  <h1 className='text-lg capitalize text-gray-900 font-semibold'>
+                    jescy
+                  </h1>
+
+                  <p className='text-gray-600 italic text-sm'>
+                    los angeles, ca
+                  </p>
+                </div>
+              </div>
+
+              <div className='py-3 border-b border-gray-200'>
+                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                  <img
+                    src={'/img/icons/user.svg'}
+                    alt=''
+                    loading='lazy'
+                    className='w-5 h-5 object-contain opacity-70'
+                  />
+
+                  <span className='text-sm text-gray-700 font-semibold'>
+                    My Account
+                  </span>
+                </a>
+
+                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                  <img
+                    src={'/img/icons/user.svg'}
+                    alt=''
+                    loading='lazy'
+                    className='w-5 h-5 object-contain opacity-70'
+                  />
+
+                  <span className='text-sm text-gray-700 font-semibold'>
+                    My Account
+                  </span>
+                </a>
+
+                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                  <img
+                    src={'/img/icons/user.svg'}
+                    alt=''
+                    loading='lazy'
+                    className='w-5 h-5 object-contain opacity-70'
+                  />
+
+                  <span className='text-sm text-gray-700 font-semibold'>
+                    My Account
+                  </span>
+                </a> 
+              </div>
+
+              <div className='pt-3'>
+                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                  <img
+                    src={'/img/icons/user.svg'}
+                    alt=''
+                    loading='lazy'
+                    className='w-5 h-5 object-contain opacity-70'
+                  />
+
+                  <span className='text-sm text-gray-700 font-semibold'>
+                    My Account
+                  </span>
+                </a>
+
+                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                  <img
+                    src={'/img/icons/user.svg'}
+                    alt=''
+                    loading='lazy'
+                    className='w-5 h-5 object-contain opacity-70'
+                  />
+
+                  <span className='text-sm text-gray-700 font-semibold'>
+                    My Account
+                  </span>
+                </a>
+
+                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                  <img
+                    src={'/img/icons/user.svg'}
+                    alt=''
+                    loading='lazy'
+                    className='w-5 h-5 object-contain opacity-70'
+                  />
+
+                  <span className='text-sm text-gray-700 font-semibold'>
+                    My Account
+                  </span>
+                </a> 
+              </div>
+            </div>
+          </div>
+
 
           <Link to={'/cart'} className='relative w-11 h-11 rounded-full flex items-center justify-center transition hover:bg-gray-900 group'>
             <img
@@ -132,7 +246,7 @@ function Nav() {
             />
 
             <span className='absolute top-0 right-0 w-5 h-5 bg-blue-500 text-white rounded-full text-center leading-5 text-sm'>
-              {totalAmount}
+              {totalAmount > 99 ? '99+' : totalAmount}
             </span>
           </Link>
         </div>
