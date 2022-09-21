@@ -58,11 +58,11 @@ function Product() {
             <div className="grid gap-x-5 gap-y-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             { product.map((item) => {
               return (
-                item.category === dataFilter.category[0] || dataFilter.category[0] === 'all' ?
-                <div className="group" key={item.id}>
+                dataFilter.category.includes(item.category) || dataFilter.category.includes('all') ?
+                <div key={item.id}>
                   <CardList item={item} id={item.id} image={item.image} title={item.title} price={item.price} category={item.category} rating={item.rating} />  
-                </div>     
-                : ''        
+                </div> 
+                :''
                 )
               })}
             </div>

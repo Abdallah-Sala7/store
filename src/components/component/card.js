@@ -18,7 +18,7 @@ function CardList(props) {
   }
 
   return (
-    <>
+    <div className="group">
     <div className="relative w-full h-72 p-4 bg-gray-100 rounded-3xl overflow-hidden">
       <img 
         src={props.image}
@@ -43,7 +43,7 @@ function CardList(props) {
           </span>
         </button> 
 
-        <Link to={'/detils'+props.id } className="py-2 px-4 rounded-full bg-gray-400  flex items-center justify-center space-x-2 hover:bg-opacity-90">
+        <Link to={'/detils/'+props.id } className="py-2 px-4 rounded-full bg-gray-400  flex items-center justify-center space-x-2 hover:bg-opacity-90">
           <span className="w-4 h-4">
             <img 
               src="./img/icons/full-screen.svg" 
@@ -168,7 +168,7 @@ function CardList(props) {
         </div>
       </div>
     </div>
-    </>
+    </div>
   )
 }
 

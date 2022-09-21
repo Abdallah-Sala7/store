@@ -242,7 +242,7 @@ function Home() {
           </h1>
 
           {loading ? 
-          <Swiper className="group"
+          <Swiper
               slidesPerView={1.1}
               spaceBetween={5}
               loop={false}

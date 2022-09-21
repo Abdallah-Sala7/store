@@ -23,6 +23,11 @@ function Details() {
     e.preventDefault();
     setQuantity(quantity + 1);
   }
+
+//   export function GetNewProductById(id) {
+//     const product = newProducts.find(item => item.id === id)
+//     return Promise.resolve(product)
+// }
   return (
     <main>
       <header className='pt-28'>
@@ -31,7 +36,7 @@ function Details() {
             <div className="w-full mb-10 lg:w-1/2 lg:mb-0">
               <div className="w-full mb-5 rounded-lg overflow-hidden">
                 <img
-                  src='./img/detail1.jpg'
+                  src={'/img/detail1.jpg'}
                   alt='feature1'
                   loading='lazy'
                   className='w-full object-contain'
@@ -41,7 +46,7 @@ function Details() {
               <div className="w-full flex justify-between space-x-2">
                 <div className="w-1/2 rounded-lg overflow-hidden">
                   <img
-                    src='./img/detail1.jpg'
+                    src={'/img/detail1.jpg'}
                     alt='feature2'
                     loading='lazy'
                     className='w-full object-contain'
@@ -50,7 +55,7 @@ function Details() {
 
                 <div className="w-1/2 rounded-lg overflow-hidden">
                   <img
-                    src='./img/detail1.jpg'
+                    src={'/img/detail1.jpg'}
                     alt='feature3'
                     loading='lazy'
                     className='w-full object-contain'
@@ -76,7 +81,7 @@ function Details() {
                 <div className="flex items-center  space-x-3 ">
                   <span className="w-5 h-5">
                     <img 
-                      src="./img/icons/star.svg" 
+                      src={"/img/icons/star.svg"} 
                       alt=""
                       loading="lazy"
                       className="w-full h-full object-contain" 
@@ -139,7 +144,7 @@ function Details() {
                 <div className="w-full mb-5 py-3 px-6 bg-slate-300 text-lg font-medium rounded-full flex justify-between items-center sm:mb-0 sm:w-1/3">
                   <a onClick={decrementQuantity} href='#'  className="w-8 h-8">
                     <img 
-                      src="./img/icons/add-circle-outline.svg" 
+                      src={"/img/icons/add-circle-outline.svg"} 
                       alt=""
                       loading='lazy'
                       className='w-full h-full object-contain opacity-80 ' 
@@ -150,7 +155,7 @@ function Details() {
 
                   <a onClick={incrementQuantity} href='#' className="w-8 h-8">
                     <img 
-                      src="./img/icons/add-circle-outline.svg" 
+                      src={"/img/icons/add-circle-outline.svg"} 
                       alt=""
                       loading='lazy'
                       className='w-full h-full object-contain opacity-80 ' 
@@ -203,7 +208,7 @@ function Details() {
               <div className=" grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div className="p-5 rounded-2xl bg-discover-100">
                   <img 
-                    src="./img/icons/details/delivery.webp" 
+                    src={"/img/icons/details/delivery.webp"} 
                     alt=""
                     loading='lazy'
                     className="w-6 h-6 object-contain mb-3" 
@@ -220,7 +225,7 @@ function Details() {
 
                 <div className="p-5 rounded-2xl bg-discover-400">
                   <img 
-                    src="./img/icons/details/delivery-status.webp" 
+                    src={"/img/icons/details/delivery-status.webp"} 
                     alt=""
                     loading='lazy'
                     className="w-6 h-6 object-contain mb-3" 
@@ -237,7 +242,7 @@ function Details() {
 
                 <div className="p-5 rounded-2xl bg-discover-300 ">
                   <img 
-                    src="./img/icons/details/germany.webp" 
+                    src={"/img/icons/details/germany.webp"} 
                     alt=""
                     loading='lazy'
                     className="w-6 h-6 object-contain mb-3" 
@@ -254,7 +259,7 @@ function Details() {
 
                 <div className="p-5 rounded-2xl bg-discover-200">
                   <img 
-                    src="./img/icons/details/refund.webp" 
+                    src={"/img/icons/details/refund.webp"} 
                     alt=""
                     loading='lazy'
                     className="w-6 h-6 object-contain mb-3" 
@@ -317,7 +322,7 @@ function Details() {
         <div className="container">
           <div className="flex items-center gap-5 mb-8">
             <img 
-              src="./img/icons/star.svg" 
+              src={"/img/icons/star.svg"} 
               alt="star"
               loading='lazy'
               className="w-6 h-6 object-contain img-dark" 
@@ -333,7 +338,7 @@ function Details() {
               <div className="flex justify-between items-center">
                 <div className="flex">
                   <img
-                    src="./img/blog/image-1.webp"
+                    src={"/img/blog/image-1.webp"}
                     alt="star"
                     loading='lazy'
                     className="w-12 h-12 object-contain rounded-full mr-6"
@@ -352,28 +357,28 @@ function Details() {
 
                 <div className="flex items-center gap-1">
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
@@ -390,7 +395,7 @@ function Details() {
               <div className="flex justify-between items-center">
                 <div className="flex">
                   <img
-                    src="./img/blog/image-10.webp"
+                    src={"/img/blog/image-10.webp"}
                     alt="star"
                     loading='lazy'
                     className="w-12 h-12 object-contain rounded-full mr-6"
@@ -409,28 +414,28 @@ function Details() {
 
                 <div className="flex items-center gap-1">
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
@@ -466,28 +471,28 @@ function Details() {
 
                 <div className="flex items-center gap-1">
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
@@ -504,7 +509,7 @@ function Details() {
               <div className="flex justify-between items-center">
                 <div className="flex">
                   <img
-                    src="./img/blog/image-6.webp"
+                    src={"/img/blog/image-6.webp"}
                     alt="star"
                     loading='lazy'
                     className="w-12 h-12 object-contain rounded-full mr-6"
@@ -523,28 +528,28 @@ function Details() {
 
                 <div className="flex items-center gap-1">
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
                   />
 
                   <img
-                    src="./img/icons/star.svg"
+                    src={"/img/icons/star.svg"}
                     alt="star"
                     loading='lazy'
                     className="w-5 h-5 object-contain"
@@ -560,7 +565,6 @@ function Details() {
         </div>
       </section> 
     </main>
-
   )
 }
 

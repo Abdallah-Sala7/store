@@ -248,14 +248,14 @@ function ProductFilter({ handleFilter }) {
                 <input 
                   type="checkbox" 
                   name="cat" 
-                  id="new" 
-                  value={'new'} 
+                  id="men's clothing" 
+                  value={"men's clothing"} 
                   onChange={addCat}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
-                <label htmlFor="new" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
-                  new arrivals
+                <label htmlFor="men's clothing" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                  men's clothing
                 </label>
               </li>
 
@@ -263,14 +263,14 @@ function ProductFilter({ handleFilter }) {
                 <input 
                   type="checkbox" 
                   name="cat" 
-                  id="sale" 
-                  value={'sale'} 
+                  id="jewelery" 
+                  value={'jewelery'} 
                   onChange={addCat}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
-                <label htmlFor="sale" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
-                  sale
+                <label htmlFor="jewelery" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                  jewelery
                 </label>
               </li>
 
@@ -278,14 +278,14 @@ function ProductFilter({ handleFilter }) {
                 <input 
                   type="checkbox" 
                   name="cat" 
-                  id="backpacks" 
-                  value={'backpacks'} 
+                  id="electronics" 
+                  value={'electronics'} 
                   onChange={addCat}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
-                <label htmlFor="backpacks" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
-                  backpacks
+                <label htmlFor="electronics" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                  electronics
                 </label>
               </li>
 
@@ -293,14 +293,14 @@ function ProductFilter({ handleFilter }) {
                 <input 
                   type="checkbox" 
                   name="cat" 
-                  id="travel" 
-                  value={'travel'} 
+                  id="women's clothing" 
+                  value="women's clothing" 
                   onChange={addCat}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
-                <label htmlFor="travel" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
-                  travel bags
+                <label htmlFor="women's clothing" className='text-gray-600 text-xl flex-1 capitalize cursor-pointer'>
+                  women's clothing
                 </label>
               </li>    
             </ul>                   

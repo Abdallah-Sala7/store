@@ -9,7 +9,7 @@ function Footer() {
           <div className="w-full mb-8 flex items-center justify-between md:w-1/5 md:mb-0 md:flex-col md:items-start">
             <Link to='/' className='w-32 h-8 sm:w-36 sm:h-10 md:mb-3'>
               <img 
-                src="./img/logo.svg" 
+                src={"/img/logo.svg"} 
                 alt="" 
                 loading='lazy'
                 className='w-full h-full object-contain object-left'
@@ -19,7 +19,7 @@ function Footer() {
             <div className="w-1/2 flex items-center gap-2 md:flex-col md:items-start md:w-full">
               <a href="http://facebook.com" target={'_blank'} title='' className='flex items-center gap-3 group' >
                 <img 
-                  src="./img/footer/facebook.svg" 
+                  src={"/img/footer/facebook.svg"}
                   alt="" 
                   loading='lazy'
                   className='w-5 h-5 object-contain sm:w-6 sm:h-6'
@@ -32,7 +32,7 @@ function Footer() {
 
               <a href="http://youtube.com" target={'_blank'} title='' className='flex items-center gap-3 group' >
                 <img 
-                  src="./img/footer/youtube.svg" 
+                  src={"/img/footer/youtube.svg"} 
                   alt="" 
                   loading='lazy'
                   className='w-5 h-5 object-contain sm:w-6 sm:h-6'
@@ -45,7 +45,7 @@ function Footer() {
 
               <a href="http://twitter.com" target={'_blank'} title='' className='flex items-center gap-3 group' >
                 <img 
-                  src="./img/footer/twitter.svg" 
+                  src={"/img/footer/twitter.svg"} 
                   alt="" 
                   loading='lazy'
                   className='w-5 h-5 object-contain sm:w-6 sm:h-6'
@@ -58,7 +58,7 @@ function Footer() {
 
               <a href="http://telegram.com" target={'_blank'} title='' className='flex items-center gap-3 group' >
                 <img 
-                  src="./img/footer/telegram.svg" 
+                  src={"/img/footer/telegram.svg"} 
                   alt="" 
                   loading='lazy'
                   className='w-5 h-5 object-contain sm:w-6 sm:h-6'

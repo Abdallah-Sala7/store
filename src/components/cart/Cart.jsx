@@ -23,7 +23,6 @@ function Cart() {
 
   return (
     <main>
-      {console.log(cartItems)}
       <header className='pt-40'>
         <div className="container">
           <div className="border-b border-gray-300 pb-8 sm:pb-12 md:pb-20">
