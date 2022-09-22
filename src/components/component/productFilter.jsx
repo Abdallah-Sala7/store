@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, {useState } from 'react'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import { useDispatch } from 'react-redux';
+import { handleCat } from '../store/reducers/filterSlice';
 
 function valuetext(value) {
   return `${value}$`;
 }
 
-function ProductFilter({ handleFilter }) {
+function ProductFilter() {
   const [mobileFilter, setMobileFilter] = useState(false);
+
+  const dispatch = useDispatch()
 
   const [openRange, setOpenRange] = useState(false)
   const [openColor, setOpenColor] = useState(false)
@@ -67,8 +71,10 @@ function ProductFilter({ handleFilter }) {
 
     if (!x) {
       setCatValue([...catValue, e.target.value])
-      handleFilter(e.target.value, value, sortValue)
     }
+
+    // handleFilter(e.target.value, catValue)
+    console.log(catValue);
   }
 
   const addColor = (e) =>{
@@ -104,7 +110,7 @@ function ProductFilter({ handleFilter }) {
   const addSort = (e) =>{
     setSortValue(e.target.value)
 
-    handleFilter(catValue, value, e.target.value)
+    // handleFilter(e.target.value, value, catValue)
   }
 
   return (
@@ -233,7 +239,7 @@ function ProductFilter({ handleFilter }) {
                   name="cat" 
                   id="all" 
                   value={'all'} 
-                  onChange={addCat}
+                  onChange={(e) =>{dispatch(handleCat(e.target.value))}}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
@@ -248,7 +254,7 @@ function ProductFilter({ handleFilter }) {
                   name="cat" 
                   id="men's clothing" 
                   value={"men's clothing"} 
-                  onChange={addCat}
+                  onChange={(e) =>{dispatch(handleCat(e.target.value))}}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
@@ -263,7 +269,7 @@ function ProductFilter({ handleFilter }) {
                   name="cat" 
                   id="jewelery" 
                   value={'jewelery'} 
-                  onChange={addCat}
+                  onChange={(e) =>{dispatch(handleCat(e.target.value))}}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
@@ -278,7 +284,7 @@ function ProductFilter({ handleFilter }) {
                   name="cat" 
                   id="electronics" 
                   value={'electronics'} 
-                  onChange={addCat}
+                  onChange={(e) =>{dispatch(handleCat(e.target.value))}}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
@@ -293,7 +299,7 @@ function ProductFilter({ handleFilter }) {
                   name="cat" 
                   id="women's clothing" 
                   value="women's clothing" 
-                  onChange={addCat}
+                  onChange={(e) =>{dispatch(handleCat(e.target.value))}}
                   className="w-6 h-6 mr-5 rounded-lg !border-purple-600 focus:ring-0 foucs:!shadow-none !outline-purple-600 checked:bg-purple-900 "
                 />
 
