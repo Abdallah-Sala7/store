@@ -17,9 +17,9 @@ const filterSlice = createSlice({
           x = true;
         }
       }
-  
+
       if (!x) {
-        state.catFilter.push([...action.payload])
+        state.catFilter.push(action.payload)
       }
     }
   }

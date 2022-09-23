@@ -1,7 +1,7 @@
 import React, {useState } from 'react'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { handleCat } from '../store/reducers/filterSlice';
 
 function valuetext(value) {
@@ -12,6 +12,7 @@ function ProductFilter() {
   const [mobileFilter, setMobileFilter] = useState(false);
 
   const dispatch = useDispatch()
+  const {catFilter} = useSelector(state => state.filter)
 
   const [openRange, setOpenRange] = useState(false)
   const [openColor, setOpenColor] = useState(false)
@@ -20,7 +21,6 @@ function ProductFilter() {
   const [openSort, setOpenSort] = useState(false)
 
   const [value, setValue] = useState([0, 100])
-  const [catValue, setCatValue] = useState([])
   const [colorValue, setColorValue] = useState([])
   const [sizeValue, setSizeValue] = useState([])
   const [sortValue, setSortValue] = useState('')
@@ -59,23 +59,6 @@ function ProductFilter() {
     setMobileFilter(!mobileFilter)
   }
 
-  const addCat = (e) =>{
-    let x = false;
-
-    for (let i = 0; i < catValue.length; i++) {
-      if (catValue[i] === e.target.value) {
-        catValue.splice(i,1)
-        x = true;
-      }
-    }
-
-    if (!x) {
-      setCatValue([...catValue, e.target.value])
-    }
-
-    // handleFilter(e.target.value, catValue)
-    console.log(catValue);
-  }
 
   const addColor = (e) =>{
     let x = false;
@@ -214,7 +197,7 @@ function ProductFilter() {
         </div>
 
         <div className={`relative w-full md:w-fit ${openCat ? '' : 'overflow-hidden'}`}>
-          <a href="#" onClick={handleOpenCat} className={`hidden items-center justify-center py-2 px-4 rounded-full border ${catValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'} md:flex`}>
+          <a href="#" onClick={handleOpenCat} className={`hidden items-center justify-center py-2 px-4 rounded-full border ${catFilter.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'} md:flex`}>
             <img
               src='./img/icons/filter/document-text-outline.svg'
               alt='filter price'
