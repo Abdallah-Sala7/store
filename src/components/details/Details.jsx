@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addToCart } from '../store/reducers/cartSlice';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Details() {
   const [color, setColor] = useState('');
@@ -48,6 +50,7 @@ function Details() {
     setQuantity(quantity + 1);
   }
 
+  const notify = () => toast.success("Added to cart!",{theme:"light",position:"bottom-right"});
   return (
     <main>
       {loading ? ( 
@@ -186,9 +189,11 @@ function Details() {
                   </a>
                 </div>
 
-                <button onClick={() => dispatch(addToCart(product, quantity))} className="w-full py-3 px-6 bg-gray-900 text-center text-white text-lg font-medium rounded-full first-letter:capitalize sm:w-3/5">
+                <button onClick={() => {dispatch(addToCart(product, quantity)); notify()}} className="w-full py-3 px-6 bg-gray-900 text-center text-white text-lg font-medium rounded-full first-letter:capitalize sm:w-3/5">
                   add to cart
                 </button>
+
+                <ToastContainer />
               </div>
 
               <div className="w-full mb-6">
@@ -199,7 +204,7 @@ function Details() {
                     </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                      Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.
+                          {product.description}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
@@ -210,7 +215,7 @@ function Details() {
                     </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                      Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.
+                        {product.description}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
@@ -221,7 +226,7 @@ function Details() {
                     </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                      Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.
+                        {product.description}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
@@ -352,7 +357,7 @@ function Details() {
             />
 
             <h1 className='text-2xl font-semibold text-gray-700 capitalize leading-none md:text-3xl'>
-              {/* {product.rating.rate} - {product.rating.count} reviews */}
+              {product.rating.rate} - {product.rating.count} reviews
             </h1>
           </div>
 

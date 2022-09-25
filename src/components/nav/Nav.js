@@ -45,40 +45,40 @@ function Nav() {
           />
         </Link>
 
-        <div className={`nav-bar ${open ? 'translate-x-0 ' : '-translate-x-full'} md:translate-x-0`}>
-          <ul className={`mb-5 text-center items-center flex-col space-y-6 md:mb-0 md:flex-row md:space-x-4 md:space-y-0 ${search ? 'md:hidden' : 'flex'}`}>
-            <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
-              <Link to={'/'} className='w-full py-2 px-3 text-lg'> 
+        <div className={`nav-bar ${open ? 'translate-x-0 ' : '-translate-x-full'} md:translate-x-0`}>          
+          <a href="#" onClick={openNav} className=' absolute top-5 right-5 w-10 h-10 rounded bg-gray-700 text-gray-50 flex items-center justify-center md:hidden'>
+            <img 
+              src={"/img/icons/xmark.svg"}
+              alt=""
+              loading='lazy'
+              className='w-3/4 h-3/4 object-contain img-white'
+            />
+          </a>
+
+          <ul className={`mb-5 flex-col space-y-6 pb-5 border-b border-gray-300 md:border-none md:p-0 md:mb-0 md:flex-row md:space-x-4 md:space-y-0 ${search ? 'md:hidden' : 'flex'}`}>
+            <li className='w-full font-semibold text-gray-700 capitalize transition-colors hover:bg-gray-700 hover:bg-opacity-10 md:rounded-full '>
+              <Link to={'/'} className='block py-3 px-5 text-lg'> 
                 home
               </Link>
             </li>
 
-            <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
-              <Link to={'/product'} className='w-full py-2 px-3 text-lg'> 
+            <li className='w-full font-semibold text-gray-700 capitalize transition-colors hover:bg-gray-700 hover:bg-opacity-10 md:rounded-full '>
+              <Link to={'/product'} className='block py-3 px-5 text-lg'> 
                 men
               </Link>
             </li>
 
-            <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
-              <Link to={'/product'} className='w-full py-2 px-3 text-lg'> 
+            <li className='w-full font-semibold text-gray-700 capitalize transition-colors hover:bg-gray-700 hover:bg-opacity-10 md:rounded-full '>
+              <Link to={'/product'} className='block py-3 px-5 text-lg'> 
                 women
               </Link>
             </li>
 
-            <li className='w-full font-semibold text-gray-700 capitalize transition-colors flex justify-center items-center hover:bg-gray-700 hover:text-primary-100 md:rounded-full '>
-              <Link to={'/product'} className='w-full py-2 px-3 text-lg'> 
+            <li className='w-full font-semibold text-gray-700 capitalize transition-colors hover:bg-gray-700 hover:bg-opacity-10 md:rounded-full '>
+              <Link to={'/product'} className='block py-3 px-5 text-lg'> 
                 sport
               </Link>
             </li>
-
-            <a href="#" onClick={openNav} className=' absolute top-0 right-5 w-10 h-10 rounded bg-gray-700 text-gray-50 flex items-center justify-center md:hidden'>
-              <img 
-                src={"/img/icons/xmark.svg"}
-                alt=""
-                loading='lazy'
-                className='w-3/4 h-3/4 object-contain img-white'
-              />
-            </a>
           </ul>       
 
           <form action="" className={`w-11/12 h-14 m-auto md:w-96 ${search ? 'block' : 'md:hidden'}`}>
@@ -107,7 +107,7 @@ function Nav() {
                 />
               </a>
             </div>
-          </form>          
+          </form>        
         </div>
 
         <div className="flex items-baseline md:space-x-6">
@@ -120,7 +120,7 @@ function Nav() {
             />
           </a>
 
-          <div className={`relative overflow-hidden ${openUser ? 'md:overflow-visible' : ''}`}>
+          <div className={`relative overflow-hidden z-50 ${openUser ? 'md:overflow-visible' : ''}`}>
             <a href="#" onClick={handleOpenUser} className='w-11 h-11 rounded-full items-center justify-center transition hidden hover:bg-gray-900 group md:flex'>
               <img
                 src={'/img/icons/user.svg'}
@@ -161,34 +161,34 @@ function Nav() {
                     className='w-5 h-5 object-contain opacity-70'
                   />
 
-                  <span className='text-sm text-gray-700 font-semibold'>
+                  <span className='text-sm text-gray-700 font-semibold capitalize'>
                     My Account
                   </span>
                 </a>
 
                 <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
                   <img
-                    src={'/img/icons/user.svg'}
+                    src={'/img/icons/file.svg'}
                     alt=''
                     loading='lazy'
                     className='w-5 h-5 object-contain opacity-70'
                   />
 
-                  <span className='text-sm text-gray-700 font-semibold'>
-                    My Account
+                  <span className='text-sm text-gray-700 font-semibold capitalize'>
+                    my order
                   </span>
                 </a>
 
                 <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
                   <img
-                    src={'/img/icons/user.svg'}
+                    src={'/img/icons/heart-regular.svg'}
                     alt=''
                     loading='lazy'
                     className='w-5 h-5 object-contain opacity-70'
                   />
 
-                  <span className='text-sm text-gray-700 font-semibold'>
-                    My Account
+                  <span className='text-sm text-gray-700 font-semibold capitalize'>
+                    wishlist
                   </span>
                 </a> 
               </div>
@@ -196,44 +196,33 @@ function Nav() {
               <div className='pt-3'>
                 <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
                   <img
-                    src={'/img/icons/user.svg'}
+                    src={'/img/icons/help.svg'}
                     alt=''
                     loading='lazy'
                     className='w-5 h-5 object-contain opacity-70'
                   />
 
-                  <span className='text-sm text-gray-700 font-semibold'>
-                    My Account
+                  <span className='text-sm text-gray-700 font-semibold capitalize'>
+                    help
                   </span>
                 </a>
 
                 <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
                   <img
-                    src={'/img/icons/user.svg'}
+                    src={'/img/icons/log-out.svg'}
                     alt=''
                     loading='lazy'
                     className='w-5 h-5 object-contain opacity-70'
                   />
 
-                  <span className='text-sm text-gray-700 font-semibold'>
-                    My Account
-                  </span>
-                </a>
-
-                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
-                  <img
-                    src={'/img/icons/user.svg'}
-                    alt=''
-                    loading='lazy'
-                    className='w-5 h-5 object-contain opacity-70'
-                  />
-
-                  <span className='text-sm text-gray-700 font-semibold'>
-                    My Account
+                  <span className='text-sm text-gray-700 font-semibold capitalize'>
+                    log out
                   </span>
                 </a> 
               </div>
             </div>
+
+            <div onClick={handleOpenUser} className={`overlay-black bg-opacity-0 -z-10 invisible ${openUser? 'md:visible' : ''}`}></div>
           </div>
 
 

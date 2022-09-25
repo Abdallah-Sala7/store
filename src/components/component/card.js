@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { addToCart } from '../store/reducers/cartSlice';
+import { toast } from 'react-toastify';
 
 function CardList(props) {
   const [color, setColor] = useState('');
@@ -17,6 +18,8 @@ function CardList(props) {
     setCountry(e.target.value);
   }
 
+  const notify = () => toast.success("Added to cart!",{theme:"light",position:"bottom-right"});
+
   return (
     <div className="group">
       <div className="relative w-full h-72 p-4 bg-gray-100 rounded-3xl overflow-hidden">
@@ -28,7 +31,7 @@ function CardList(props) {
         />
 
         <div className="absolute bottom-0 left-0 w-full flex items-center justify-center space-x-2 translate-y-full transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-5">
-          <button onClick={() => dispatch(addToCart(props.item))} type="butoon" className="py-2 px-4 rounded-full bg-gray-900  flex items-center justify-center space-x-2 hover:bg-opacity-90">
+          <button onClick={() => {dispatch(addToCart(props.item)); notify()}} type="butoon" className="py-2 px-4 rounded-full bg-gray-900  flex items-center justify-center space-x-2 hover:bg-opacity-90">
             <span className="w-4 h-4">
               <img 
                 src="./img/icons/shopping-basket.svg" 
@@ -41,7 +44,7 @@ function CardList(props) {
             <span className="text-base leading-none text-gray-50">
               add to cart
             </span>
-          </button> 
+          </button>
 
           <Link to={'/details/'+props.id } className="py-2 px-4 rounded-full bg-gray-400  flex items-center justify-center space-x-2 hover:bg-opacity-90">
             <span className="w-4 h-4">

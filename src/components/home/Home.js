@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import CardList from "../component/card";
 import Loading from "../component/loading";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home() {
   const [product, setProduct] = useState([]);
@@ -88,7 +90,6 @@ function Home() {
           </Swiper>
           </div>
         </div>
-
         <div className="overlay absolute inset-3 -z-10"></div>
       </header>
 
@@ -240,7 +241,7 @@ function Home() {
             <span>New Arrivals.</span> 
             <span className="text-gray-600"> REY backpacks & bags</span> 
           </h1>
-
+          
           {loading ? 
           <Swiper
               slidesPerView={1.1}
@@ -274,6 +275,8 @@ function Home() {
 
           </Swiper> : <Loading />
           }
+
+          <ToastContainer />
         </div>
       </section>
 

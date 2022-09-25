@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import CardList from '../component/card';
 import Loading from '../component/loading';
@@ -55,7 +57,8 @@ function Product() {
               })}
             </div>
             : <Loading />
-          }         
+          }
+            <ToastContainer />
         </div>
       </section>
     </main>

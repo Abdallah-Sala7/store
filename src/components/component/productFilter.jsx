@@ -98,7 +98,7 @@ function ProductFilter() {
 
   return (
     <>
-    <div className={`fixed inset-0 z-50 remove-scrollbar bg-white w-full h-full justify-between items-center flex-wrap md:flex-nowrap md:static ${mobileFilter ? 'flex overflow-y-auto' : 'hidden'} md:overflow-visible md:flex`}>
+    <div className={`fixed inset-0 z-50 remove-scrollbar bg-white w-full h-full justify-between items-center flex-wrap transition-transform duration-300 md:flex-nowrap md:static ${mobileFilter ? 'flex overflow-y-auto' : 'hidden'} md:overflow-visible md:flex`}>
       <div className="fixed top-0 left-0 z-10 w-full px-8 py-4 bg-slate-50 md:hidden">
         <a href="#" onClick={handleMobileFilter} className='absolute top-1/2 left-5 -translate-y-1/2 w-10 h-10 flex justify-center items-center bg-gray-100 hover:bg-opacity-75'>
           <img 
