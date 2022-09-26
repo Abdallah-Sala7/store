@@ -11,7 +11,7 @@ function Cart() {
 
   return (
     <main>
-      {totalAmount > 0 ? 
+      {totalAmount > 0 ?
       <>
       <header className='pt-40'>
         <div className="container">
@@ -179,7 +179,7 @@ function Cart() {
                 </h3>
 
                 <p className='text-gray-800 font-semibold'>
-                  500$
+                  {totalPrice}$
                 </p>
               </div>
 

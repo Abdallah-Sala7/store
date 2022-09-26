@@ -189,7 +189,7 @@ function Details() {
                   </a>
                 </div>
 
-                <button onClick={() => {dispatch(addToCart(product, quantity)); notify()}} className="w-full py-3 px-6 bg-gray-900 text-center text-white text-lg font-medium rounded-full first-letter:capitalize sm:w-3/5">
+                <button onClick={() => {dispatch(addToCart({item:product, quant:quantity})); notify()}} className="w-full py-3 px-6 bg-gray-900 text-center text-white text-lg font-medium rounded-full first-letter:capitalize sm:w-3/5">
                   add to cart
                 </button>
 
@@ -303,7 +303,6 @@ function Details() {
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </header>
