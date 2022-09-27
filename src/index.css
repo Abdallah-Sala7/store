@@ -103,3 +103,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-
     background-position: 120% 0
   }
 }
+
+.account .active{
+  color: rgb(17 24 39);
+  border-bottom: 2px solid rgb(14,165,233);
+}
