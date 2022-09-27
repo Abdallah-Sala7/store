@@ -2,7 +2,7 @@ import React from 'react'
 import { Breadcrumb } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 
-import { removeFromCart, addToCart, removeProduct } from '../store/reducers/cartSlice'
+import { removeFromCart, addToCart, removeProduct } from '../../store/reducers/cartSlice'
 import { useSelector,useDispatch } from 'react-redux'
 
 function Cart() {
@@ -88,7 +88,7 @@ function Cart() {
 
                       <div className="flex items-center justify-between flex-wrap gap-y-3 mb-5">
                         <div className="flex items-center gap-3">
-                          <button onClick={()=> dispatch(addToCart(item))} className="w-8 h-8">
+                          <button onClick={()=> dispatch(addToCart({item, quant:1}))} className="w-8 h-8">
                             <img 
                               src="./img/icons/add-circle-outline.svg" 
                               alt=""
@@ -111,7 +111,7 @@ function Cart() {
 
                         <div className="py-1 px-3 border-2 border-green-500 rounded-md">
                           <h3 className="text-green-500 font-medium text-lg leading-none">
-                            {item.price}$
+                            {item.cartQuantity*item.price}$
                           </h3>
                         </div>
                       </div>
@@ -179,7 +179,7 @@ function Cart() {
                 </h3>
 
                 <p className='text-gray-800 font-semibold'>
-                  {totalPrice}$
+                  {Math.floor(totalPrice)}$
                 </p>
               </div>
 

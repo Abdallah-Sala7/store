@@ -3,7 +3,7 @@ import { Accordion } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { addToCart } from '../store/reducers/cartSlice';
+import { addToCart } from '../../store/reducers/cartSlice';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

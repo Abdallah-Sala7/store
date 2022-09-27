@@ -6,8 +6,8 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import CardList from "../component/card";
-import Loading from "../component/loading";
+import CardList from "../../components/card";
+import Loading from "../../components/loading";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

@@ -3,9 +3,9 @@ import axios from "axios";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import CardList from '../component/card';
-import Loading from '../component/loading';
-import ProductFilter from '../component/productFilter';
+import CardList from '../../components/card';
+import Loading from '../../components/loading';
+import ProductFilter from '../../components/productFilter';
 import { useSelector } from 'react-redux';
 
 function Product() {
