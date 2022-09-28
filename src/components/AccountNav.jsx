@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const AccountNav = () => {
   return (
-    <nav>
+    <nav className='lg:px-40'>
       <div className="container">
         <ul className="flex items-center gap-6 border-y border-gray-300 account">
           <li className='py-7'>

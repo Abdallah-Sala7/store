@@ -5,7 +5,7 @@ import AccountNav from '../../components/AccountNav'
 const Account = () => {
   return (
     <main>
-      <header className='pt-28'>
+      <header className='pt-28 lg:px-40'>
         <div className='container mb-10'>
           <h1 className='capitalize text-4xl font-bold mb-5 text-gray-900'>
             account
