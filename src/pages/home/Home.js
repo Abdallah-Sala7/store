@@ -268,7 +268,7 @@ function Home() {
               {product.map((item, index) => {
                 return (
                 <SwiperSlide key={index}>
-                  <CardList item={item} />
+                  <CardList item={item} saved={false} />
                 </SwiperSlide>                
                 )
               })}

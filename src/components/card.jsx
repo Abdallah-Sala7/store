@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 function CardList(props) {
   const [color, setColor] = useState('');
   const [country, setCountry] = useState('');
-  const [saved, setSaved] = useState(false)
+  const [saved, setSaved] = useState(props.saved);
 
   const dispatch = useDispatch()
 
@@ -181,11 +181,9 @@ function CardList(props) {
         </h3>
 
         <div className="flex justify-between items-end ">
-          <div className="py-1 px-3 border-2 border-green-500 rounded-md">
-            <h4 className="text-green-500 font-semibold text-lg leading-none">
-              {props.item.price}$
-            </h4>
-          </div>
+          <h4 className="py-1 px-3 text-lg text-green-500 font-semibold leading-none border-2 border-green-400 rounded-md">
+            {props.item.price}$
+          </h4>
 
           <div className="flex items-center  space-x-3 ">
             <span className="w-5 h-5">

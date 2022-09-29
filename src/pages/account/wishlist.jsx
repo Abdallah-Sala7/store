@@ -13,7 +13,7 @@ const Wishlist = () => {
           { wishListItems.map((item) => {
           return (
             <div key={item.id}>
-              <CardList item={item} />  
+              <CardList item={item} saved={true} />  
             </div> 
             )
           })}

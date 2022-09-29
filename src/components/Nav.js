@@ -36,7 +36,7 @@ function Nav() {
           />
         </a>
 
-        <Link to='/' className='w-32 h-8 sm:w-36 sm:h-10'>
+        <Link to='/' className='w-28 h-8 sm:w-36 sm:h-10'>
           <img 
             src={"/img/logo.svg"}
             alt="" 
@@ -98,7 +98,7 @@ function Nav() {
                 />
               </a>
 
-              <a href="#" onClick={openSearch} className=' absolute top-1/2 -translate-y-1/2 right-2 w-6 h-6 group'>
+              <a href="#" onClick={openSearch} className='absolute top-1/2 -translate-y-1/2 right-2 w-6 h-6 group'>
                 <img
                   src={"/img/icons/xmark.svg"}
                   alt=""
@@ -120,8 +120,8 @@ function Nav() {
             />
           </a>
 
-          <div className={`relative overflow-hidden z-50 ${openUser ? 'md:overflow-visible' : ''}`}>
-            <a href="#" onClick={handleOpenUser} className='w-11 h-11 rounded-full items-center justify-center transition hidden hover:bg-gray-900 group md:flex'>
+          <div className={`relative overflow-hidden z-50 ${openUser ? 'overflow-visible' : ''}`}>
+            <a href="#" onClick={handleOpenUser} className='w-11 h-11 flex rounded-full items-center justify-center transition hover:bg-gray-900 group'>
               <img
                 src={'/img/icons/user.svg'}
                 alt=''
@@ -130,7 +130,7 @@ function Nav() {
               />
             </a>
 
-            <div className={`absolute top-16 right-0 w-64 py-6 px-5 rounded-3xl shadow-2xl bg-white transition-all duration-300 opacity-0 translate-y-5 lg:left-0 lg:-translate-x-1/2  ${openUser ? 'opacity-100 translate-y-0' : ''}`}>
+            <div className={`absolute top-16 right-0 w-60 py-6 px-5 rounded-3xl shadow-2xl bg-white transition-all duration-300 opacity-0 translate-y-5 translate-x-12 sm:w-w-64 sm:translate-x-0 lg:left-0 lg:-translate-x-1/2  ${openUser ? 'opacity-100 translate-y-0' : ''}`}>
               <div className='flex gap-5 pb-3 border-b border-gray-200'>
                 <div className='w-12 h-12 rounded-full overflow-hidden '>
                   <img
@@ -222,7 +222,7 @@ function Nav() {
               </div>
             </div>
 
-            <div onClick={handleOpenUser} className={`overlay-black bg-opacity-0 -z-10 invisible ${openUser? 'md:visible' : ''}`}></div>
+            <div onClick={handleOpenUser} className={`overlay-black bg-opacity-0 -z-10 ${openUser? 'visible' : 'invisible'}`}></div>
           </div>
 
 
