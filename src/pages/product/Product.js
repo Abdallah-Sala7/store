@@ -50,7 +50,7 @@ function Product() {
               return (
                 catFilter.includes(item.category) || catFilter.includes('all') || catFilter.length == 0?
                 <div key={item.id}>
-                  <CardList item={item} id={item.id} image={item.image} title={item.title} price={item.price} category={item.category} rating={item.rating} />  
+                  <CardList item={item}/>  
                 </div> 
                 :''
                 )

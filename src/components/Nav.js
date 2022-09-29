@@ -153,7 +153,7 @@ function Nav() {
               </div>
 
               <div className='py-3 border-b border-gray-200'>
-                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                <Link to={"/account"} className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
                   <img
                     src={'/img/icons/user.svg'}
                     alt=''
@@ -164,9 +164,9 @@ function Nav() {
                   <span className='text-sm text-gray-700 font-semibold capitalize'>
                     My Account
                   </span>
-                </a>
+                </Link>
 
-                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                <Link to={'account/order'} className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
                   <img
                     src={'/img/icons/file.svg'}
                     alt=''
@@ -177,9 +177,9 @@ function Nav() {
                   <span className='text-sm text-gray-700 font-semibold capitalize'>
                     my order
                   </span>
-                </a>
+                </Link>
 
-                <a href="#" className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
+                <Link to={'account/wishlist'} className='flex items-center gap-5 px-4 py-3 rounded-lg transition hover:bg-gray-100'>
                   <img
                     src={'/img/icons/heart-regular.svg'}
                     alt=''
@@ -190,7 +190,7 @@ function Nav() {
                   <span className='text-sm text-gray-700 font-semibold capitalize'>
                     wishlist
                   </span>
-                </a> 
+                </Link> 
               </div>
 
               <div className='pt-3'>

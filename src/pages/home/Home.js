@@ -268,7 +268,7 @@ function Home() {
               {product.map((item, index) => {
                 return (
                 <SwiperSlide key={index}>
-                  <CardList item={item} id={item.id} image={item.image} title={item.title} price={item.price} category={item.category} rating={item.rating} />
+                  <CardList item={item} />
                 </SwiperSlide>                
                 )
               })}

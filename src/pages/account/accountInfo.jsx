@@ -4,7 +4,7 @@ const AccountInfo = () => {
   return (
     <section className='py-8 sm:py-12 md:py-24 lg:px-40'>
       <div className="container">
-        <h1 className='text-2xl font-semibold text-gray-900 first-letter:capitalize mb-8 md:text-4xl'>
+        <h1 className='text-xl font-semibold text-gray-900 first-letter:capitalize mb-8 sm:text-2xl md:text-4xl'>
           account information
         </h1>
 
@@ -151,7 +151,7 @@ const AccountInfo = () => {
                   <input 
                     type="text"
                     id='name'
-                    defaultValue={"John Doe"}
+                    defaultValue={"+201025077437"}
                     className='h-12 w-full px-5 rounded-r-xl border !border-gray-200 focus:outline-none focus:ring-0 focus:shadow-none' 
                   />
                 </div>
@@ -169,6 +169,10 @@ const AccountInfo = () => {
                   className='h-36 w-full mt-3 px-5 rounded-xl border !border-gray-200 resize-y focus:outline-none focus:ring-0 focus:shadow-none '
                   ></textarea>
               </div>
+
+              <a href="#" className='custom-btn'>
+                update account
+              </a>
             </form>
           </div>
         </div>

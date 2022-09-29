@@ -11,7 +11,7 @@ const Account = () => {
             account
           </h1>
 
-          <p className='text-xl text-gray-600 flex gap-3 flex-wrap'>
+          <p className='text-sm text-gray-600 flex gap-3 flex-wrap sm:text-xl'>
             <span className='text-gray-900 font-semibold'>
               Enrico Cole
             </span>
@@ -28,7 +28,7 @@ const Account = () => {
       </header>
 
       <AccountNav />
-
+      
       <Outlet />
     </main>
   )
