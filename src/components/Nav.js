@@ -36,7 +36,7 @@ function Nav() {
           />
         </a>
 
-        <Link to='/' className='w-28 h-8 sm:w-36 sm:h-10'>
+        <Link to='/' className='w-36 h-10 hidden sm:block'>
           <img 
             src={"/img/logo.svg"}
             alt="" 

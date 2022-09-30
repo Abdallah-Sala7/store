@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Home() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [navTap, setNavTap] = useState(0);
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
@@ -22,6 +23,11 @@ function Home() {
       setLoading(true)
     })
   }, []);
+
+  const handleNavTap = (e, index) => {
+    e.preventDefault();
+    setNavTap(index)
+  }
 
   return (
     <main>
@@ -391,86 +397,86 @@ function Home() {
           </h1>
 
           <ul className="p-1 w-11/12 mb-14 flex items-center overflow-x-auto gap-2 mx-auto bg-white rounded-full shadow-lg md:gap-3 sm:max-w-fit remove-scrollbar">
-            <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover active md:py-2 md:px-6">
-              <a href="#" type="button" className="flex items-center space-x-2">
+            <li>
+              <a href="#" type="button" onClick={(e)=> handleNavTap(e, 0)} className={`p-2 rounded-full transition duration-300 flex items-center space-x-2 hover:bg-gray-900 group md:py-2 md:px-6 ${navTap == 0 ? 'bg-gray-900' :''}`}>
                 <span className="w-3 h-3 md:w-5 md:h-5 ">
                   <img 
                     src="./img/icons/male.svg" 
                     alt=""
                     loading="lazy"
-                    className="w-full h-full object-contain img-dark change-img-hover"
+                    className={`w-full h-full object-contain opacity-60 group-hover:invert group-hover:opacity-100 ${navTap == 0 ? 'invert opacity-100' : ''}`}
                   />
                 </span>
 
-                <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                <span className={`text-sm text-gray-900 capitalize leading-none group-hover:text-white sm:text-base ${navTap == 0 ? 'text-white':'' }`}>
                   man
                 </span>
               </a>
             </li>
 
-            <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover md:py-2 md:px-6">
-              <a href="#" type="button" className="flex items-center space-x-2">
+            <li>
+              <a href="#" type="button" onClick={(e)=> handleNavTap(e, 1)} className={`p-2 rounded-full transition duration-300 flex items-center space-x-2 hover:bg-gray-900 group md:py-2 md:px-6 ${navTap == 1 ? 'bg-gray-900' :''}`}>
                 <span className="w-3 h-3 md:w-5 md:h-5 ">
                   <img 
                     src="./img/icons/female.svg" 
                     alt=""
                     loading="lazy"
-                    className="w-full h-full object-contain img-dark change-img-hover"
+                    className={`w-full h-full object-contain opacity-60 group-hover:invert group-hover:opacity-100 ${navTap == 1 ? 'invert opacity-100' : ''}`}
                   />
                 </span>
 
-                <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                <span className={`text-sm text-gray-900 capitalize leading-none group-hover:text-white sm:text-base ${navTap == 1 ? 'text-white':'' }`}>
                   women
                 </span>
               </a>
             </li>
 
-            <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover md:py-2 md:px-6">
-              <a href="#" type="button" className="flex items-center space-x-2">
+            <li>
+              <a href="#" type="button" onClick={(e)=> handleNavTap(e, 2)} className={`p-2 rounded-full transition duration-300 flex items-center space-x-2 hover:bg-gray-900 group md:py-2 md:px-6 ${navTap == 2 ? 'bg-gray-900' :''}`}>
                 <span className="w-3 h-3 md:w-5 md:h-5 ">
                   <img 
                     src="./img/icons/kids.svg" 
                     alt=""
                     loading="lazy"
-                    className="w-full h-full object-contain img-dark change-img-hover"
+                    className={`w-full h-full object-contain opacity-60 group-hover:invert group-hover:opacity-100 ${navTap == 2 ? 'invert opacity-100' : ''}`}
                   />
                 </span>
 
-                <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                <span className={`text-sm text-gray-900 capitalize leading-none group-hover:text-white sm:text-base ${navTap == 2 ? 'text-white':'' }`}>
                   kids
                 </span>
               </a>
             </li>
 
-            <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover md:py-2 md:px-6">
-              <a href="#" type="button" className="flex items-center space-x-2">
+            <li>
+              <a href="#" type="button" onClick={(e)=> handleNavTap(e, 3)} className={`p-2 rounded-full transition duration-300 flex items-center space-x-2 hover:bg-gray-900 group md:py-2 md:px-6 ${navTap == 3 ? 'bg-gray-900' :''}`}>
                 <span className="w-3 h-3 md:w-5 md:h-5 ">
                   <img 
                     src="./img/icons/diamond.svg" 
                     alt=""
                     loading="lazy"
-                    className="w-full h-full object-contain img-dark change-img-hover"
+                    className={`w-full h-full object-contain opacity-60 group-hover:invert group-hover:opacity-100 ${navTap == 3 ? 'invert opacity-100' : ''}`}
                   />
                 </span>
 
-                <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                <span className={`text-sm text-gray-900 capitalize leading-none group-hover:text-white sm:text-base ${navTap == 3 ? 'text-white':'' }`}>
                   jewelry
                 </span>
               </a>
             </li>
 
-            <li className="p-2 rounded-full transition hover:bg-gray-900 group parent-hover md:py-2 md:px-6">
-              <a href="#" type="button" className="flex items-center space-x-2">
+            <li>
+              <a href="#" type="button" onClick={(e)=> handleNavTap(e, 4)} className={`p-2 rounded-full transition duration-300 flex items-center space-x-2 hover:bg-gray-900 group md:py-2 md:px-6 ${navTap == 4 ? 'bg-gray-900' :''}`}>
                 <span className="w-3 h-3 md:w-5 md:h-5 ">
                   <img 
                     src="./img/icons/barbell.svg" 
                     alt=""
                     loading="lazy"
-                    className="w-full h-full object-contain img-dark change-img-hover"
+                    className={`w-full h-full object-contain opacity-60 group-hover:invert group-hover:opacity-100 ${navTap == 4 ? 'invert opacity-100' : ''}`}
                   />
                 </span>
 
-                <span className="text-sm text-gray-900 capitalize leading-none sm:text-base">
+                <span className={`text-sm text-gray-900 capitalize leading-none group-hover:text-white sm:text-base ${navTap == 4 ? 'text-white':'' }`}>
                   sports
                 </span>
               </a>

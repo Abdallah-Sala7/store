@@ -11,6 +11,7 @@ import Wishlist from "./pages/account/wishlist";
 import Order from "./pages/account/order";
 import ChangeBilling from "./pages/account/changeBilling";
 import ChangePassword from "./pages/account/changePassword";
+import Checkout from "./pages/checkout/checkout";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/account" element={<Account />} >
           <Route index element={<AccountInfo />} />
           <Route path="wishlist" element={<Wishlist />} />
