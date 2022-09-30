@@ -43,8 +43,8 @@ function Cart() {
             <div className="w-full flex flex-col flex-wrap divide-y divide-gray-100 pb-5 border-b border-gray-300 md:pb-0 md:border-b-0 md:px-5 md:border-r md:w-2/3">
               {cartItems.map(item =>{
                 return( 
-                  <div key={item.id} className="w-full flex py-4">
-                    <div className="w-28 rounded-2xl overflow-hidden mr-3 shrink-0 sm:mr-5 md:w-40">
+                  <div key={item.id} className="w-full flex flex-col items-center justify-center py-4 sm:flex-row sm:justify-between">
+                    <div className="w-28 shrink-0 mb-5 sm:mb-0 sm:mr-5 md:w-40">
                       <img 
                         src={item.image}
                         alt=""
@@ -53,7 +53,7 @@ function Cart() {
                       />
                     </div>
 
-                    <div className="grow">
+                    <div className="grow w-full sm:w-auto">
                       <h1 className='text-gray-800 mb-3 text-lg font-semibold capitalize line-clamp-1'>
                         {item.title}
                       </h1>
@@ -149,7 +149,7 @@ function Cart() {
                 </p>
 
                 <p className='text-gray-800 font-semibold'>
-                  200$
+                  {Math.floor(totalPrice)}$
                 </p>
               </div>
 
@@ -159,7 +159,7 @@ function Cart() {
                 </p>
 
                 <p className='text-gray-800 font-semibold'>
-                  200$
+                  50$
                 </p>
               </div>
 
@@ -169,7 +169,7 @@ function Cart() {
                 </p>
 
                 <p className='text-gray-800 font-semibold'>
-                  200$
+                  3%
                 </p>
               </div>
 
@@ -179,7 +179,7 @@ function Cart() {
                 </h3>
 
                 <p className='text-gray-800 font-semibold'>
-                  {Math.floor(totalPrice)}$
+                  {(Math.floor(totalPrice) * 0.3) + Math.floor(totalPrice) + 50}$
                 </p>
               </div>
 

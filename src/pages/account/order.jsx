@@ -4,7 +4,7 @@ const Order = () => {
   return (
     <section className='py-8 sm:py-12 md:py-24 lg:px-40'>
       <div className="container">
-        <h1 className='font-bold text-3xl text-gray-900 capitalize mb-8 sm:text-5xl'>
+        <h1 className='text-xl font-semibold text-gray-900 first-letter:capitalize mb-8 sm:text-2xl md:text-4xl'>
           order history
         </h1>
         <div className="border border-gray-200 rounded-xl  overflow-hidden">

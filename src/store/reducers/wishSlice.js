@@ -9,7 +9,13 @@ const wishSlice = createSlice({
   initialState,
   reducers:{
     addToWish:(state, action) =>{
-      state.wishListItems.push(action.payload)
+      const itemIndex = state.wishListItems.findIndex(
+        item => item.id === action.payload.id
+      )
+
+      if(itemIndex < 0){
+        state.wishListItems.push(action.payload)
+      }
     },
     removeFromWish:(state, action) =>{
       state.wishListItems = state.wishListItems.filter(item => item.id != action.payload)
