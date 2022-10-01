@@ -30,7 +30,7 @@ const Checkout = () => {
               </Breadcrumb.Item>
 
               <Breadcrumb.Item>
-                Flowbite React
+                Checkout
               </Breadcrumb.Item>
             </Breadcrumb>
           </div>
@@ -40,7 +40,7 @@ const Checkout = () => {
       <section className='py-5 mb:py-10'>
         <div className="container">
           <div className="flex items-start flex-wrap">
-            <div className="w-full md:pb-0 md:border-b-0 md:px-5 md:border-r md:w-2/3">
+            <div className="w-full pb-5 lg:pb-0 lg:px-5 lg:w-1/2">
                 <Accordion flush={true} border={true}>
                   <Accordion.Panel >
                     <Accordion.Title className='relative'>
@@ -55,13 +55,13 @@ const Checkout = () => {
                 </Accordion>
             </div>
 
-            <div className="w-full px-5 md:w-1/3">
-              <div className="flex flex-col flex-wrap divide-y divide-gray-100 pb-5 border-b border-gray-300">
+            <div className="w-full border-gray-300 lg:w-1/2 lg:px-8 lg:border-l">
+              <div className="flex flex-col flex-wrap divide-y divide-gray-100 pb-5">
                 {cartItems.map(item =>{
                   return( 
                     <div key={item.id} className="w-full flex flex-col items-center justify-center py-4 sm:flex-row sm:justify-between">
-                      <div className="w-28 shrink-0 mb-5 sm:mb-0 sm:mr-5 md:w-40">
-                        <img 
+                      <div className="w-32 h-32 p-5 mb-5 flex justify-center items-center bg-slate-100 rounded-xl overflow-hidden shrink-0 sm:w-36 sm:h-36 sm:mr-5 sm:mb-0">
+                        <img
                           src={item.image}
                           alt=""
                           loading='lazy'
@@ -70,11 +70,17 @@ const Checkout = () => {
                       </div>
 
                       <div className="grow w-full sm:w-auto">
-                        <h1 className='text-gray-800 mb-3 text-lg font-semibold capitalize line-clamp-1'>
-                          {item.title}
-                        </h1>
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <h1 className='text-gray-800 font-semibold capitalize line-clamp-1'>
+                            {item.title}
+                          </h1>
 
-                        <div className="flex items-center gap-5 divide-x mb-3">
+                          <h2 className="py-1 px-2 text-green-500 font-medium border-2 border-green-400 rounded-md leading-none">
+                            {item.cartQuantity*item.price}$
+                          </h2>                          
+                        </div>
+
+                        <div className="flex items-center gap-5 divide-x mb-8">
                           <div className="flex items-center gap-2">
                             <img 
                               src="./img/icons/filter/color-fill-outline.svg" 
@@ -102,7 +108,7 @@ const Checkout = () => {
                           </div>
                         </div>
 
-                        <div className="flex items-center justify-between flex-wrap gap-y-3 mb-5">
+                        <div className="flex justify-between items-center">
                           <div className="flex items-center gap-3">
                             <button onClick={()=> dispatch(addToCart({item, quant:1}))} className="w-8 h-8">
                               <img 
@@ -124,28 +130,7 @@ const Checkout = () => {
                               />
                             </button>
                           </div>
-
-                          <div className="py-1 px-3 border-2 border-green-500 rounded-md">
-                            <h3 className="text-green-500 font-medium text-lg leading-none">
-                              {item.cartQuantity*item.price}$
-                            </h3>
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between items-center flex-wrap gap-y-3">
-                          <div className="w-fit py-1 px-3 border border-gray-300 rounded-full flex items-center">
-                            <img 
-                              src="./img/icons/check-solid.svg" 
-                              alt=""
-                              loading='lazy'
-                              className='w-4 h-4 object-contain mr-2 opacity-50' 
-                            />
-
-                            <span className='text-gray-500'>
-                              in stuck
-                            </span>
-                          </div>
-
+                          
                           <button onClick={() => dispatch(removeProduct(item.id))} className='text-lg capitalize text-red-300 transition hover:text-red-600'>remove</button>
                         </div>
                       </div>
@@ -154,10 +139,10 @@ const Checkout = () => {
                   )}
               </div>
 
-              <div className="">
-                <h2 className='text-gray-900 font-semibold text-lg capitalize mb-5'>
+              <div className="border-t pt-5">
+                <h3 className='text-gray-900 font-semibold text-lg capitalize mb-5'>
                   Order Summary
-                </h2>
+                </h3>
 
                 <div className="py-3 flex justify-between items-center border-b border-gray-300">
                   <p className='capitalize text-gray-400'>
@@ -190,9 +175,9 @@ const Checkout = () => {
                 </div>
 
                 <div className="py-3 flex justify-between items-center">
-                  <h3 className='text-gray-900 font-semibold capitalize mb-5'>
+                  <h4 className='text-gray-900 font-semibold capitalize mb-5'>
                     order total
-                  </h3>
+                  </h4>
 
                   <p className='text-gray-800 font-semibold'>
                     {(Math.floor(totalPrice) * 0.3) + Math.floor(totalPrice) + 50}$

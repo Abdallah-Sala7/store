@@ -44,7 +44,7 @@ function CardList(props) {
         />
 
         <div className="absolute bottom-0 left-0 w-full flex items-center justify-center space-x-2 translate-y-full transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-5">
-          <button onClick={() => {dispatch(addToCart({item:props.item, quant:1})); notify()}} type="butoon" className="py-2 px-4 rounded-full bg-gray-900  flex items-center justify-center space-x-2 hover:bg-opacity-90">
+          <button onClick={() => {dispatch(addToCart({item:props.item, quant:1})); notify()}} type="butoon" className="py-2 px-3 rounded-full bg-gray-900  flex items-center justify-center space-x-2 hover:bg-opacity-90 sm:py-2 sm:px-4">
             <span className="w-4 h-4">
               <img 
                 src="/img/icons/shopping-basket.svg" 
@@ -54,12 +54,12 @@ function CardList(props) {
               />
             </span>
 
-            <span className="text-base leading-none text-gray-50">
+            <span className="text-base leading-none text-gray-50 whitespace-nowrap">
               add to cart
             </span>
           </button>
 
-          <Link to={'/details/'+props.item.id } className="py-2 px-4 rounded-full bg-gray-400  flex items-center justify-center space-x-2 hover:bg-opacity-90">
+          <Link to={'/details/'+props.item.id } className="py-2 px-3 rounded-full bg-gray-400  flex items-center justify-center space-x-2 hover:bg-opacity-90 sm:py-2 sm:px-4">
             <span className="w-4 h-4">
               <img 
                 src="/img/icons/full-screen.svg" 
@@ -69,7 +69,7 @@ function CardList(props) {
               />
             </span>
 
-            <span className="text-base leading-none text-gray-50">
+            <span className="text-base leading-none text-gray-50 whitespace-nowrap">
               full view
             </span>
           </Link> 

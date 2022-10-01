@@ -20,6 +20,10 @@
   }
 }
 
+html{
+  -webkit-tap-highlight-color: transparent;
+}
+
 span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main{
   width: 12px;
   height: 12px;

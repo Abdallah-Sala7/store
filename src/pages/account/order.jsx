@@ -32,7 +32,7 @@ const Order = () => {
 
           <div className="flex flex-col divide-y divide-gray-200">
             <div className="w-full flex flex-col items-center p-4 sm:p-8 sm:items-stretch sm:flex-row">
-              <div className="w-36 h-36 mb-5 mr-3 bg-slate-100 rounded-2xl overflow-hidden  shrink-0 sm:mr-5 sm:mb-0">
+              <div className="w-36 h-36 mb-5 mr-3 bg-slate-100 rounded-2xl overflow-hidden shrink-0 sm:mr-5 sm:mb-0">
                 <img 
                   src={'/img/tshirt.webp'}
                   alt=""

@@ -67,7 +67,7 @@ function Nav() {
               </a>
             </div>
 
-            <p className='text-sm leading-7 text-gray-600'>
+            <p className='text-sm  text-gray-600 sm:leading-7'>
               Discover the most outstanding articles on all topics of life. Write your stories and share them
             </p>
           </div>

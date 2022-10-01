@@ -30,7 +30,7 @@ function Cart() {
               </Breadcrumb.Item>
 
               <Breadcrumb.Item>
-                Flowbite React
+                Cart
               </Breadcrumb.Item>
             </Breadcrumb>
           </div>
@@ -183,9 +183,9 @@ function Cart() {
                 </p>
               </div>
 
-              <button className='w-full custom-btn justify-center capitalize text-xl'>
+              <Link to={'/checkout'} className='w-full custom-btn justify-center capitalize text-xl'>
                 checkout
-              </button>
+              </Link>
             </div>
           </div>
         </div>
