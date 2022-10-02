@@ -22,6 +22,7 @@
 
 html{
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
 span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main{

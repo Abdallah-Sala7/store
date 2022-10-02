@@ -1,9 +1,10 @@
 import React from 'react'
-import { Breadcrumb, Accordion } from 'flowbite-react'
+import { Breadcrumb } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 
 import { removeFromCart, addToCart, removeProduct } from '../../store/reducers/cartSlice'
 import { useSelector,useDispatch } from 'react-redux'
+import CheckoutAccordion from '../../components/CheckoutAccordion'
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -41,18 +42,17 @@ const Checkout = () => {
         <div className="container">
           <div className="flex items-start flex-wrap">
             <div className="w-full pb-5 lg:pb-0 lg:px-5 lg:w-1/2">
-                <Accordion flush={true} border={true}>
-                  <Accordion.Panel >
-                    <Accordion.Title className='relative'>
-                      discription
-                    </Accordion.Title>
-                    <Accordion.Content>
-                      <p className="mb-2 text-gray-500 dark:text-gray-400">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum in eaque suscipit, incidunt iure iusto optio deserunt repellendus praesentium ex et eum numquam odio voluptatum expedita! Voluptatem facilis quaerat quisquam.
-                      </p>
-                    </Accordion.Content>
-                  </Accordion.Panel>
-                </Accordion>
+              <CheckoutAccordion id={'pay'}>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nisi debitis voluptatum tempora numquam pariatur obcaecati dolorem modi molestiae aliquam laudantium eveniet, ea nobis iste quo consectetur! Iure, doloribus dolorum?</p>
+              </CheckoutAccordion>
+
+              <CheckoutAccordion id={'pay1'}>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nisi debitis voluptatum tempora numquam pariatur obcaecati dolorem modi molestiae aliquam laudantium eveniet, ea nobis iste quo consectetur! Iure, doloribus dolorum?</p>
+              </CheckoutAccordion>
+
+              <CheckoutAccordion id={'pay2'}>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nisi debitis voluptatum tempora numquam pariatur obcaecati dolorem modi molestiae aliquam laudantium eveniet, ea nobis iste quo consectetur! Iure, doloribus dolorum?</p>
+              </CheckoutAccordion>
             </div>
 
             <div className="w-full border-gray-300 lg:w-1/2 lg:px-8 lg:border-l">
