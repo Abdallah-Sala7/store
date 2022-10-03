@@ -15,6 +15,7 @@ import Checkout from "./pages/checkout/checkout";
 
 function App() {
   return (
+<>
     <BrowserRouter>
       <Nav />
       <Routes>
@@ -33,6 +34,7 @@ function App() {
       </Routes>
       <Footer />        
     </BrowserRouter>
+</>
   );
 }
 
