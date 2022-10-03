@@ -25,7 +25,7 @@ function Nav() {
   }
 
   return (
-    <nav className='fixed inset-x-0 h-20 border-b border-slate-200 bg-white bg-opacity-50 backdrop-blur-sm z-40'>
+    <nav className='fixed inset-x-0 h-20 shadow-sm bg-white bg-opacity-50 backdrop-blur-sm z-40'>
       <div  className='container flex justify-between items-center h-full w-full'>
         <a onClick={openNav} href="#" className='w-10 h-10 md:hidden'>
           <img 

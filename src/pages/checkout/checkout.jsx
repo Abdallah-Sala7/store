@@ -42,16 +42,68 @@ const Checkout = () => {
         <div className="container">
           <div className="flex items-start flex-wrap">
             <div className="w-full pb-5 lg:pb-0 lg:px-5 lg:w-1/2">
-              <CheckoutAccordion id={'pay'}>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nisi debitis voluptatum tempora numquam pariatur obcaecati dolorem modi molestiae aliquam laudantium eveniet, ea nobis iste quo consectetur! Iure, doloribus dolorum?</p>
+              <CheckoutAccordion id={'maininfo'} img={"/img/icons/user-ci.svg"} title={'contact info'} info={'+201025077437'}>
+                <div className="w-full">
+                  <h1 className='font-medium  text-gray-700 capitalize mb-8 sm:text-2xl'>
+                    contact informatiion
+                  </h1>
+
+                  <form action="" className='w-full'>
+                    <div className="w-full mb-5">
+                      <label htmlFor="name" className='text-gray-700 font-medium mb-2 block'>
+                        Your phone number
+                      </label>
+
+                      <input 
+                        type="text" 
+                        id='phone' 
+                        className='w-full border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-gray-400 !ring-0' 
+                      />
+                    </div>
+
+                    <div className="w-full mb-5">
+                      <label htmlFor="name" className='text-gray-600 font-medium mb-2 block'>
+                        Email address
+                      </label>
+
+                      <input 
+                        type="text" 
+                        id='email' 
+                        className='w-full border border-gray-200 rounded-xl px-4 py-2 focus:outline-none focus:border-gray-400 !ring-0' 
+                      />
+                    </div>
+
+                    <div className="flex items-center gap-2 mb-8">
+                      <input
+                        type="checkbox"
+                        id="save"
+                        className='w-6 h-6 border border-gray-200 rounded-sm focus:outline-none'
+                      />
+
+                      <label htmlFor="save" className='text-gray-600 text-sm'>
+                        Email me news and offers
+                      </label>
+                    </div>
+
+                    <div className="flex items-center justify-between flex-wrap gap-5">
+                      <a href="#" className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
+                        Save and next to shipping
+                      </a>
+
+                      <a href="#" className='w-full py-2 px-5 bg-gray-100 text-gray-900 text-lg text-center rounded-full bg-opacity-0 hover:bg-opacity-100 sm:w-fit'>
+                        cancel
+                      </a>
+                    </div>
+                  </form>
+                </div>
               </CheckoutAccordion>
 
-              <CheckoutAccordion id={'pay1'}>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nisi debitis voluptatum tempora numquam pariatur obcaecati dolorem modi molestiae aliquam laudantium eveniet, ea nobis iste quo consectetur! Iure, doloribus dolorum?</p>
+              <CheckoutAccordion id={'addres'} img={'/img/icons/location.svg'} title={'shipping addrees'} info={"St. Paul's Road, Norris, SD 57560, Dakota, USA"}>
+
               </CheckoutAccordion>
 
-              <CheckoutAccordion id={'pay2'}>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nisi debitis voluptatum tempora numquam pariatur obcaecati dolorem modi molestiae aliquam laudantium eveniet, ea nobis iste quo consectetur! Iure, doloribus dolorum?</p>
+              <CheckoutAccordion id={'payment'} img={'/img/icons/cc-visa.svg'} title={'payment method'} info={"Google / Apple Walletxxx-xxx-xx55"}>
+
               </CheckoutAccordion>
             </div>
 
