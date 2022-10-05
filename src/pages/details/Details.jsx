@@ -19,14 +19,9 @@ function Details() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products`)
+    axios.get(`https://fakestoreapi.com/products/${param.id}`)
       .then(res => {
-        res.data.forEach(item => {
-          if (item.id === parseInt(param.id)) {
-            setProduct(item);
-          }
-        })
-        
+        setProduct(res.data)
         setLoading(true);
       })
   }, [param.id]);

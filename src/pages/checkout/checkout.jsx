@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Breadcrumb } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 
@@ -8,12 +8,16 @@ import CheckoutAccordion from '../../components/CheckoutAccordion'
 
 const Checkout = () => {
   const dispatch = useDispatch();
-  const {cartItems, totalAmount, totalPrice} = useSelector(state => state.cart)
+  const {cartItems, totalPrice} = useSelector(state => state.cart)
+
+  const [activeAccordionList, setActiveAccordionList] = useState({
+    shipping: false,
+    payment: false,
+    info: true
+  });
   
   return (
     <main>
-      {/* {totalAmount > 0 ? */}
-      <>
       <header className='pt-40'>
         <div className="container">
           <div className="border-b border-gray-300 pb-8 sm:pb-12 md:pb-20">
@@ -42,7 +46,7 @@ const Checkout = () => {
         <div className="container">
           <div className="flex items-start flex-wrap">
             <div className="w-full pb-5 lg:pb-0 lg:px-5 lg:w-1/2">
-              <CheckoutAccordion id={'maininfo'} img={"/img/icons/user-ci.svg"} title={'contact info'} info={'+201025077437'}>
+              <CheckoutAccordion id={'maininfo'} isActive={activeAccordionList.info} img={"/img/icons/user-ci.svg"} title={'contact info'} info={'+201025077437'}>
                 <div className="w-full">
                   <h1 className='font-medium  text-gray-700 capitalize mb-8 sm:text-2xl'>
                     contact informatiion
@@ -86,8 +90,141 @@ const Checkout = () => {
                     </div>
 
                     <div className="flex items-center justify-between flex-wrap gap-5">
-                      <a href="#" className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
+                      <a href="#" onClick={(e)=>{e.preventDefault() ; setActiveAccordionList({shipping:true, info:false, payment:false})}} className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
                         Save and next to shipping
+                      </a>
+
+                      <a href="#addres" className='w-full py-2 px-5 bg-gray-100 text-gray-900 text-lg text-center rounded-full bg-opacity-0 hover:bg-opacity-100 sm:w-fit'>
+                        cancel
+                      </a>
+                    </div>
+                  </form>
+                </div>
+              </CheckoutAccordion>
+
+              <CheckoutAccordion id={'addres'} isActive={activeAccordionList.shipping} img={'/img/icons/location.svg'} title={'shipping addrees'} info={"St. Paul's Road, Norris, SD 57560, Dakota, USA"}>
+                <div className="w-full">
+                  <h1 className='font-medium text-gray-700 capitalize mb-8 sm:text-2xl'>
+                    shipping address
+                  </h1>
+
+                  <form action="" className='w-full'>
+                    <div className="w-full mb-5 flex flex-wrap gap-3 sm:flex-nowrap">
+                      <div className="w-full sm:w-1/2">
+                        <label htmlFor="first-name" className='text-gray-700 font-medium mb-2 block'>
+                          First name
+                        </label>
+
+                        <input
+                          type="text"
+                          id='first-name'
+                          defaultValue={'Abdallah'}
+                          className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                        />                        
+                      </div>
+
+                      <div className="w-full sm:w-1/2">
+                        <label htmlFor="last-name" className='text-gray-700 font-medium mb-2 block'>
+                          Last name
+                        </label>
+
+                        <input
+                          type="text"
+                          id='last-name'
+                          defaultValue={'salah'}
+                          className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                        />                        
+                      </div>
+                    </div>
+
+                    <div className="w-full mb-5 flex flex-wrap gap-3 sm:flex-nowrap">
+                      <div className="w-full sm:w-2/3">
+                        <label htmlFor="address" className='text-gray-700 font-medium mb-2 block'>
+                          Address
+                        </label>
+
+                        <input
+                          type="text"
+                          id='address'
+                          defaultValue={'123, Dream Avenue, USA'}
+                          className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                        />                        
+                      </div>
+
+                      <div className="w-full sm:w-2/6">
+                        <label htmlFor="apt" className='text-gray-700 font-medium mb-2 block'>
+                          Apt, Suite
+                        </label>
+
+                        <input
+                          type="text"
+                          id='apt'
+                          defaultValue={'55U - DD5'}
+                          className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                        />                        
+                      </div>
+                    </div>
+
+                    <div className="w-full mb-8 flex flex-wrap gap-3 sm:flex-nowrap">
+                      <div className="w-full sm:w-2/3">
+                        <label htmlFor="city" className='text-gray-700 font-medium mb-2 block'>
+                          City
+                        </label>
+
+                        <input
+                          type="text"
+                          id='city'
+                          defaultValue={'Norris'}
+                          className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                        />                        
+                      </div>
+
+                      <div className="w-full sm:w-2/6">
+                        <label htmlFor="country" className='text-gray-700 font-medium mb-2 block'>
+                          Country
+                        </label>
+
+                        <input
+                          type="text"
+                          id='country'
+                          defaultValue={'united states'}
+                          className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                        />                        
+                      </div>
+                    </div>
+
+                    <div className="w-full mb-8 flex flex-wrap gap-3 sm:flex-nowrap">
+                      <div className="w-full flex items-center sm:w-2/3">
+                        <input
+                          type="radio"
+                          name='delivery'
+                          id='home'
+                          defaultValue={'Norris'}
+                          className='w-7 h-7 border border-gray-600 rounded-full focus:outline-none'
+                        />  
+
+                        <label htmlFor="home" className='text-gray-700 font-medium ml-2'>
+                          Home
+                        </label>               
+                      </div>
+
+                      <div className="w-full flex items-center sm:w-2/3">
+                        <input
+                          type="radio"
+                          name='delivery'
+                          id='office'
+                          className='w-7 h-7 border border-gray-600 rounded-full focus:outline-none'
+                        />  
+
+                        <label htmlFor="office" className='text-gray-700 font-medium ml-2'>
+                          Office
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between flex-wrap gap-5">
+                      <a href="#" onClick={(e)=>{e.preventDefault() ; setActiveAccordionList({shipping:false, info:false, payment:true})}} className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
+                        Save and next to payment
                       </a>
 
                       <a href="#" className='w-full py-2 px-5 bg-gray-100 text-gray-900 text-lg text-center rounded-full bg-opacity-0 hover:bg-opacity-100 sm:w-fit'>
@@ -98,12 +235,76 @@ const Checkout = () => {
                 </div>
               </CheckoutAccordion>
 
-              <CheckoutAccordion id={'addres'} img={'/img/icons/location.svg'} title={'shipping addrees'} info={"St. Paul's Road, Norris, SD 57560, Dakota, USA"}>
+              <CheckoutAccordion id={'payment'} isActive={activeAccordionList.payment} img={'/img/icons/cc-visa.svg'} title={'payment method'} info={"Google / Apple Walletxxx-xxx-xx55"}>
+                <div className="w-full">
+                  <h1 className='font-medium text-gray-700 capitalize mb-8 sm:text-2xl'>
+                    debit / credit card
+                  </h1>
 
-              </CheckoutAccordion>
+                  <form action="" className='w-full'>
+                    <div className="w-full mb-5">
+                      <label htmlFor="card-number" className='text-gray-700 font-medium mb-2 block'>
+                        Card number
+                      </label>
 
-              <CheckoutAccordion id={'payment'} img={'/img/icons/cc-visa.svg'} title={'payment method'} info={"Google / Apple Walletxxx-xxx-xx55"}>
+                      <input
+                        type="text"
+                        id='card-number'
+                        className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                      />                        
+                    </div>
 
+                    <div className="w-full mb-5">
+                      <label htmlFor="card-name" className='text-gray-700 font-medium mb-2 block'>
+                        Card name
+                      </label>
+
+                      <input
+                        type="text"
+                        id='card-name'
+                        className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                      />                        
+                    </div>
+
+                    <div className="w-full mb-5 flex flex-wrap gap-3 sm:flex-nowrap">
+                      <div className="w-full sm:w-2/3">
+                        <label htmlFor="expiration" className='text-gray-700 font-medium mb-2 block'>
+                          Expiration date (MM/YY)
+                        </label>
+
+                        <input
+                          type="text"
+                          id='expiration'
+                          placeholder='MM/YY'
+                          className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                        />                        
+                      </div>
+
+                      <div className="w-full sm:w-2/6">
+                        <label htmlFor="cvc" className='text-gray-700 font-medium mb-2 block'>
+                          CVC
+                        </label>
+
+                        <input
+                          type="text"
+                          id='cvc'
+                          placeholder='123'
+                          className='w-full border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gray-400 !ring-0'
+                        />                        
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between flex-wrap gap-5">
+                      <a href="#" className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
+                        confirm order
+                      </a>
+
+                      <a href="#" className='w-full py-2 px-5 bg-gray-100 text-gray-900 text-lg text-center rounded-full bg-opacity-0 hover:bg-opacity-100 sm:w-fit'>
+                        cancel
+                      </a>
+                    </div>
+                  </form>
+                </div>
               </CheckoutAccordion>
             </div>
 
@@ -244,25 +445,6 @@ const Checkout = () => {
           </div>
         </div>
       </section>
-      </>
-      {/* :
-      // <section className="pt-40 pb-20 bg-primary-100">
-      //   <div className="container">
-      //     <div className="flex flex-col items-center justify-center">
-      //       <img 
-      //         src="/img/icons/shopping-basket.svg" 
-      //         alt=""
-      //         loading='lazy'
-      //         className='w-52 h-52 object-contain opacity-70 mb-7 md:w-80 md:h-80' 
-      //       />
-
-      //       <h1 className='text-2xl font-bold text-gray-900 md:text-3xl'>
-      //         Your cart is empty
-      //       </h1>
-      //     </div>
-      //   </div>
-      // </section>
-                */}
     </main>
   )
 }

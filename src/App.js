@@ -12,11 +12,12 @@ import Order from "./pages/account/order";
 import ChangeBilling from "./pages/account/changeBilling";
 import ChangePassword from "./pages/account/changePassword";
 import Checkout from "./pages/checkout/checkout";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-<>
     <BrowserRouter>
+      <ScrollToTop />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -34,7 +35,6 @@ function App() {
       </Routes>
       <Footer />        
     </BrowserRouter>
-</>
   );
 }
 
