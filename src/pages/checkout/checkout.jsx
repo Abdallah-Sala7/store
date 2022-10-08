@@ -9,12 +9,6 @@ import CheckoutAccordion from '../../components/CheckoutAccordion'
 const Checkout = () => {
   const dispatch = useDispatch();
   const {cartItems, totalPrice} = useSelector(state => state.cart)
-
-  const [activeAccordionList, setActiveAccordionList] = useState({
-    shipping: false,
-    payment: false,
-    info: true
-  });
   
   return (
     <main>
@@ -46,7 +40,7 @@ const Checkout = () => {
         <div className="container">
           <div className="flex items-start flex-wrap">
             <div className="w-full pb-5 lg:pb-0 lg:px-5 lg:w-1/2">
-              <CheckoutAccordion id={'maininfo'} isActive={activeAccordionList.info} img={"/img/icons/user-ci.svg"} title={'contact info'} info={'+201025077437'}>
+              <CheckoutAccordion id={'maininfo'} img={"/img/icons/user-ci.svg"} title={'contact info'} info={'+201025077437'}>
                 <div className="w-full">
                   <h1 className='font-medium  text-gray-700 capitalize mb-8 sm:text-2xl'>
                     contact informatiion
@@ -90,7 +84,7 @@ const Checkout = () => {
                     </div>
 
                     <div className="flex items-center justify-between flex-wrap gap-5">
-                      <a href="#" onClick={(e)=>{e.preventDefault() ; setActiveAccordionList({shipping:true, info:false, payment:false})}} className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
+                      <a href="#" className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
                         Save and next to shipping
                       </a>
 
@@ -102,7 +96,7 @@ const Checkout = () => {
                 </div>
               </CheckoutAccordion>
 
-              <CheckoutAccordion id={'addres'} isActive={activeAccordionList.shipping} img={'/img/icons/location.svg'} title={'shipping addrees'} info={"St. Paul's Road, Norris, SD 57560, Dakota, USA"}>
+              <CheckoutAccordion id={'addres'} img={'/img/icons/location.svg'} title={'shipping addrees'} info={"St. Paul's Road, Norris, SD 57560, Dakota, USA"}>
                 <div className="w-full">
                   <h1 className='font-medium text-gray-700 capitalize mb-8 sm:text-2xl'>
                     shipping address
@@ -223,7 +217,7 @@ const Checkout = () => {
                     </div>
 
                     <div className="flex items-center justify-between flex-wrap gap-5">
-                      <a href="#" onClick={(e)=>{e.preventDefault() ; setActiveAccordionList({shipping:false, info:false, payment:true})}} className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
+                      <a href="#" className='w-full py-2 px-5 bg-gray-900 text-gray-100 text-lg text-center rounded-full hover:bg-opacity-90 sm:w-fit'>
                         Save and next to payment
                       </a>
 
@@ -235,7 +229,7 @@ const Checkout = () => {
                 </div>
               </CheckoutAccordion>
 
-              <CheckoutAccordion id={'payment'} isActive={activeAccordionList.payment} img={'/img/icons/cc-visa.svg'} title={'payment method'} info={"Google / Apple Walletxxx-xxx-xx55"}>
+              <CheckoutAccordion id={'payment'} img={'/img/icons/cc-visa.svg'} title={'payment method'} info={"Google / Apple Walletxxx-xxx-xx55"}>
                 <div className="w-full">
                   <h1 className='font-medium text-gray-700 capitalize mb-8 sm:text-2xl'>
                     debit / credit card
@@ -313,7 +307,7 @@ const Checkout = () => {
                 {cartItems.map(item =>{
                   return( 
                     <div key={item.id} className="w-full flex flex-col items-center justify-center py-4 sm:flex-row sm:justify-between">
-                      <div className="w-32 h-32 p-5 mb-5 flex justify-center items-center bg-slate-100 rounded-xl overflow-hidden shrink-0 sm:w-36 sm:h-36 sm:mr-5 sm:mb-0">
+                      <div className="w-32 h-32 p-3 mb-5 flex justify-center items-center bg-slate-100 rounded-xl overflow-hidden shrink-0 sm:w-36 sm:h-36 sm:mr-5 sm:mb-0">
                         <img
                           src={item.image}
                           alt=""
@@ -389,7 +383,7 @@ const Checkout = () => {
                       </div>
                     </div>
                   )}
-                  )}
+                )}
               </div>
 
               <div className="border-t pt-5">

@@ -31,7 +31,7 @@ function CardList(props) {
     }
   }
 
-  const notify = () => toast.success("Added to cart!",{theme:"light",position:"bottom-right"});
+  const notify = () => toast.success("Added to cart!",{theme:"light", position:"bottom-right", autoClose: 2000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined,});
 
   return (
     <div className="group">

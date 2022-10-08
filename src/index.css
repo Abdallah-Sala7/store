@@ -22,7 +22,6 @@
 
 html{
   -webkit-tap-highlight-color: transparent;
-  scroll-behavior: smooth;
 }
 
 span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main{
@@ -92,23 +91,6 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-
 
 .remove-scrollbar::-webkit-scrollbar{
   display: none;
-}
-
-.animated-background {
-  animation: loadingAnimation 1.25s linear infinite forwards;
-  background: #F6F6F6;
-  background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
-  background-size: 800px 104px;
-  background-position: 100% 0;
-}
-
-@keyframes loadingAnimation{
-  0%{
-    background-position: -400px 0
-  }
-  100%{
-    background-position: 400px 0
-  }
 }
 
 .account .active{

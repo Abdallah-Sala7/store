@@ -3,9 +3,9 @@ import axios from "axios";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import CardList from '../../components/card';
-import Loading from '../../components/loading';
-import ProductFilter from '../../components/productFilter';
+import CardList from '../../components/Card';
+import Loading from '../../components/Loading';
+import ProductFilter from '../../components/ProductFilter';
 import { useSelector } from 'react-redux';
 
 function Product() {
@@ -58,7 +58,7 @@ function Product() {
             </div>
             : <Loading />
           }
-            <ToastContainer />
+            <ToastContainer limit={1} />
         </div>
       </section>
     </main>

@@ -1,10 +1,10 @@
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home"
-import Product from "./pages/product/Product";
-import Details from "./pages/details/Details";
-import Cart from "./pages/cart/Cart";
+import Home from "./pages/home/home"
+import Product from "./pages/product/product";
+import Details from "./pages/details/details";
+import Cart from "./pages/cart/cart";
 import Account from "./pages/account/account";
 import AccountInfo from "./pages/account/accountInfo";
 import Wishlist from "./pages/account/wishlist";

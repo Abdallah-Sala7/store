@@ -6,8 +6,8 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import CardList from "../../components/card";
-import Loading from "../../components/loading";
+import CardList from "../../components/Card";
+import Loading from "../../components/Loading";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -282,7 +282,7 @@ function Home() {
           </Swiper> : <Loading />
           }
 
-          <ToastContainer />
+          <ToastContainer limit={1} />
         </div>
       </section>
 

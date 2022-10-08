@@ -9,56 +9,34 @@ function valuetext(value) {
 }
 
 function ProductFilter() {
-  const [mobileFilter, setMobileFilter] = useState(false);
-
   const dispatch = useDispatch()
   const {catFilter} = useSelector(state => state.filter)
-
-  const [openRange, setOpenRange] = useState(false)
-  const [openColor, setOpenColor] = useState(false)
-  const [openSize, setOpenSize] = useState(false)
-  const [openCat, setOpenCat] = useState(false)
-  const [openSort, setOpenSort] = useState(false)
 
   const [value, setValue] = useState([0, 100])
   const [colorValue, setColorValue] = useState([])
   const [sizeValue, setSizeValue] = useState([])
   const [sortValue, setSortValue] = useState('')
 
+  const [openFilterList, setOpenFilterList] = useState({
+    range: false,
+    color: false,
+    size: false,
+    cat: false,
+    sort: false,
+    mobile: false,
+  });
+
+  const handleFilterList = (e, name) => {
+    e.preventDefault();
+    setOpenFilterList({
+      ...openFilterList,
+      [name]: !openFilterList[name]
+    })
+  }
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  const handleOpenRange = (e) => {
-    e.preventDefault()
-    setOpenRange(!openRange)
-  }
-
-  const handleOpenColor = (e) => {
-    e.preventDefault()
-    setOpenColor(!openColor)
-  }
-
-  const handleOpenSize = (e) => {
-    e.preventDefault()
-    setOpenSize(!openSize)
-  }
-
-  const handleOpenCat = (e) => {
-    e.preventDefault()
-    setOpenCat(!openCat)
-  }
-
-  const handleOpenSort = (e) => {
-    e.preventDefault()
-    setOpenSort(!openSort)
-  }
-
-  const handleMobileFilter = (e) => {
-    e.preventDefault()
-    setMobileFilter(!mobileFilter)
-  }
-
 
   const addColor = (e) =>{
     let x = false;
@@ -98,9 +76,9 @@ function ProductFilter() {
 
   return (
     <>
-    <div className={`fixed inset-0 z-50 remove-scrollbar bg-white w-full h-full justify-between items-center flex-wrap transition-transform duration-300 md:flex-nowrap md:static ${mobileFilter ? 'flex overflow-y-auto' : 'hidden'} md:overflow-visible md:flex`}>
+    <div className={`fixed inset-0 z-50 remove-scrollbar bg-white w-full h-full justify-between items-center flex-wrap transition-transform duration-300 md:flex-nowrap md:static ${openFilterList.mobile ? 'flex overflow-y-auto' : 'hidden'} md:overflow-visible md:flex`}>
       <div className="fixed top-0 left-0 z-10 w-full px-8 py-4 bg-slate-50 md:hidden">
-        <a href="#" onClick={handleMobileFilter} className='absolute top-1/2 left-5 -translate-y-1/2 w-10 h-10 flex justify-center items-center bg-gray-100 hover:bg-opacity-75'>
+        <a href="#" onClick={(e)=>{handleFilterList(e, 'mobile')}} className='absolute top-1/2 left-5 -translate-y-1/2 w-10 h-10 flex justify-center items-center bg-gray-100 hover:bg-opacity-75'>
           <img 
             src="./img/icons/xmark.svg" 
             alt=""
@@ -115,8 +93,8 @@ function ProductFilter() {
       </div>
 
       <div className="flex items-center flex-wrap pt-16 md:pt-0 md:gap-5">
-        <div className={`relative w-full md:w-fit  ${openRange ? '' : 'overflow-hidden'}`}>
-          <a href="#" onClick={handleOpenRange} className={` hidden w-36 items-center justify-between py-2 px-4 border  rounded-full ${value[0] == 0 && value[1] == 100 ? 'border-gray-300' : 'bg-blue-50 border-blue-300'} md:flex `}>
+        <div className={`relative w-full md:w-fit  ${openFilterList.range ? '' : 'overflow-hidden'}`}>
+          <a href="#" onClick={(e)=>{handleFilterList(e,'range')}} className={` hidden w-36 items-center justify-between py-2 px-4 border  rounded-full ${value[0] == 0 && value[1] == 100 ? 'border-gray-300' : 'bg-blue-50 border-blue-300'} md:flex `}>
             <img
               src='./img/icons/filter/dollar-sign-solid.svg'
               alt='filter price'
@@ -129,7 +107,7 @@ function ProductFilter() {
             </span>
           </a>
 
-          <div className={`static top-14 left-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:rounded-2xl md:w-96 md:shadow-2xl ${openRange ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'} md:absolute `}>
+          <div className={`static top-14 left-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:rounded-2xl md:w-96 md:shadow-2xl ${openFilterList.range ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'} md:absolute `}>
             <div className="px-8 mb-10">
               <h2 className='text-xl font-medium first-letter:capitalize text-gray-900 mb-5 whitespace-nowrap'>
                 price range
@@ -187,17 +165,17 @@ function ProductFilter() {
                 clear
               </button>
 
-              <button onClick={handleOpenRange} className='custom-btn capitalize py-2 px-6'>
+              <button onClick={(e)=>{handleFilterList(e,'range')}} className='custom-btn capitalize py-2 px-6'>
                 apply
               </button>
             </div>             
           </div>
 
-          <div onClick={handleOpenRange} className={`fixed inset-0 z-10 hidden ${openRange ? 'md:block' : ''}`}></div>
+          <div onClick={(e)=>{handleFilterList(e,'range')}} className={`fixed inset-0 z-10 hidden ${openFilterList.range ? 'md:block' : ''}`}></div>
         </div>
 
-        <div className={`relative w-full md:w-fit ${openCat ? '' : 'overflow-hidden'}`}>
-          <a href="#" onClick={handleOpenCat} className={`hidden items-center justify-center py-2 px-4 rounded-full border ${catFilter.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'} md:flex`}>
+        <div className={`relative w-full md:w-fit ${openFilterList.cat ? '' : 'overflow-hidden'}`}>
+          <a href="#" onClick={(e)=>{handleFilterList(e,'cat')}} className={`hidden items-center justify-center py-2 px-4 rounded-full border ${catFilter.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'} md:flex`}>
             <img
               src='./img/icons/filter/document-text-outline.svg'
               alt='filter price'
@@ -210,7 +188,7 @@ function ProductFilter() {
             </span>
           </a>
 
-          <div className={`static top-14 left-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:w-96 md:rounded-2xl md:shadow-2xl  ${openCat ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'} md:absolute`}>
+          <div className={`static top-14 left-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:w-96 md:rounded-2xl md:shadow-2xl  ${openFilterList.cat ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'} md:absolute`}>
             <h2 className='text-xl pl-8 font-medium capitalize text-gray-900 mb-5 whitespace-nowrap md:hidden'>
               categories
             </h2>
@@ -297,17 +275,17 @@ function ProductFilter() {
                 clear
               </button>
 
-              <button onClick={handleOpenCat} className='custom-btn capitalize py-2 px-6'>
+              <button onClick={(e)=>{handleFilterList(e,'cat')}} className='custom-btn capitalize py-2 px-6'>
                 apply
               </button>
             </div>             
           </div>
 
-          <div onClick={handleOpenCat} className={`hidden fixed inset-0 z-10 ${openCat? 'md:block' : ''}`}></div>
+          <div onClick={(e)=>{handleFilterList(e,'cat')}} className={`hidden fixed inset-0 z-10 ${openFilterList.cat? 'md:block' : ''}`}></div>
         </div>
 
-        <div className={`relative w-full md:w-fit ${openColor ? '' : 'overflow-hidden'}`}>
-          <a href="#" onClick={handleOpenColor} className={`hidden items-center justify-center py-2 px-4 rounded-full border ${colorValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'} md:flex`}>
+        <div className={`relative w-full md:w-fit ${openFilterList.color ? '' : 'overflow-hidden'}`}>
+          <a href="#" onClick={(e)=>{handleFilterList(e,'color')}} className={`hidden items-center justify-center py-2 px-4 rounded-full border ${colorValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'} md:flex`}>
             <img
               src='./img/icons/filter/color-fill-outline.svg'
               alt='filter price'
@@ -320,7 +298,7 @@ function ProductFilter() {
             </span>
           </a>
 
-          <div className={`static top-14 left-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:w-96 md:rounded-2xl md:shadow-2xl  ${openColor ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'} md:absolute`}>
+          <div className={`static top-14 left-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:w-96 md:rounded-2xl md:shadow-2xl  ${openFilterList.color ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'} md:absolute`}>
             <h2 className='text-xl pl-8 font-medium capitalize text-gray-900 mb-5 whitespace-nowrap md:hidden'>
               colors
             </h2>
@@ -407,17 +385,17 @@ function ProductFilter() {
                 clear
               </button>
 
-              <button onClick={handleOpenColor} className='custom-btn capitalize py-2 px-6'>
+              <button onClick={(e)=>{handleFilterList(e,'color')}} className='custom-btn capitalize py-2 px-6'>
                 apply
               </button>
             </div>             
           </div>
 
-          <div onClick={handleOpenColor} className={`inset-0 z-10 hidden fixed ${openColor ? 'md:block' : ''}`}></div>
+          <div onClick={(e)=>{handleFilterList(e,'color')}} className={`inset-0 z-10 hidden fixed ${openFilterList.color ? 'md:block' : ''}`}></div>
         </div>
 
-        <div className={`relative w-full md:w-fit ${openSize ? '' : 'overflow-hidden'}`}>
-          <a href="#" onClick={handleOpenSize} className={` hidden items-center justify-center py-2 px-4 rounded-full border md:flex ${sizeValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'} `}>
+        <div className={`relative w-full md:w-fit ${openFilterList.size ? '' : 'overflow-hidden'}`}>
+          <a href="#" onClick={(e)=>{handleFilterList(e,'size')}} className={` hidden items-center justify-center py-2 px-4 rounded-full border md:flex ${sizeValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'} `}>
             <img
               src='./img/icons/filter/resize-outline.svg'
               alt='filter price'
@@ -430,7 +408,7 @@ function ProductFilter() {
             </span>
           </a>
 
-          <div className={`static top-14 right-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:w-96 md:rounded-2xl md:shadow-2xl md:absolute  ${openSize ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'}`}>
+          <div className={`static top-14 right-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 border-b border-gray-100 md:w-96 md:rounded-2xl md:shadow-2xl md:absolute  ${openFilterList.size ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'}`}>
             <h2 className='text-xl pl-8 font-medium capitalize text-gray-900 mb-5 whitespace-nowrap md:hidden'>
               size
             </h2>
@@ -517,18 +495,18 @@ function ProductFilter() {
                 clear
               </button>
 
-              <button onClick={handleOpenSize} className='custom-btn capitalize py-2 px-6'>
+              <button onClick={(e)=>{handleFilterList(e,'size')}} className='custom-btn capitalize py-2 px-6'>
                 apply
               </button>
             </div>             
           </div>
 
-          <div onClick={handleOpenSize} className={`fixed inset-0 z-10 hidden ${openSize? 'md:block' : ''}`}></div>
+          <div onClick={(e)=>{handleFilterList(e,'size')}} className={`fixed inset-0 z-10 hidden ${openFilterList.size? 'md:block' : ''}`}></div>
         </div>
       </div>
 
-      <div className={`relative w-full pb-20 md:pb-0 md:w-fit ${openSort ? '' : 'overflow-hidden'}`}>
-        <a href="#" onClick={handleOpenSort} className={`hidden items-center justify-center py-2 px-4 rounded-full border md:flex ${sortValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'}`}>
+      <div className={`relative w-full pb-20 md:pb-0 md:w-fit ${openFilterList.sort ? '' : 'overflow-hidden'}`}>
+        <a href="#" onClick={(e)=>{handleFilterList(e,'sort')}} className={`hidden items-center justify-center py-2 px-4 rounded-full border md:flex ${sortValue.length > 0 ? 'bg-blue-50 border-blue-300':'border-gray-300'}`}>
           <img
             src='./img/icons/filter/swap-vertical-outline.svg'
             alt='filter price'
@@ -541,7 +519,7 @@ function ProductFilter() {
           </span>
         </a>
 
-        <div className={`static top-14 right-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 md:rounded-2xl md:shadow-2xl md:absolute md:w-96  ${openSort ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'}`}>
+        <div className={`static top-14 right-0 z-20 w-full pt-10 bg-white overflow-hidden transition duration-500 md:rounded-2xl md:shadow-2xl md:absolute md:w-96  ${openFilterList.sort ? 'md:opacity-100 md:translate-y-0' : 'md:opacity-0 md:translate-y-5'}`}>
           <h2 className='text-xl pl-8 font-medium capitalize text-gray-900 mb-5 whitespace-nowrap md:hidden'>
             sort order
           </h2>
@@ -628,27 +606,27 @@ function ProductFilter() {
               clear
             </button>
 
-            <button onClick={handleOpenSort} className='custom-btn capitalize py-2 px-6'>
+            <button onClick={(e)=>{handleFilterList(e,'sort')}} className='custom-btn capitalize py-2 px-6'>
               apply
             </button>
           </div>             
         </div>
 
-        <div onClick={handleOpenSort} className={`fixed inset-0 z-10 hidden ${openSort? 'md:block' : ''}`}></div>
+        <div onClick={(e)=>{handleFilterList(e,'sort')}} className={`fixed inset-0 z-10 hidden ${openFilterList.sort? 'md:block' : ''}`}></div>
       </div>
 
       <div className="fixed bottom-0 left-0 w-full flex justify-between items-center px-8 py-4 bg-slate-50 md:hidden">
-        <button onClick={handleMobileFilter} className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
+        <button onClick={(e)=>{handleFilterList(e,'mobile')}} className='custom-btn capitalize py-2 px-6 text-gray-900 hover:text-white after:w-0 before:w-0 hover:after:w-3/5 hover:before:w-3/5 '>
           clear
         </button>
 
-        <button onClick={handleMobileFilter} className='custom-btn capitalize py-2 px-6'>
+        <button onClick={(e)=>{handleFilterList(e,'mobile')}} className='custom-btn capitalize py-2 px-6'>
           apply
         </button>
       </div> 
     </div>
 
-    <a href="#" onClick={handleMobileFilter} className={`flex items-center justify-center py-2 px-4 rounded-full border ${value[0] == 0 && value[1] == 100 ? 'border-gray-300' : 'bg-blue-50 border-blue-300'} md:hidden`}>
+    <a href="#" onClick={(e)=>{handleFilterList(e,'mobile')}} className={`flex items-center justify-center py-2 px-4 rounded-full border ${value[0] == 0 && value[1] == 100 ? 'border-gray-300' : 'bg-blue-50 border-blue-300'} md:hidden`}>
       <img
         src='./img/icons/filter/sliders-solid.svg'
         alt='filter price'

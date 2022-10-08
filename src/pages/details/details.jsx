@@ -19,11 +19,20 @@ function Details() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products/${param.id}`)
-      .then(res => {
-        setProduct(res.data)
-        setLoading(true);
-      })
+    const cancelToken = axios.CancelToken.source();
+    axios.get(`https://fakestoreapi.com/products/${param.id}`,{
+      cancelToken: cancelToken.token,
+    })
+    .then(res => {
+      setProduct(res.data)
+      setLoading(true);
+    }).catch(err => {
+      if(axios.isCancel(err)){
+        console.log('cancelled');
+      } else {
+        console.log(err);
+      }
+    })
   }, [param.id]);
 
 
@@ -37,7 +46,9 @@ function Details() {
 
   const decrementQuantity = (e) => {
     e.preventDefault();
-    setQuantity(quantity - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
   }
 
   const incrementQuantity = (e) => {
@@ -45,7 +56,7 @@ function Details() {
     setQuantity(quantity + 1);
   }
 
-  const notify = () => toast.success("Added to cart!",{theme:"light",position:"bottom-right"});
+  const notify = () => toast.success("Added to cart!",{theme:"light",position:"bottom-right", autoClose: 2000});
   return (
     <main>
       {loading ? ( 
@@ -165,7 +176,7 @@ function Details() {
                 <div className="w-full mb-5 py-3 px-6 bg-slate-300 text-lg font-medium rounded-full flex justify-between items-center sm:mb-0 sm:w-1/3">
                   <a onClick={decrementQuantity} href='#' className="w-8 h-8">
                     <img 
-                      src={"/img/icons/add-circle-outline.svg"} 
+                      src={"/img/icons/remove-circle-outline.svg"} 
                       alt=""
                       loading='lazy'
                       className='w-full h-full object-contain opacity-80 ' 
@@ -188,7 +199,7 @@ function Details() {
                   add to cart
                 </button>
 
-                <ToastContainer />
+                <ToastContainer limit={1} />
               </div>
 
               <div className="w-full mb-6">
@@ -587,14 +598,14 @@ function Details() {
         </div>
       </section> </>) : 
         <div className="container pt-28 pb-8 flex flex-wrap lg:pb-28 lg:flex-nowrap lg:space-x-8">
-          <div className="w-full h-96 mb-10 rounded-lg animated-background lg:w-1/2 lg:mb-0"></div>
+          <div className="w-full h-96 mb-10 rounded-lg bg-slate-100 animate-pulse lg:w-1/2 lg:mb-0"></div>
 
           <div className="w-full lg:w-1/2">
-            <div className='w-full h-16 mb-10 animated-background'></div>
+            <div className='w-full h-16 mb-10 bg-slate-100 animate-pulse'></div>
 
-            <div className='w-3/4 h-10 mb-8 animated-background'></div>
+            <div className='w-3/4 h-10 mb-8 bg-slate-100 animate-pulse'></div>
 
-            <div className='w-40 h-8 animated-background'></div>
+            <div className='w-40 h-8 bg-slate-100 animate-pulse'></div>
           </div>            
       </div>}
     </main>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import CardList from '../../components/card'
+import CardList from '../../components/Card'
 
 const Wishlist = () => {
 
