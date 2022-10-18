@@ -40,7 +40,7 @@ function CardList(props) {
           src={props.item.image}
           alt=""
           loading="lazy"
-          className="w-full h-full object-contain" 
+          className="w-full h-full object-contain mix-blend-multiply" 
         />
 
         <div className="absolute bottom-0 left-0 w-full flex items-center justify-center space-x-2 translate-y-full transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-5">

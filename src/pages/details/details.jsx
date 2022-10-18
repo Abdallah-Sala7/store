@@ -70,7 +70,7 @@ function Details() {
                   src={product.image}
                   alt='feature1'
                   loading='lazy'
-                  className='w-1/2 m-auto object-contain'
+                  className='w-1/2 m-auto object-contain mix-blend-multiply'
                 />
               </div>
 
@@ -80,7 +80,7 @@ function Details() {
                     src={product.image}
                     alt='feature2'
                     loading='lazy'
-                    className='w-1/2 m-auto object-contain'
+                    className='w-1/2 m-auto object-contain mix-blend-multiply'
                   />
                 </div>
 
@@ -89,7 +89,7 @@ function Details() {
                     src={product.image}
                     alt='feature3'
                     loading='lazy'
-                    className='w-1/2 m-auto object-contain'
+                    className='w-1/2 m-auto object-contain mix-blend-multiply'
                   />
                 </div>
               </div>

@@ -312,7 +312,7 @@ const Checkout = () => {
                           src={item.image}
                           alt=""
                           loading='lazy'
-                          className='w-full h-full object-contain'
+                          className='w-full h-full object-contain mix-blend-multiply'
                         />
                       </div>
 
